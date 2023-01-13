@@ -2,7 +2,7 @@
 session_start(); 
 include "db_connect.php";
 
-if (isset($_POST['uname']) && isset($_POST['password'])) {
+if (isset($_POST['email'])) {
 
     function validate($data){
        $data = trim($data);
@@ -12,19 +12,14 @@ if (isset($_POST['uname']) && isset($_POST['password'])) {
     }
 }
 
-$uname = validate($_POST['uname']);
-$pass = validate($_POST['password']);
+$email = validate($_POST['email']);
 
-if (empty($uname)) {
-    header("Location: index.php?error=User Name is required");
-    exit();
-}
-else if(empty($pass)) {
-    header("Location: index.php?error=Password is required");
+if (empty($email)) {
+    header("Location: index.php?error=Email required");
     exit();
 }
     
-$sql = "SELECT * FROM users WHERE user_name='$uname' AND password='$pass' AND email='$email'";
+$sql = "SELECT * FROM users WHERE email='$email'";
 
 $result = mysqli_query($conn, $sql);
 
@@ -33,14 +28,12 @@ if (mysqli_num_rows($result) === 1) {
     if ($row['email'] === $email) {
         header("Location: index.php?error=User already exists");
         exit();
-    }
-    else {
-        header("Location: home_registration.php");
+    } else {
+        header("Location: index.php?error=something went wrong");
         exit();
     }
-}
-else {
-    header("Location: index.php?error=Incorect Username or password");
+} else {
+    header("Location: home_registration.php");
     exit();
 }
 ?>

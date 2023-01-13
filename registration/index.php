@@ -11,14 +11,7 @@
             <p class="error"><?php echo $_GET['error']; ?></p>
         <?php } ?>
         <label>Email</label>
-        <input type="text" name="email" placeholder="Email"><br>
-        <label>Username</label>
-        <input type="text" name="uname" placeholder="Username"><br>
-        <label>Password</label>
-        <input type="password" name="password" placeholder="Password"><br> 
-        <label>Repeat Password</label>
-        <input type="password" name="password" placeholder="password"><br>
-        <button type="submit">Register</button>
+        <input type="text" name="email" placeholder="email"><br>
      </form>
 </body>
 </html>
