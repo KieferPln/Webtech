@@ -2,7 +2,7 @@
 session_start(); 
 include "db_connect.php";
 
-if (isset($_POST['email'])) {
+if (isset($_POST['email']) && isset($_POST['user_name']) && isset($_POST['password'])) {
 
     function validate($data){
        $data = trim($data);
@@ -13,6 +13,8 @@ if (isset($_POST['email'])) {
 }
 
 $email = validate($_POST['email']);
+$uname = validate($_POST['user_name']);
+$password = validate($_POST['password']);
 
 if (empty($email)) {
     header("Location: index.php?error=Email required");
@@ -33,6 +35,9 @@ if (mysqli_num_rows($result) === 1) {
         exit();
     }
 } else {
+
+    $sql = "INSERT INTO users (id, email, user_name, password)
+            VALUES (NULL, $email, $uname, $password)"
     header("Location: home_registration.php");
     exit();
 }

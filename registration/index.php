@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login page</title>
+    <title>registration page</title>
     <link rel="stylesheet" type="text/css" href="styles_regristration.css">
 </head>
 <body>
@@ -12,6 +12,10 @@
         <?php } ?>
         <label>Email</label>
         <input type="text" name="email" placeholder="email"><br>
+        <label>Username</label>
+        <input type="text" name="uname" placeholder="Username"><br>
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Password"><br>
      </form>
 </body>
 </html>
