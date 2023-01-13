@@ -47,3 +47,4 @@ else {
     header("Location: index.php?error=Incorect Username or password");
     exit();
 }
+?>
