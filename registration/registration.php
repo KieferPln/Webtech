@@ -36,9 +36,10 @@ if (mysqli_num_rows($result) === 1) {
     }
 } else {
 
-    $sql = "INSERT INTO users (id, email, user_name, password)
-            VALUES (NULL, $email, $uname, $password)"
+    $sql = "INSERT INTO users (email, user_name, password)
+            VALUES ($email, $uname, $password)"
+
     header("Location: home_registration.php");
     exit();
-}
+}   
 ?>
