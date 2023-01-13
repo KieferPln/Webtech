@@ -16,6 +16,7 @@
         <input type="text" name="uname" placeholder="Username"><br>
         <label>Password</label>
         <input type="password" name="password" placeholder="Password"><br>
+        <button type="submit">Register</button>
      </form>
 </body>
 </html>
