@@ -1,6 +1,5 @@
 const header = document.getElementById('header')
-var bubbleCount = 0
-console.log(bubbleCount)
+let main = document.getElementById('main')
 
 const delay = (time) => {
     return new Promise(resolve => setTimeout(resolve, time));
@@ -34,7 +33,7 @@ const moveUp = async (element, speed) => {
 }
 
 const createElement = async (speed, position) => {
-    const bubble = document.createElement("div");
+    const bubble = document.createElement("span");
     bubble.classList.add('bubble')
     bubble.style.left = position.x + 'px';
     bubble.style.top = position.y + 'px';
@@ -44,14 +43,12 @@ const createElement = async (speed, position) => {
 }
 
 const createBubbles = (e) => {
-    if (bubbleCount <= 5) {
-        const count = Math.round(getRandomArbitrary(3, 8))
-        const speeds = generateSpeed(count)
-        const position = { x: e.clientX, y: e.clientY }
+    const count = Math.round(getRandomArbitrary(3, 8))
+    const speeds = generateSpeed(count)
+    const position = { x: e.clientX, y: e.clientY + main.scrollTop }
 
-        for (let i = 0; i < count; i++) {
-            createElement(speeds[i], position)
-        }
+    for (let i = 0; i < count; i++) {
+        createElement(speeds[i], position)
     }
 }
 
