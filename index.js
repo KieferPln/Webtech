@@ -1,4 +1,5 @@
 const getRectTopById = (id) => {
+    console.log(document.getElementById(id).offsetTop)
     return document.getElementById(id).offsetTop;
 }
 
@@ -7,8 +8,8 @@ const scrollTo = (top) => {
     main.scrollTop = top
 }
 
-let navContent = document.getElementById('nav_content')
-navContent.addEventListener('click', () => scrollTo(getRectTopById('content')), true);
+let nav_events = document.getElementById('nav_events')
+nav_events.addEventListener('click', () => scrollTo(getRectTopById('events')), true);
 
 
 

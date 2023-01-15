@@ -25,7 +25,7 @@ const moveUp = async (element, speed) => {
         else { offset += 0 }
 
         element.style.transform = `translate(${offset + i * 2}%,${-i * 2}px) ${size})`
-        element.style.opacity = 1 - (i / height)
+        element.style.opacity = 1 - (i / height).toFixed(3)
 
         await delay(speed)
     }
