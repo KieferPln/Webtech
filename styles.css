@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Oi&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://css.gg/user.css');
 
 * {
     font-family: 'Roboto', sans-serif;
@@ -16,9 +17,14 @@
 }
 
 *:hover {
-    cursor: default !important;
     user-select: none;
     -webkit-user-select: none;
+} 
+
+*:active {
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: default;
 }
 
 :root {
@@ -194,7 +200,7 @@ div.nav-placeholder {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 ul.nav-container {
@@ -304,4 +310,44 @@ span.circle {
 
 .time {
     font-size: .7em;
+}
+
+.login-placeholder {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    gap: var(--gutter-s);
+}
+
+.login-container {
+    background-color: white;
+    width: fit-content;
+    height: fit-content;
+    padding: var(--gutter-m);
+    border-radius: var(--rounded);
+    display: flex;
+    justify-content: space-around;
+    gap: var(--gutter-m);
+    opacity: .7;
+    transition: all 300ms ease;
+    font-weight: 400;
+}
+
+.login-container:hover {
+    cursor: default;
+    opacity: 1;
+    border: none;
+    cursor: pointer !important;
+
+}
+
+.link {
+    color: white !important;
+    text-decoration: none;
+    opacity: .7;
+}
+
+.link:hover {
+    cursor: pointer !important;
+    opacity: 1;
 }

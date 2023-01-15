@@ -4,7 +4,6 @@ const getRectTopById = (id) => {
 
 const scrollTo = (top) => {
     let main = document.getElementById('main')
-    console.log(top)
     main.scrollTop = top
 }
 

@@ -50,22 +50,23 @@ const createBubbles = async (e) => {
     moveUp(bubble_5, speedArray[4])
 }
 
-const moveUp = async (element, speed) => {
-    var scale = `scale(${getRandomArbitrary(0.35, .8)}`
-    var xOffset = -50
-    var shouldSwerve = Math.random() < 0.5
-    const height = getRandomArbitrary(20, 60)
-    for (let i = 0; i < height; i++) {
-        if (i > (height - 10)) { scale == 'scale(-2)' }
-        if (shouldSwerve) { xOffset -= 1 }
-        else { xOffset += 0 }
-        element.style.transform = `translate(${xOffset + i * 2}%,${-i * 2}px) ${scale})`
-        element.style.opacity = 1 - (i / height)
-        await delay(speed)
-    }
+// const moveUp = async (element, speed) => {
+//     var scale = `scale(${getRandomArbitrary(0.35, .8)}`
+//     var xOffset = -50
+//     var shouldSwerve = Math.random() < 0.5
+//     const height = getRandomArbitrary(20, 60)
+    
+//     for (let i = 0; i < height; i++) {
+//         if (i > (height - 10)) { scale == 'scale(-2)' }
+//         if (shouldSwerve) { xOffset -= 1 }
+//         else { xOffset += 0 }
+//         element.style.transform = `translate(${xOffset + i * 2}%,${-i * 2}px) ${scale})`
+//         element.style.opacity = 1 - (i / height)
+//         await delay(speed)
+//     }
 
-    element.style.opacity = 0
-}
+//     element.style.opacity = 0
+// }
 
 document.body.addEventListener('mousedown', createBubbles, true);
 
