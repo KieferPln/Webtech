@@ -89,6 +89,7 @@ ul {
     height: 200vh;
     width: 100vw;
     position: absolute;
+    
 }
 
 @keyframes floating {
