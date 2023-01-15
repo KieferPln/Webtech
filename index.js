@@ -11,5 +11,8 @@ const scrollTo = (top) => {
 let nav_events = document.getElementById('nav_events')
 nav_events.addEventListener('click', () => scrollTo(getRectTopById('events')), true);
 
+let nav_targets = document.getElementById('nav_targets')
+nav_targets.addEventListener('click', () => scrollTo(getRectTopById('targets')), true);
+
 
 
