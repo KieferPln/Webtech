@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Add event
+</title>
+</head>
+<body>
+<h1>Add event</h1>
+
+<form action="add_event.php" method="post">
+
+<div class="new_event_info">Event name <input name="name" type="text"></div>
+<div class="new_event_info">Date <input name="date" type="date"></div>
+<div class="new_event_info">Description <input name="description" type="text"> </div>
+<div class="new_event_info">Event URL <input name="URL" type="url"> </div>
+
+<label for="location">Location</label> 
+<select name="location" id="location">
+    <option value="australia">Africa</option>
+    <option value="antarctica">Antarctica</option>
+    <option value="asia">Asia</option>
+    <option value="europe">Europe</option>
+    <option value="north america">North America</option>
+    <option value="oceania">Oceania</option>
+    <option value="south america">South America</option>
+</select> 
+<br>
+<input type="submit" value="Submit">
+
+</form>
+</body>
+</html>
