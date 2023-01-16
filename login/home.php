@@ -1,31 +1,40 @@
-<?php 
-session_start();
-
-if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
-
-    ?>
-
-    <!DOCTYPE html>
-    <html>
-    <head>
-    <title>HOME</title>
-    <link rel="stylesheet" type="text/css" href="styles_login.css">
-    </head>
-    <body>
-
-     <h1>Hello, <?php echo $_SESSION['user_name']; ?></h1>
-
-     <a href="logout.php">Logout</a>
-
-    </body>
-    </html>
-
-    <?php 
-
-}
-else{
-     header("Location: index.php");
-     exit();
-}
-
- ?>
+<!DOCTYPE html>
+<?php
+	require 'opendb.php';
+	session_start();
+ 
+	if(!ISSET($_SESSION['user'])){
+		header('location:index.php');
+	}
+?>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
+	</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="https://sourcecodester.com">Sourcecodester</a>
+		</div>
+	</nav>
+	<div class="col-md-3"></div>
+	<div class="col-md-6 well">
+		<h3 class="text-primary">PHP - PDO Login and Registration</h3>
+		<hr style="border-top:1px dotted #ccc;"/>
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<h3>Welcome!</h3>
+			<br />
+			<?php
+				$id = $_SESSION['user'];
+				$sql = $conn->prepare("SELECT * FROM `users` WHERE `id`='$id'");
+				$sql->execute();
+				$fetch = $sql->fetch();
+			?>
+			<center><h4><?php echo $fetch['username']." with email ". $fetch['email']?></h4></center>
+			<a href = "logout.php">Logout</a>
+		</div>
+	</div>
+</body>
+</html>
