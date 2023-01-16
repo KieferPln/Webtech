@@ -24,7 +24,7 @@
       <a href="#" class="link">Forgot Your Password?</a>
     </div>
     <div class="action">
-      <button type="button" onclick="location.href='/~kieferp/Webtech-2/registration/';" style="text-decoration:none;">Register</button>
+      <button type="button" onclick="location.href='/~kieferp/Webtech/registration/';" style="text-decoration:none;">Register</button>
       <button type="submit">Sign in</button>
     </div>
   </form>
