@@ -5,10 +5,10 @@
 	if(ISSET($_POST['register'])){
 		if($_POST['username'] != "" || $_POST['email'] != "" || $_POST['password'] != ""){
 			try{
-				$username = mysqli_real_escape_string($connection, htmlspecialchars($_POST['username']));
-				$email = mysqli_real_escape_string($connection, htmlspecialchars($_POST['email']));
+				$username = mysql_real_escape_string($conn, htmlspecialchars($_POST['username']));
+				$email = mysql_real_escape_string($conn, htmlspecialchars($_POST['email']));
 				// md5 encrypted
-				$password = mysqli_real_escape_string($connection, htmlspecialchars(md5($_POST['password'])));
+				$password = mysql_real_escape_string($conn, htmlspecialchars(md5($_POST['password'])));
 				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				$sql = "INSERT INTO `users` (username, email, password) VALUES ('$username', '$email', '$password')";
 				$conn->exec($sql);
