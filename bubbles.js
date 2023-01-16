@@ -1,4 +1,4 @@
-const header = document.getElementById('header')
+const bubble_layer = document.getElementById('bubble-layer')
 let main = document.getElementById('main')
 
 const delay = (time) => {
@@ -52,4 +52,4 @@ const createBubbles = (e) => {
     }
 }
 
-header.addEventListener('mousedown', createBubbles, true);
+bubble_layer.addEventListener('mousedown', createBubbles, true);

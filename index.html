@@ -20,7 +20,8 @@
     <div class="main" id="main">
 
         <div class="header" id="header">
-            <div style="width:60%; display:flex; flex-direction: column;">
+            <div id="bubble-layer"></div>
+            <div style="width:fit-content; height: fit-content; display:flex; flex-direction: column;">
                 <h1>Life Below Water</h1>
                 <h2>Conserve and sustainably use the oceans, seas and marine resources for sustainable development.</h2>
             </div>
@@ -28,7 +29,7 @@
                 <div class="login-placeholder">
                     <div class="login-container">
                         <i class="gg-user"></i>
-                        <a href="login" style="text-decoration:none";>Log In</a>
+                        <a href="login" style="text-decoration:none" ;>Log In</a>
                     </div>
                     <a class='link' href="registration" style="text-align:center">Or Sign Up</a>
                 </div>
@@ -64,8 +65,8 @@
                             23:00
                         </div>
                     </div>
-                    <div class="event">
-                        <span class="circle"></span>
+                    <div class="event" onclick="togglePopup()">
+                        <span class=" circle"></span>
                         <div class="name">
                             Ms. Jones
                         </div>
@@ -84,18 +85,20 @@
                     </div>
                 </div>
             </div>
+            <div class="pop-up-container" id="popup">
+                <button class="close-button" onclick="togglePopup()">
+                    <span class="cross-line" style="transform: rotate(-45deg);""></span>
+                    <span class=" cross-line" style="transform: rotate(45deg);"></span>
+                </button>
+                <div id="map"></div>
+                <h3 style="color: white;">Robert Jay Band</h3>
+                <button style="color: white;">Aanmelden</button>
+            </div>
             <div id="targets">
                 <h2>The Targets</h2>
-                <div class="tile-container">
-                    <!-- <div class="tile">
-                        <div class="tile-overlap"></div>
-                    </div>
-                    <div class="tile"></div>
-                    <div class="tile"></div> -->
-                    <canvas id="canvas"></canvas>
-                </div>
             </div>
         </div>
+
 
 
         <div class="scroll-top-container"></div>
@@ -104,10 +107,14 @@
         <script src="bubbles.js"></script>
         <script src="index.js"></script>
         <script src="elastisch_effect_test.js"></script>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+            defer>
+            </script>
+        <script src="maps.js"></script>
+
     </div>
     >
-
-</body>
 
 </body>
 
