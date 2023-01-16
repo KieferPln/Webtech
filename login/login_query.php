@@ -6,7 +6,7 @@
 	if(ISSET($_POST['login'])){
 		if($_POST['username'] != "" || $_POST['password'] != ""){
 			$username = $_POST['username'];
-			$password = ∏hash('sha256', $_POST['password']);
+			$password = hash('sha256', $_POST['password']);
 			$sql = "SELECT * FROM `users` WHERE `username`=? AND `password`=? ";
 			$query = $conn->prepare($sql);
 			$query->execute(array($username,$password));
