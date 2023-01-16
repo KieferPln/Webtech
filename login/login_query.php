@@ -6,7 +6,7 @@
 	if(ISSET($_POST['login'])){
 		if($_POST['username'] != "" || $_POST['password'] != ""){
 			$username = $_POST['username'];
-			$password = $_POST['password'];
+			$password = hash('sha256', $_POST['password']);
 			$sql = "SELECT * FROM `users` WHERE `username`=? AND `password`=? ";
 			$query = $conn->prepare($sql);
 			$query->execute(array($username,$password));
@@ -14,7 +14,7 @@
 			$fetch = $query->fetch();
 			if($row > 0) {
 				$_SESSION['user'] = $fetch['id'];
-				header("location: ../index.html");
+				header("location: home.php");
 			} else{
 				echo "
 				<script>alert('Invalid username or password')</script>
