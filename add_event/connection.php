@@ -1,8 +1,16 @@
 <?php
+
 $username = "daank";
 $password = "bWbkWfCXuNAqbWAtBvPTINkMHQqIjzwG";
-$conn = new PDO( 'mysql:host=localhost;dbname=test_db', $username, $password);
-if(!$conn){
-    die("Error: Connection Failed!");
+
+try {
+
+    $conn = new PDO( 'mysql:host=localhost;dbname=test_db', $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+} catch(PDOException $e) {
+
+    echo "Connection Failed" .$e->getMessage();
 }
+
 ?>
