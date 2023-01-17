@@ -21,13 +21,13 @@ if(isset($_POST['add_to_favorite']))
     if($query_execute)
     {
         $_SESSION['message'] = "Inserted Successfully";
-        header('Location: add_favourite.php');
+        header('Location: add_favorite.php');
         exit(0);
     }
     else
     {
         $_SESSION['message'] = "Not Inserted";
-        header('Location: add_favourite.php');
+        header('Location: add_favorite.php');
         exit(0);
     }
 }
