@@ -36,13 +36,14 @@
 				<div class="form-group"> -->
 				</br>
 					<label>Password</label>
+					<br/>
 					<input type="password" class="form-control" name="password" />
 				<!-- </div> -->
 					<br/>
 				<!-- <div class="form-group"> -->
 					<button class="btn btn-primary form-control" name="login">Login</button>
 					<div class="login_button">
-						<a href="registration.php">Registration</a>
+						<p>Don't have an account yet<p> <a href="registration.php">sign up</a>
 					</div>
 				</div>
 			</form>
