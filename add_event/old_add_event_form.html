@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+Add event
+</title>
+</head>
+<body>
+<h1>Add event</h1>
+
+<form action="add_event.php" method="POST">
+
+<div class="new_event_info">Event name <input name="name" type="text"></div> <br>
+<div class="new_event_info">Date <input name="date" type="date"></div> <br>
+<div class="new_event_info">Description <input name="description" type="text"> </div> <br>
+<div class="new_event_info">Event URL <input name="url" type="url" placeholder="Start url with http or https"> </div> <br>
+
+<div class="new_event_info">Location(s) <br> 
+    <input name="africa" type="checkbox" value="1">
+    <label for="africa">Africa</label>
+    <input name="antarctica" type="checkbox" value="1">
+    <label for="antarctica">Antarctica</label>
+    <input name="asia" type="checkbox" value="1">
+    <label for="asia">Asia</label>
+    <input name="europe" type="checkbox" value="1">
+    <label for="europe">Europe</label>
+    <input name="north america" type="checkbox" value="1">
+    <label for="north america">North America</label>
+    <input name="oceania" type="checkbox" value="1">
+    <label for="oceania">Oceania</label>
+    <input name="south america" type="checkbox" value="1">
+    <label for="south america">South America</label>
+</div>
+<br>    
+<div class="new_event_info">Subjects <br> 
+    <input name="pollution" type="checkbox" value="1">
+    <label for="pollution">Pollution</label>
+    <input name="acidification" type="checkbox" value="1">
+    <label for="acidification">Acidification</label>
+    <input name="rising temperatures" type="checkbox" value="1">
+    <label for="rising temperatures">Rising temperatures</label>
+    <input name="eutrophication" type="checkbox" value="1">
+    <label for="eutrophication">Eutrophication</label>
+    <input name="overfishing" type="checkbox" value="1">
+    <label for="overfishing">Overfishing</label>
+</div>
+
+<!-- label for="location">Location</label> 
+<select name="location" id="location">
+    <option value="africa">Africa</option>
+    <option value="antarctica">Antarctica</option>
+    <option value="asia">Asia</option>
+    <option value="europe">Europe</option>
+    <option value="north america">North America</option>
+    <option value="oceania">Oceania</option>
+    <option value="south america">South America</option>
+</select> 
+<br>
+-->
+<br>
+<input type="submit" name="add_new_event" value="Submit">
+
+</form>
+</body>
+</html>
