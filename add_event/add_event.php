@@ -10,7 +10,8 @@ if(isset($_POST['add_new_event']))
     $url = $_POST['url'];
     $location = $_POST['location'];
 
-    $query = "INSERT INTO events (name, date, description, url, location) VALUES (:name, :date, :description, :url, :location)";
+    $query = "INSERT INTO events (name, date, description, url, location) 
+    VALUES (:name, :date, :description, :url, :location)";
     $query_run = $conn->prepare($query);
 
     $data = [
