@@ -2,7 +2,7 @@
 <MysqL_INIT>
     <mysql_host>localhost</mysql_host>
 
-<mysql_database>test_db</mysql_database>
+<mysql_database>life_below_water</mysql_database>
     <mysql_username>kieferp</mysql_username>
     <mysql_password>UkmtdEVlrYGOKYkGqeljPundaLYKpZin</mysql_password>
 </MysqL_INIT>
