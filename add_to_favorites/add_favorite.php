@@ -32,4 +32,34 @@ if(isset($_POST['add_to_favorite']))
     }
 }
 
+if(isset($_POST['remove_from_favorite']))
+{
+    $eventid = $_POST['eventid'];
+    $userid = $_POST['userid'];
+
+
+    $query = "DELETE FROM favorites WHERE eventid = :int AND userid = :int";
+
+    $query_run = $conn->prepare($query);
+
+    $data = [
+        ':int' => $eventid,
+        ':int' => $userid,
+    ];
+    $query_execute = $query_run->execute($data);
+
+    if($query_execute)
+    {
+        $_SESSION['message'] = "Removed Successfully";
+        header('Location: add_favorite.php');
+        exit(0);
+    }
+    else
+    {
+        $_SESSION['message'] = "Not Inserted";
+        header('Location: add_favorite.php');
+        exit(0);
+    }
+}
 ?>
+
