@@ -23,6 +23,10 @@ if(isset($_POST['add_new_event']))
     ];
     $query_execute = $query_run->execute($data);
 
+    
+
+
+
     if($query_execute)
     {
         $_SESSION['message'] = "Inserted Successfully";
