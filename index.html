@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Life Below Water</title>
     <link rel="stylesheet" href="./styles.css">
-
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
@@ -20,6 +19,7 @@
     <div class="main" id="main">
 
         <div class="header" id="header">
+            <p style="position: absolute; font-size: .6em; opacity: .5;">Press anywhere to create bubbles!</p>
             <div id="bubble-layer"></div>
             <div style="width:fit-content; height: fit-content; display:flex; flex-direction: column;">
                 <h1>Life Below Water</h1>
@@ -34,63 +34,75 @@
                     <a class='link' href="registration" style="text-align:center">Or Sign Up</a>
                 </div>
                 <ul class="nav-container">
-                    <li id="nav_content">Events</li>
-                    <li id="nav_targets">Research</li>
-                    <l1 id='nav_events'>
-                        </li>
+                    <li id='nav_information'>Information</li>
+                    <li id="nav_events">Events</li>
+                    <li id='nav_about_us'>About us</li>
+                    <li id="nav_add_event">Add Event *</li>
                 </ul>
             </div>
         </div>
 
         <div id="content">
+
+            <div id="information">
+                <h2>Information</h2>
+
+                <div class="tile-container">
+                    <div onclick="toggleInfoPopup('OK')" class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                </div>
+            </div>
             <div id="events">
                 <h2>Upcoming Events</h2>
                 <div class="event-container">
-                    <div class="event">
-                        <span class="circle"></span>
-                        <div class="name">
-                            Robert Jay Band
-                        </div>
-                        <div class="time">
-                            23:00
-                        </div>
-                    </div>
-                    <div class="event">
-                        <span class="circle"></span>
-                        <div class="name">
-                            Ruige Rita's
-                        </div>
-                        <div class="time">
-                            23:00
-                        </div>
-                    </div>
                     <div class="event" onclick="togglePopup()">
                         <span class=" circle"></span>
                         <div class="name">
                             Ms. Jones
                         </div>
-                        <div class="time">
-                            23:00
-                        </div>
-                    </div>
-                    <div class="event">
-                        <span class="circle"></span>
-                        <div class="name">
-                            Adwaith
-                        </div>
-                        <div class="time">
-                            23:00
+                        <div class="date">
+                            16-05-22
                         </div>
                     </div>
                 </div>
             </div>
             <div class="pop-up-container" id="popup">
                 <div id="map"></div>
+
+                <!-- _______PHP________ -->
+
                 <div class="text-container">
-                    <h3>Robert Jay Band</h3>
+
+                    <div class="pop-up-header">
+
+                        <!-- __ Naam __ -->
+                        <h3>Ms.Jones</h3>
+
+                        <!-- __ Tags __ -->
+                        <div class="tag">Tag</div>
+                        <div class="tag">Water</div>
+                        <div class="tag">Muziek</div>
+                    </div>
+
+                    <!-- __ Omschrijving __ -->
+                    <a href="https://www.google.com">Bekijk de website</a>
+
+                    <!-- __ Omschrijving __ -->
                     <p>
                         Op dit album vind je naast de live versie van de nieuwe single “Freedom” ondermeer, “Red
                         Bullet”, “Raining in the Snow”, “Penthouse in Heaven” en nog veel meer mooie nummers.
+                        Op dit album vind je naast de live versie van de nieuwe single “Freedom” ondermeer, “Red
+                        Bullet”, “Raining in the Snow”, “Penthouse in Heaven” en nog veel meer mooie nummers.
+                        Op dit album vind je naast de live versie van de nieuwe single “Freedom” ondermeer, “Red
+                        Bullet”, “Raining in the Snow”, “Penthouse in Heaven” en nog veel meer mooie nummers.
+                    </p>
+
+                    <!-- __ Doelgroep __ -->
+                    <p style="font-size: .9em; font-weight: 600;">
+                        Dit is een doelgroep
                     </p>
                 </div>
                 <div class="button-container">
@@ -99,23 +111,27 @@
                         <span class=" cross-line" style="transform: rotate(45deg);"></span>
                     </button>
                     <button class="sign-up-button">
-                        Sign up!
+                        Add
+                        <i class="gg-add"></i>
                     </button>
                 </div>
             </div>
-            <div id="targets">
-                <h2>The Targets</h2>
+
+            <div id='info-popup' class="information-popup-backdrop">
+                <div class="information-popup-content">
+                    <button class="close-button " onclick="toggleInfoPopup()">
+                        <span class="cross-line" style="transform: rotate(-45deg);""></span>
+                    <span class=" cross-line" style="transform: rotate(45deg);"></span>
+                    </button>
+                </div>
             </div>
         </div>
-
-
 
         <div class="scroll-top-container"></div>
 
         <!-- <script src="bubbles.js"></script> -->
         <script src="bubbles.js"></script>
         <script src="index.js"></script>
-        <script src="elastisch_effect_test.js"></script>
         <script
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
             defer>
