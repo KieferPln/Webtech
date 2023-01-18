@@ -33,7 +33,10 @@
 					<button class="btn btn-primary form-control" name="register">Register</button>
 				</div>
 				<div class="login_button">
-				<p>already have an account?<p> <a href="index.php">Login here</a>
+				<p>already have an account?<p> 
+				</div>
+				<div class="Signin">
+					<p><a href="./">Sign in!</a><p> 
 				</div>
 			</form>
 		</div>

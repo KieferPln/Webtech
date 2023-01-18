@@ -38,8 +38,8 @@
 
 .login_button{
   position: fixed;
-  top: 80%;
-  left: 50%;
+  top: 70%;
+  left: 47%;
   transform: translate(-50%, -50%);
   font-size: 1em;
   color: rgb(221, 221, 221);
@@ -62,8 +62,8 @@
 .Signin{
 
   position: fixed;
-  top: 80%;
-  left: 68%;
+  top: 70%;
+  left: 57%;
   transform: translate(-50%, -50%);
   font-size: 1em;
   color: rgb(221, 221, 221);
@@ -82,6 +82,31 @@
   z-index: 1;
 
 }
+
+
+.make_account{
+    position: fixed;
+    top: 70%;
+    left: 58%;
+    transform: translate(-50%, -50%);
+    font-size: 1em;
+    color: rgb(221, 221, 221);
+    font-weight: 700;
+    width: fit-content;
+    padding: var(--gutter-m);
+    padding-left: 0;
+    padding-bottom: 0;
+    height: fit-content;
+    background: rgb(255, 255, 255);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: var(--gutter-s);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 1;
+  
+  }
+
 
 .register_rest{
     font-size: 2em;

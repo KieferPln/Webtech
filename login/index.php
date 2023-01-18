@@ -34,19 +34,22 @@
 					<input type="text" class="form-control" name="username" />
 				<!-- </div>
 				<div class="form-group"> -->
-				</br>
+				<br>
 					<label>Password</label>
 					<br/>
 					<input type="password" class="form-control" name="password" />
 				<!-- </div> -->
-					<br/>
+					<br>
 				<!-- <div class="form-group"> -->
 					<button class="btn btn-primary form-control" name="login">Login</button>
-					<div class="login_button">
-						<p>Don't have an account yet<p> <a href="registration.php">sign up</a>
-					</div>
+					
 				</div>
 			</form>
+			<div class="login_button">
+				<p>Don't have an account yet?</p>
+			</div>
+			<div class="make_account">
+				<p><a href="registration.php">Sign up!</a><p>
 		</div>
 	</div>
 </body>
