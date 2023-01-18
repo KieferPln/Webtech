@@ -19,20 +19,21 @@
 
     <form action="add_favorite.php" method="POST">
 
-    <div class="new_event_info">EventID <input name="eventid" type="int"></div>
-    <div class="new_event_info">UserID <input name="userid" type="int"></div>
-    <input type="submit" name='add_to_favorite' value="Submit">
+    <div class="new_event_info">EventID <input name="eventid" type="int" required></div>
+
+    <input type="submit" name='add_to_favorite' value="Favorite">
+    <input type="submit" name='remove_from_favorite' value="Unfavorite">
 
     </form>
 
-    <form action="add_favorite.php" method="POST">
+    <!-- <form action="add_favorite.php" method="POST">
 
-    <div class="new_event_info">EventID <input name="eventid" type="int"></div>
-    <div class="new_event_info">UserID <input name="userid" type="int"></div>
-    <input type="submit" name='remove_from_favorite' value="Delete">
+    <div class="new_event_info">EventID <input name="eventid" type="int" required></div>
+    <div class="new_event_info">UserID <input name="userid" type="int" required></div>
+    <input type="submit" name='remove_from_favorite' value="Unfavorite">
 
-    </form>
-      
+    </form> -->
+    
 
 </body>
 </html>
