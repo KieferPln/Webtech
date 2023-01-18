@@ -5,37 +5,36 @@
 		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
 	</head>
 <body>
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="https://sourcecodester.com">Sourcecodester</a>
-		</div>
-	</nav>
-	<div class="col-md-3"></div>
-	<div class="col-md-6 well">
-		<h3 class="text-primary">PHP - PDO Login and Registration</h3>
-		<hr style="border-top:1px dotted #ccc;"/>
-		<div class="col-md-2"></div>
+	<div class="header">
 		<div class="col-md-8">
 			<form action="register_query.php" method="POST">	
-				<h4 class="text-success">Register here...</h4>
-				<hr style="border-top:1px groovy #000;">
-				<div class="form-group">
+				<div class="text_header">
+					<h4>Register here</h4>
+				</div>
+				<div class="text_login">
 					<label>Username</label>
+					<br/>
 					<input type="text" class="form-control" name="username" />
-				</div>
-				<div class="form-group">
+				<!-- </div>
+				<div class="form-group"> -->
+				<br/>
 					<label>Email</label>
+					<br/>
 					<input type="email" class="form-control" name="email" />
-				</div>
-				<div class="form-group">
+				<!-- </div> -->
+				<br/>
+				<!-- <div class="form-group"> -->
 					<label>Password</label>
+					<br/>
 					<input type="password" class="form-control" name="password" />
-				</div>
-				<br />
-				<div class="form-group">
+				<!-- </div> -->
+				<br/>
+				<!-- <div class="form-group"> -->
 					<button class="btn btn-primary form-control" name="register">Register</button>
 				</div>
-				<a href="index.php">Login</a>
+				<div class="login_button">
+				<p>already have an account?<p> <a href="index.php">Login here</a>
+				</div>
 			</form>
 		</div>
 	</div>
