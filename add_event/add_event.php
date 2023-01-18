@@ -22,6 +22,88 @@ if(isset($_POST['add_new_event']))
     ];
     $query_execute = $query_run->execute($data);
 
+    $eventid = $conn->lastInsertId();
+
+    if (isset($_POST['africa'])) {
+        $location = 'africa'; 
+        $query2 = "INSERT INTO event_locations (eventid, location) VALUES (:eventid, :location)";
+        $query_run2 = $conn->prepare($query2);
+        $data2 = [
+            ':eventid' => $eventid,
+            ':location' => $location,
+        ];
+        $query_execute2 = $query_run2->execute($data2);
+    }
+
+    if (isset($_POST['antarctica'])) {
+        $location = 'antarctica'; 
+        $query2 = "INSERT INTO event_locations (eventid, location) VALUES (:eventid, :location)";
+        $query_run2 = $conn->prepare($query2);
+        $data2 = [
+            ':eventid' => $eventid,
+            ':location' => $location,
+        ];
+        $query_execute2 = $query_run2->execute($data2);
+    }    
+    
+    if (isset($_POST['asia'])) {
+        $location = 'asia'; 
+        $query2 = "INSERT INTO event_locations (eventid, location) VALUES (:eventid, :location)";
+        $query_run2 = $conn->prepare($query2);
+        $data2 = [
+            ':eventid' => $eventid,
+            ':location' => $location,
+        ];
+        $query_execute2 = $query_run2->execute($data2);
+    }    
+    
+    if (isset($_POST['europe'])) {
+        $location = 'europe'; 
+        $query2 = "INSERT INTO event_locations (eventid, location) VALUES (:eventid, :location)";
+        $query_run2 = $conn->prepare($query2);
+        $data2 = [
+            ':eventid' => $eventid,
+            ':location' => $location,
+        ];
+        $query_execute2 = $query_run2->execute($data2);
+    }    
+    
+    if (isset($_POST['north_america'])) {
+        $location = 'north_america'; 
+        $query2 = "INSERT INTO event_locations (eventid, location) VALUES (:eventid, :location)";
+        $query_run2 = $conn->prepare($query2);
+        $data2 = [
+            ':eventid' => $eventid,
+            ':location' => $location,
+        ];
+        $query_execute2 = $query_run2->execute($data2);
+    }    
+    
+    if (isset($_POST['oceania'])) {
+        $location = 'oceania'; 
+        $query2 = "INSERT INTO event_locations (eventid, location) VALUES (:eventid, :location)";
+        $query_run2 = $conn->prepare($query2);
+        $data2 = [
+            ':eventid' => $eventid,
+            ':location' => $location,
+        ];
+        $query_execute2 = $query_run2->execute($data2);
+    }    
+    
+    if (isset($_POST['south_america'])) {
+        $location = 'south_america'; 
+        $query2 = "INSERT INTO event_locations (eventid, location) VALUES (:eventid, :location)";
+        $query_run2 = $conn->prepare($query2);
+        $data2 = [
+            ':eventid' => $eventid,
+            ':location' => $location,
+        ];
+        $query_execute2 = $query_run2->execute($data2);
+    }
+
+
+
+    /*
     // for table 'event_locations'
     $eventid = $conn->lastInsertId();
     $africa = $_POST['africa'];
@@ -70,8 +152,9 @@ if(isset($_POST['add_new_event']))
         
     ];
     $query_execute3 = $query_run3->execute($data3);
+    */
 
-
+    /*
     if($query_execute and $query_execute2 and $query_execute3)
     {
         $_SESSION['message'] = "Inserted Successfully";
@@ -84,6 +167,7 @@ if(isset($_POST['add_new_event']))
         header('Location: add_event.php');
         exit(0);
     }
+    */
 }
 
 ?>
