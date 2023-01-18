@@ -46,6 +46,7 @@
         0 32px 64px rgba(0, 0, 0, 0.07);
     --transition: transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
     --transition-slow: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --transition-med: transform .8s cubic-bezier(0.165, 0.84, 0.44, 1), opacity .2s cubic-bezier(0.165, 0.84, 0.44, 1);
 
 }
 
@@ -73,7 +74,12 @@ a {
     background: linear-gradient(183deg, rgb(0, 20, 32) 11%, rgba(0, 6, 8, 1) 74%);
     text-align: left;
     z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--gutter-l);
 }
+
 
 .main {
     width: 100vw;
@@ -92,6 +98,7 @@ a {
     flex-direction: column;
     gap: var(--gutter-m);
     background-color: rgb(0, 0, 0);
+    padding: var(--gutter-l);
 }
 
 #events {
@@ -104,28 +111,22 @@ h1 {
     color: rgb(221, 221, 221);
     font-weight: 700;
     width: fit-content;
-    padding: var(--gutter-m);
-    padding-left: 0;
-    padding-bottom: 0;
     height: fit-content;
     background: rgb(133, 12, 255);
     background: linear-gradient(225deg, rgb(227, 199, 255) 0%, rgb(67, 50, 255) 100%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-left: var(--gutter-s);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     z-index: 1;
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 1.8em;
     color: rgb(221, 221, 221);
     font-weight: 700;
     width: fit-content;
-    padding: var(--gutter-m);
     padding-bottom: 0;
-    margin-left: var(--gutter-s);
     height: fit-content;
     background: rgb(220, 220, 220);
     background-clip: text;
@@ -134,6 +135,8 @@ h2 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     z-index: 1;
+    
+
 }
 
 h3 {
@@ -141,34 +144,7 @@ h3 {
     font-size: 1.4em;
     font-weight: 500;
     letter-spacing: 1px;
-}
-
-button.basic {
-    position: relative;
-    background-color: transparent;
-    width: fit-content;
-    height: fit-content;
-    padding: var(--gutter-s);
-    border-radius: var(--rounded);
-    font-weight: 500;
-}
-
-button.basic::after {
-    transition: all 200ms ease;
-    background-color: var(--light-gray);
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    opacity: 0;
-    z-index: -1;
-    border-radius: inherit;
-}
-
-button.basic:hover::after {
-    opacity: 1;
+    z-index: 1;
 }
 
 .bubble {
@@ -186,26 +162,33 @@ button.basic:hover::after {
     top: 50%;
     padding: var(--gutter-m);
     text-align: left;
+    display: flex;
+    flex-direction: column;
 }
 
 div.nav-placeholder {
     background-color: transparent;
     width: fit-content;
-    padding: var(--gutter-l);
-    height: 100%;
+
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: var(--gutter-m);
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+    padding: var(--gutter-s);
+    position: sticky;
+    z-index: 1000;
+    background: rgb(133, 12, 255);
+    background: linear-gradient(225deg, rgb(69, 20, 202) 0%, rrgb(78, 1, 166)100%);
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
 }
 
 ul.nav-container {
     height: fit-content;
     display: flex;
-    flex-direction: column;
     gap: var(--gutter-m);
-    padding-bottom: 60px;
 }
 
 ul.nav-container li {
@@ -213,11 +196,21 @@ ul.nav-container li {
     border-radius: 20px;
     position: relative;
     font-weight: 700;
-    font-size: 1.5em;
+    font-size: 1.3em;
     color: rgb(221, 221, 221);
     letter-spacing: 2px !important;
     z-index: 2;
     border-radius: var(--rounded);
+    ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+
+ul.nav-container li:hover {
+    cursor: default !important;
 }
 
 ul.nav-container li::after {
@@ -230,8 +223,7 @@ ul.nav-container li::after {
     background-color: rgb(255, 255, 255);
     z-index: -1;
     opacity: 0;
-    -webkit-transition: var(--transition-slow);
-    transition: var(--transition-slow);
+    transition: var(--transition-med);
     box-shadow: var(--shadow);
     border-radius: inherit;
 }
@@ -313,6 +305,8 @@ span.circle {
     flex-direction: column;
     height: fit-content;
     gap: var(--gutter-s);
+    color: black;
+
 }
 
 .login-container {
@@ -366,7 +360,7 @@ span.circle {
     position: absolute;
     top: 0px;
     left: 0px;
-    z-index: 0;
+    z-index: 2;
 }
 
 .pop-up-container {
@@ -385,6 +379,7 @@ span.circle {
     display: flex;
     border-top: 2px solid rgb(195, 195, 195);
     gap: var(--gutter-s);
+    z-index: 100000;
 }
 
 .pop-up-container h1 {
@@ -435,36 +430,43 @@ button.close-button:hover span.cross-line:nth-child(1) {
 }
 
 span.cross-line {
-    width: 30px;
+    width: 25px;
     height: 2px;
     background-color: rgb(255, 255, 255);
     border-radius: 50vmax;
-    left: 10px;
+    left: 12.5px;
     position: absolute;
     -webkit-transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
     transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .button-container {
-    height: 100%;
+    height: 200px;
     width: fit-content;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
     background-color: rgb(0, 0, 0);
+    justify-content: space-between;
 }
 
 .text-container {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: 200px;
     padding: var(--gutter-m);
     padding-top: 0px;
     background-color: rgb(0, 0, 0);
     gap: var(--gutter-m);
     overflow-y: auto;
+    overflow-y: scroll;
+}
+
+.text-container::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+    /* make scrollbar transparent */
 }
 
 p {
@@ -513,9 +515,9 @@ p {
 }
 
 .tile {
-    background-color: rgb(255, 255, 255);
-    width: 200px;
-    height: 200px;
+    background-color: rgb(220, 220, 220);
+    width: 250px;
+    height: 250px;
     border-radius: var(--rounded);
     box-shadow: var(--shadow);
     position: relative;

@@ -18,35 +18,36 @@
 <body>
     <div class="main" id="main">
 
-        <div class="header" id="header">
-            <p style="position: absolute; font-size: .6em; opacity: .5;">Press anywhere to create bubbles!</p>
-            <div id="bubble-layer"></div>
+        <div class="header" id="header" style="padding: var(--gutter-l);">
+            <p style="position: absolute; font-size: .6em; opacity: .5; top: var(--gutter-l);">Press anywhere to create
+                bubbles!</p>
             <div style="width:fit-content; height: fit-content; display:flex; flex-direction: column;">
                 <h1>Life Below Water</h1>
                 <h2>Conserve and sustainably use the oceans, seas and marine resources for sustainable development.</h2>
             </div>
-            <div class="nav-placeholder">
-                <div class="login-placeholder">
-                    <div class="login-container">
-                        <i class="gg-user"></i>
-                        <a href="login" style="text-decoration:none" ;>Log In</a>
-                    </div>
-                    <a class='link' href="registration" style="text-align:center">Or Sign Up</a>
+            <div id="bubble-layer"></div>
+            <!-- <div class="login-placeholder">
+                <div class="login-container">
+                    <i class="gg-user"></i>
+                    <a href="login" style="text-decoration:none; color:black" ;>Log In</a>
                 </div>
-                <ul class="nav-container">
-                    <li id='nav_information'>Information</li>
-                    <li id="nav_events">Events</li>
-                    <li id='nav_about_us'>About us</li>
-                    <li id="nav_add_event">Add Event *</li>
-                </ul>
-            </div>
+                <a class='link' href="registration" style="text-align:center">Or Sign Up</a>
+            </div> -->
+        </div>
+        <div id='nav' class="nav-placeholder">
+            <ul class="nav-container">
+                <li id='nav_information'>Information</li>
+                <li id="nav_events">Events</li>
+                <li id='nav_about_us'>About us</li>
+                <li id="nav_add_event">Add Event *</li>
+            </ul>
         </div>
 
         <div id="content">
 
+            <!-- *********** INFORMATION *********** -->
             <div id="information">
-                <h2>Information</h2>
-
+                <h2 style="margin-top: var(--gutter-m);">Information</h2>
                 <div class="tile-container">
                     <div onclick="toggleInfoPopup('OK')" class="tile"></div>
                     <div class="tile"></div>
@@ -55,8 +56,43 @@
                     <div class="tile"></div>
                 </div>
             </div>
+
+            <!-- *********** EVENTS *********** -->
             <div id="events">
-                <h2>Upcoming Events</h2>
+                <h2 style="margin-top: var(--gutter-m)">Upcoming Events</h2>
+                <div class=" event-container">
+                    <div class="event" onclick="togglePopup()">
+                        <span class=" circle"></span>
+                        <div class="name">
+                            Ms. Jones
+                        </div>
+                        <div class="date">
+                            16-05-22
+                        </div>
+                    </div>
+                </div>
+                <div class="event-container">
+                    <div class="event" onclick="togglePopup()">
+                        <span class=" circle"></span>
+                        <div class="name">
+                            Ms. Jones
+                        </div>
+                        <div class="date">
+                            16-05-22
+                        </div>
+                    </div>
+                </div>
+                <div class="event-container">
+                    <div class="event" onclick="togglePopup()">
+                        <span class=" circle"></span>
+                        <div class="name">
+                            Ms. Jones
+                        </div>
+                        <div class="date">
+                            16-05-22
+                        </div>
+                    </div>
+                </div>
                 <div class="event-container">
                     <div class="event" onclick="togglePopup()">
                         <span class=" circle"></span>
@@ -69,6 +105,13 @@
                     </div>
                 </div>
             </div>
+
+            <!-- *********** ABOUT US *********** -->
+            <div id="about-us">
+
+            </div>
+
+            <!-- *********** POPUP *********** -->
             <div class="pop-up-container" id="popup">
                 <div id="map"></div>
 
@@ -79,7 +122,7 @@
                     <div class="pop-up-header">
 
                         <!-- __ Naam __ -->
-                        <h3>Ms.Jones</h3>
+                        <h3>Ms. Jones</h3>
 
                         <!-- __ Tags __ -->
                         <div class="tag">Tag</div>
@@ -117,6 +160,7 @@
                 </div>
             </div>
 
+            <!-- *********** INFORMATION POPUP  *********** -->
             <div id='info-popup' class="information-popup-backdrop">
                 <div class="information-popup-content">
                     <button class="close-button " onclick="toggleInfoPopup()">
@@ -128,8 +172,6 @@
         </div>
 
         <div class="scroll-top-container"></div>
-
-        <!-- <script src="bubbles.js"></script> -->
         <script src="bubbles.js"></script>
         <script src="index.js"></script>
         <script
