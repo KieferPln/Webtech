@@ -15,6 +15,7 @@ Add event
 <div class="new_event_info">Description <input name="description" type="text"> </div> <br>
 <div class="new_event_info">Event URL <input name="url" type="url" placeholder="Start url with http or https"> </div> <br>
 
+<!--
 <div class="new_event_info">Location(s) <br> 
     <input name="africa" type="checkbox" value="africa">
     <label for="africa">Africa</label>
@@ -31,6 +32,19 @@ Add event
     <input name="south_america" type="checkbox" value="south_america">
     <label for="south_america">South America</label>
 </div>
+-->
+
+<label for="location">Location</label> 
+<select name="location" id="location">
+    <option value="africa">Africa</option>
+    <option value="antarctica">Antarctica</option>
+    <option value="asia">Asia</option>
+    <option value="europe">Europe</option>
+    <option value="north america">North America</option>
+    <option value="oceania">Oceania</option>
+    <option value="south america">South America</option>
+</select> 
+<br>
 <br>    
 <div class="new_event_info">Subjects <br> 
     <input name="pollution" type="checkbox" value="pollution">
@@ -44,19 +58,20 @@ Add event
     <input name="overfishing" type="checkbox" value="overfishing">
     <label for="overfishing">Overfishing</label>
 </div>
-
-<!-- label for="location">Location</label> 
-<select name="location" id="location">
-    <option value="africa">Africa</option>
-    <option value="antarctica">Antarctica</option>
-    <option value="asia">Asia</option>
-    <option value="europe">Europe</option>
-    <option value="north america">North America</option>
-    <option value="oceania">Oceania</option>
-    <option value="south america">South America</option>
-</select> 
 <br>
--->
+ 
+<div class="new_event_info">Target audience <br> 
+    <input name="academics" type="checkbox" value="academics">
+    <label for="academics">Academics</label>
+    <input name="policy_makers" type="checkbox" value="policy_makers">
+    <label for="policy_makers">Policy makers</label>
+    <input name="environmentalists" type="checkbox" value="environmentalists">
+    <label for="environmentalists">Environmentalists</label>
+    <input name="concerned_citizens" type="checkbox" value="concerned_citizens">
+    <label for="concerned_citizens">Concerned citizens</label>
+    <input name="students" type="checkbox" value="students">
+    <label for="students">Students</label>
+</div>
 <br>
 <input type="submit" name="add_new_event" value="Submit">
 
