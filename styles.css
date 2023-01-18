@@ -43,6 +43,8 @@
         0 8px 16px rgba(0, 0, 0, 0.07),
         0 16px 32px rgba(0, 0, 0, 0.07),
         0 32px 64px rgba(0, 0, 0, 0.07);
+    --transition: transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+
 }
 
 body {
@@ -84,6 +86,7 @@ ul {
     gap: var(--gutter-m);
     display: flex;
     flex-direction: column;
+    background-color: rgb(0, 0, 0);
 }
 
 #events {
@@ -190,7 +193,6 @@ button.basic:hover::after {
     top: 50%;
     padding: var(--gutter-m);
     text-align: left;
-
 }
 
 div.nav-placeholder {
@@ -201,6 +203,7 @@ div.nav-placeholder {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: space-between;
     gap: var(--gutter-m);
 }
 
@@ -435,15 +438,16 @@ span.circle {
     transform: translateY(100%);
     -webkit-transition: transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
     transition: transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
-    padding: var(--gutter-l);
+    padding: var(--gutter-m);
     border-bottom: 0px;
     background-color: rgb(5, 5, 5);
     box-shadow: var(--shadow);
     display: flex;
-    border-top: 1px solid rgb(195, 195, 195);
+    border-top: 2px solid rgb(195, 195, 195);
+    gap: var(--gutter-s);
 }
 
-.pop-up-container h1{
+.pop-up-container h1 {
     color: white;
 }
 
@@ -456,30 +460,10 @@ span.circle {
 button.close-button {
     width: 50px;
     height: 50px;
-    position: absolute;
-    top: var(--gutter-l);
-    right: var(--gutter-l);
     padding: var(--gutter-s);
     border-radius: var(--rounded);
+    position: relative;
 }
-
-/* button.close-button::after {
-    background-color: rgb(230, 230, 230);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    content: "";
-    opacity: 0;
-    border-radius: inherit;
-    z-index: -1;
-    transition: all 300ms ease;
-} */
-
-/* button.close-button:hover::after {
-    opacity: 1;
-} */
 
 button.close-button:hover span.cross-line:nth-child(2) {
     transform: rotate(45deg) scale(1.2) !important;
@@ -491,11 +475,63 @@ button.close-button:hover span.cross-line:nth-child(1) {
 
 span.cross-line {
     width: 30px;
-    height: 1px;
+    height: 2px;
     background-color: rgb(255, 255, 255);
     border-radius: 50vmax;
     left: 10px;
     position: absolute;
     -webkit-transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
     transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 1.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.button-container {
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-color: rgb(0, 0, 0);
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: var(--gutter-m);
+    background-color: rgb(0, 0, 0);
+    border-bottom: 2px solid rgb(255, 255, 255);
+    gap: var(--gutter-s);
+}
+
+h3 {
+    color: white;
+    font-size: 1.4em;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+p {
+    color: white;
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.sign-up-button {
+    color: white;
+    width: fit-content;
+    height: fit-content;
+    padding: var(--gutter-s);
+    border: 2px solid white;
+    border-bottom: 3px solid white;
+    border-radius: var(--rounded);
+    overflow: hidden;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.sign-up-button:hover {
+    opacity: 0.7;
 }
