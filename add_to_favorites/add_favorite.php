@@ -29,13 +29,13 @@ if(isset($_POST['add_to_favorite']))
     if($query_execute)
     {
         $_SESSION['message'] = "Inserted Successfully";
-        header('Location: add_favorite.php');
+        header('Location: add_favorites.html');
         exit(0);
     }
     else
     {
         $_SESSION['message'] = "Not Inserted";
-        header('Location: add_favorite.php');
+        header('Location: add_favorites.html');
         exit(0);
     }
 }
@@ -59,13 +59,13 @@ if(isset($_POST['remove_from_favorite']))
     if($query_execute)
     {
         $_SESSION['message'] = "Removed Successfully";
-        header('Location: add_favorite.php');
+        header('Location: add_favorites.html');
         exit(0);
     }
     else
     {
         $_SESSION['message'] = "Not Inserted";
-        header('Location: add_favorite.php');
+        header('Location: add_favorites.html');
         exit(0);
     }
 }
