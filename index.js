@@ -38,21 +38,33 @@ const togglePopup = () => {
 }
 
 const setInfo = (type) => {
+    switch (type) {
+        case 'Tile1':
+            return 'ok'
 
+        case 'Tile2':
+            return 'ok'
+
+        default:
+            break;
+    }
 }
 
 const toggleInfoPopup = (type) => {
-
     if (popupIsTriggered) {
         popup.style.transform = "translateY(100%)"
     }
+
     if (!infoPopupIsTriggerd) {
         infoPopup.style.opacity = "1"
         infoPopup.style.visibility = "visible"
         main.style.overflow = 'hidden'
-    }
-    else {
 
+        const bubble = document.createElement("h1");
+        infoPopup.appendChild(bubble)
+    }
+
+    else {
         infoPopup.style.opacity = "0"
         infoPopup.style.visibility = "hidden"
         main.style.overflow = 'auto'
@@ -62,7 +74,7 @@ const toggleInfoPopup = (type) => {
             main.style.overflow = 'hidden'
         }
     }
-    infoPopupIsTriggerd = !infoPopupIsTriggerd
 
+    infoPopupIsTriggerd = !infoPopupIsTriggerd
     console.log(type)
 }

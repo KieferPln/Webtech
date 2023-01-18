@@ -17,29 +17,28 @@
 
 <body>
     <div class="main" id="main">
-        
+
         <div class="header" id="header" style="padding: var(--gutter-l);">
             <p style="position: absolute; font-size: .6em; opacity: .5; top: var(--gutter-l);">Press anywhere to create
                 bubbles!</p>
+            <div class="login-container">
+                <button class="login">
+                    <i class="gg-user"></i> Log In
+                </button>
+                <a href="">Or Sign Up</a>
+            </div>
             <div style="width:fit-content; height: fit-content; display:flex; flex-direction: column;">
                 <h1>Life Below Water</h1>
                 <h2 style="width: 80%">Conserve and sustainably use the oceans, seas and marine resources for
                     sustainable development.</h2>
             </div>
             <div id="bubble-layer"></div>
-            <!-- <div class="login-placeholder">
-                <div class="login-container">
-                    <i class="gg-user"></i>
-                    <a href="login" style="text-decoration:none; color:black" ;>Log In</a>
-                </div>
-                <a class='link' href="registration" style="text-align:center">Or Sign Up</a>
-            </div> -->
         </div>
         <div id='nav' class="nav-placeholder">
             <ul class="nav-container">
                 <li id='nav_information'>Information</li>
                 <li id="nav_events">Events</li>
-                <li id='nav_about_us'>About us</li>
+                <li id='nav_about_us'>About Us</li>
                 <li id="nav_add_event">Add Event *</li>
             </ul>
         </div>
@@ -50,10 +49,9 @@
             <div id="information">
                 <h2 style="margin-top: var(--gutter-m);">Information</h2>
                 <div class="tile-container">
-                    <div onclick="toggleInfoPopup('OK')" class="tile"></div>
-                    <div class="tile"></div>
-                    <div class="tile"></div>
-                    <div class="tile"></div>
+                    <div onclick="toggleInfoPopup('1')" class="tile"></div>
+                    <div onclick="toggleInfoPopup('2')" class="tile"></div>
+                    <div onclick="toggleInfoPopup('3')" class="tile"></div>
                     <div class="tile"></div>
                 </div>
             </div>
@@ -114,6 +112,8 @@
 
             <!-- *********** POPUP *********** -->
             <div class="pop-up-container" id="popup">
+                <div></div>
+
                 <div id="map"></div>
 
                 <!-- _______PHP________ -->
@@ -180,7 +180,6 @@
             defer>
             </script>
         <script src="maps.js"></script>
-
 
     </div>
 
