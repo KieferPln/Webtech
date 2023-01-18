@@ -80,7 +80,6 @@ a {
     gap: var(--gutter-l);
 }
 
-
 .main {
     width: 100vw;
     height: 100vh;
@@ -128,15 +127,15 @@ h2 {
     width: fit-content;
     padding-bottom: 0;
     height: fit-content;
-    background: rgb(220, 220, 220);
+    background-clip: text;
+    background: rgb(133, 12, 255);
+    background: linear-gradient(225deg, rgb(195, 168, 222) 0%, rgb(255, 255, 255)100%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    width: fit-content;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     z-index: 1;
     
-
 }
 
 h3 {
@@ -183,6 +182,7 @@ div.nav-placeholder {
     right: 0px;
     bottom: 0px;
     width: 100%;
+    border-bottom: 2px solid white;
 }
 
 ul.nav-container {
