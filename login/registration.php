@@ -1,12 +1,32 @@
+<?php
+session_start()
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<title>Registration</title>
 		<link rel="stylesheet" type="text/css" href="./styles_reg.css"/>
 		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
+		<style>
+        .alert-danger{
+            color: red;
+			text-align: center;
+			position: absolute;
+			top: 25%;
+			left: 50%;
+			transform: translate(-50%, -50%)
+        }
+    	</style>
+
 	</head>
 <body>
 	<div class="header">
 		<div class="col-md-8">
+		<div class="alert-danger" id="error_msg" style="display:
+		<?php if(isset($_SESSION['error_msg'])) echo 'block'; else echo 'none'; ?>;">
+		<?php if(isset($_SESSION['error_msg'])) echo $_SESSION['error_msg']; unset($_SESSION['error_msg']);?>
+		</div>
 			<form action="register_query.php" method="POST">	
 				<div class="text_header">
 					<h4>Register here</h4>
