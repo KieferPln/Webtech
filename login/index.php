@@ -76,7 +76,7 @@
 				<p>Don't have an account yet?</p>
 			</div>
 			<div class="make_account">
-				<p><a href="registration.php">Sign up!</a><p>
+				<p><a href="registration.php">Sign Up!</a><p>
 		</div>
 	</div>
 </body>

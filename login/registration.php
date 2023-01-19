@@ -53,7 +53,7 @@ session_start()
 					<button class="btn btn-primary form-control" name="register">Register</button>
 				</div>
 				<div class="login_button">
-				<p>already have an account?<p> 
+				<p>Already have an account?<p> 
 				</div>
 				<div class="Signin">
 					<p><a href="index.php">Log In!</a><p> 
