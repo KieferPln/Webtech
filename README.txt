@@ -16,7 +16,7 @@ working web application;
 Group composition:
 Julius de Groot - 14362104
 Daan Keller - 10095152
-Colin de Koning
+Colin de Koning -13579991
 Kiefer Plender
 Milan Tool - 14407132
 
