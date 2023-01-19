@@ -52,23 +52,23 @@
 			?>
 			<form action="login_query.php" method="POST">	
 				<div class="text_header">	
-					<h4>Login here</h4>
+					<h4>Log In</h4>
 				</div>
 				<hr style="border-top:1px groovy #000;">
 				<div class="text_login">
 					<label>Username</label>
 					<br/>
-					<input type="text" class="form-control" name="username" required/>
+					<input type="text" class="form-control" name="username" />
 				<!-- </div>
 				<div class="form-group"> -->
 				<br>
 					<label>Password</label>
 					<br/>
-					<input type="password" class="form-control" name="password" required/>
+					<input type="password" class="form-control" name="password" />
 				<!-- </div> -->
 					<br>
 				<!-- <div class="form-group"> -->
-					<button class="btn btn-primary form-control" name="login">Login</button>
+					<button class="btn btn-primary form-control" name="login">Log In</button>
 					
 				</div>
 			</form>
