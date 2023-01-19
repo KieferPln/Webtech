@@ -462,6 +462,7 @@ p {
     align-items: center;
     justify-content: center;
     gap: var(--gutter-s);
+    cursor:pointer;
 }
 
 .sign-up-button:hover {
