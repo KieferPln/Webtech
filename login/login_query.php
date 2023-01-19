@@ -22,10 +22,10 @@
 				";
 			}
 		}else{
-			echo "
-				<script>alert('Please complete the required field!')</script>
-				<script>window.location = 'index.php'</script>
-			";
+			// Store error message in a session variable
+			$_SESSION['error_msg'] = "Please fill up the required field!";
+			// Redirect to registration page
+			header('location: index.php');
 		}
 	}
 ?>

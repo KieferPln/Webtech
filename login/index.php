@@ -7,6 +7,14 @@
 	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
 	<style>
         .alert-danger{
+            color: red;
+			text-align: center;
+			position: absolute;
+			top: 25%;
+			left: 50%;
+			transform: translate(-50%, -50%)
+        }
+		.alert-success{
             color: green;
 			text-align: center;
 			position: absolute;
@@ -19,9 +27,13 @@
 <body>
 	<div class="header">
 		<div class="col-md-8">
-		<div class="alert-danger" id="success_msg" style="display:
+		<div class="alert-success" id="success_msg" style="display:
 		<?php if(isset($_SESSION['message'])) echo 'block'; else echo 'none'; ?>;">
     	<?php if(isset($_SESSION['message'])) echo $_SESSION['message']['text']; unset($_SESSION['message']);?>
+		</div>
+		<div class="alert-danger" id="error_msg" style="display:
+		<?php if(isset($_SESSION['error_msg'])) echo 'block'; else echo 'none'; ?>;">
+		<?php if(isset($_SESSION['error_msg'])) echo $_SESSION['error_msg']; unset($_SESSION['error_msg']);?>
 		</div>
 			<?php if(isset($_SESSION['message'])): ?>
 				<div class="alert alert-<?php echo $_SESSION['message']['alert'] ?> msg"><?php echo $_SESSION['message']['text'] ?></div>
