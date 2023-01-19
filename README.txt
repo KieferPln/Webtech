@@ -26,6 +26,8 @@ https://webtech-ki44.webtech-uva.nl/
 
 
 Username and password with highest permissions:
+Username: admin
+Password: pmy#1_^5?jwNJ4i!Fuf#
 
 
 References:
