@@ -17,7 +17,6 @@
 
 <body>
     <div class="main" id="main">
-
         <div class="header" id="header" style="padding: var(--gutter-l);">
             <p style="position: absolute; font-size: .6em; opacity: .5; top: var(--gutter-l);">Click anywhere to create
                 bubbles!</p>
@@ -51,10 +50,26 @@
             <div id="information">
                 <h2 style="margin-top: var(--gutter-m);">Information</h2>
                 <div class="tile-container">
-                    <div onclick="toggleInfoPopup('1')" class="tile"></div>
-                    <div onclick="toggleInfoPopup('2')" class="tile"></div>
-                    <div onclick="toggleInfoPopup('3')" class="tile"></div>
-                    <div class="tile"></div>
+                    <div onclick="toggleInfoPopup('1')" class="tile">
+                        <div class="tile-content-container">
+                            Dit is Tile 1
+                        </div>
+                    </div>
+                    <div onclick="toggleInfoPopup('2')" class="tile">
+                        <div class="tile-content-container">
+                            Dit is Tile 2
+                        </div>
+                    </div>
+                    <div onclick="toggleInfoPopup('3')" class="tile">
+                        <div class="tile-content-container">
+                            Dit is Tile 3
+                        </div>
+                    </div>
+                    <div class="tile">
+                        <div class="tile-content-container">
+                            Dit is Tile 4
+                        </div>
+                    </div>
                 </div>
             </div>
 
