@@ -73,7 +73,7 @@
 			}
 		}else{
 			// Store error message in a session variable
-			$_SESSION['error_msg'] = "Please fill up the required field!";
+			$_SESSION['error_msg'] = "Please fill up the required fields!";
 			// Redirect to registration page
 			header('location: registration.php');
 		}
