@@ -40,13 +40,13 @@
 				<div class="text_login">
 					<label>Username</label>
 					<br/>
-					<input type="text" class="form-control" name="username" />
+					<input id='text-box-input'  type="text" class="form-control" name="username" />
 				<!-- </div>
 				<div class="form-group"> -->
 				<br>
 					<label>Password</label>
 					<br/>
-					<input type="password" class="form-control" name="password" />
+					<input id='text-box-input' type="password" class="form-control" name="password" />
 				<!-- </div> -->
 					<br>
 				<!-- <div class="form-group"> -->
