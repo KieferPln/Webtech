@@ -10,9 +10,11 @@ if(isset($_POST['add_new_event']))
     $description = $_POST['description'];
     $url = $_POST['url'];
     $country = $_POST['country'];
+    $city = $_POST['city'];
+    $address = $_POST['address'];
 
-    $query = "INSERT INTO events (name, date, description, url, country) 
-    VALUES (:name, :date, :description, :url, :country)";
+    $query = "INSERT INTO events (name, date, description, url, country, city, address) 
+    VALUES (:name, :date, :description, :url, :country, :city, :address)";
     $query_run = $conn->prepare($query);
 
     $data = [
@@ -21,6 +23,8 @@ if(isset($_POST['add_new_event']))
         ':description' => $description,
         ':url' => $url,
         ':country' => $country,
+        ':city' => $city,
+        ':address' => $address
     ];
     $query_execute = $query_run->execute($data);
 
