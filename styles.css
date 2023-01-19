@@ -174,8 +174,9 @@ div.nav-placeholder {
     padding: var(--gutter-s);
     position: sticky;
     z-index: 1000;
-    background: rgb(133, 12, 255);
-    background: linear-gradient(225deg, rgb(72, 28, 193) 0%, rrgb(78, 1, 166)100%);
+    background: rgb(0, 0, 0);
+    border-bottom: 1px solid white;
+
     top: 0px;
     right: 0px;
     bottom: 0px;

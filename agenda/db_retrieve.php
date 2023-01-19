@@ -37,7 +37,6 @@ SELECT @event_name := name, @event_date := date, @event_url := url, @event_locat
 			$fetch = $stmt->fetch(); ?>
             <!-- //echo $fetch['username']." with email ". $fetch['email'] -->
             <center><h4><?php echo $fetch['name']." with url ". $fetch['url']?></h4></center>
-
             
             <!-- op deze manier achterhaal je onderwerpen/doelgroepen voor events. -->
             <?php 
@@ -50,7 +49,7 @@ SELECT @event_name := name, @event_date := date, @event_url := url, @event_locat
             $stmt->execute();
             $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
             echo "De events met als onderwerp 'policy makers' zijn: <br> ";
-            foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
+			foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
                 echo $v ;
                 echo "<br>";
             }
