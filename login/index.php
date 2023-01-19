@@ -2,12 +2,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<title>Log In</title>
 	<link rel="stylesheet" type="text/css" href="./styles_reg.css"/>
 	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
+	<style>
+        .alert-danger{
+            color: green;
+			text-align: center;
+			position: absolute;
+			top: 25%;
+			left: 50%;
+			transform: translate(-50%, -50%)
+        }
+    	</style>
 </head>
 <body>
 	<div class="header">
 		<div class="col-md-8">
+		<div class="alert-danger" id="success_msg" style="display:
+		<?php if(isset($_SESSION['message'])) echo 'block'; else echo 'none'; ?>;">
+    	<?php if(isset($_SESSION['message'])) echo $_SESSION['message']['text']; unset($_SESSION['message']);?>
+		</div>
 			<?php if(isset($_SESSION['message'])): ?>
 				<div class="alert alert-<?php echo $_SESSION['message']['alert'] ?> msg"><?php echo $_SESSION['message']['text'] ?></div>
 			<script>
