@@ -8,21 +8,6 @@ session_start()
 		<title>Registration</title>
 		<link rel="stylesheet" type="text/css" href="./styles_reg.css"/>
 		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
-		<style>
-        .alert-danger{
-            color: red;
-			text-align: center;
-			position: absolute;
-			top: 25%;
-			left: 50%;
-			transform: translate(-50%, -50%)
-        }
-		input:-webkit-autofill {
-    		-webkit-box-shadow: 0 0 0px 1000px black inset !important;
-			-webkit-text-fill-color: white !important;
-		}
-    	</style>
-
 	</head>
 <body>
 	<div class="header">
