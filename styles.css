@@ -120,7 +120,7 @@ h1 {
 }
 
 h2 {
-    font-size: 1.8em;
+    font-size: 1.5em;
     color: rgb(221, 221, 221);
     font-weight: 700;
     width: fit-content;
@@ -175,12 +175,11 @@ div.nav-placeholder {
     position: sticky;
     z-index: 1000;
     background: rgb(133, 12, 255);
-    background: linear-gradient(225deg, rgb(69, 20, 202) 0%, rrgb(78, 1, 166)100%);
+    background: linear-gradient(225deg, rgb(72, 28, 193) 0%, rrgb(78, 1, 166)100%);
     top: 0px;
     right: 0px;
     bottom: 0px;
     width: 100%;
-    border-bottom: 2px solid white;
 }
 
 ul.nav-container {
@@ -194,16 +193,16 @@ ul.nav-container li {
     border-radius: 20px;
     position: relative;
     font-weight: 700;
-    font-size: 1.3em;
+    font-size: 1em;
     color: rgb(221, 221, 221);
     letter-spacing: 2px !important;
     z-index: 2;
     border-radius: var(--rounded);
-    ;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
+    z-index: 100000;
 }
 
 ul.nav-container li:hover {
@@ -220,7 +219,6 @@ ul.nav-container li::after {
     background-color: rgb(255, 255, 255);
     z-index: -1;
     opacity: 0;
-    transition: var(--transition-med);
     box-shadow: var(--shadow);
     border-radius: inherit;
 }
@@ -239,16 +237,17 @@ ul.nav-container li:hover {
     height: fit-content;
     display: flex;
     flex-direction: column;
-    margin: var(--gutter-s);
-    padding: var(--gutter-s);
     gap: var(--gutter-s);
+}
+.event-container:hover{
+    cursor: default;
 }
 
 .event {
     height: 50px;
     width: 500px;
     border-radius: var(--rounded);
-    font-size: 1.7em;
+    font-size: 1.4em;
     color: #f3f3f3;
     gap: var(--gutter-s);
     opacity: 0.8;
@@ -268,16 +267,16 @@ ul.nav-container li:hover {
 
 .event:hover .circle {
     opacity: 1;
-    transform: translateX(-80%);
+    transform: translateX(-90%);
 }
 
 span.circle {
-    width: 12px;
-    height: 12px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     background-color: white;
     opacity: 0;
-    transform: translateX(80%);
+    transform: translateX(90%);
     -webkit-transition: var(--transition-slow);
     transition: var(--transition-slow);
 }
@@ -483,9 +482,8 @@ p {
     width: 100%;
 
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
-    flex-wrap: wrap;
 
     max-height: 500px;
     overflow: auto;
@@ -497,6 +495,7 @@ p {
     background-color: rgb(220, 220, 220);
     width: 250px;
     height: 250px;
+    min-width: 250px;
     border-radius: var(--rounded);
     box-shadow: var(--shadow);
     position: relative;

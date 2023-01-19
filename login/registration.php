@@ -23,19 +23,19 @@ session_start()
 				<div class="text_login">
 					<label>Username</label>
 					<br/>
-					<input type="text" class="form-control" name="username" required />
+					<input id='text-box-input' type="text" class="form-control" name="username" required />
 				<!-- </div>
 				<div class="form-group"> -->
 				<br/>
 					<label>Email</label>
 					<br/>
-					<input type="email" class="form-control" name="email" required />
+					<input id='text-box-input'  type="email" class="form-control" name="email" required />
 				<!-- </div> -->
 				<br/>
 				<!-- <div class="form-group"> -->
 					<label>Password</label>
 					<br/>
-					<input type="password" class="form-control" name="password" required />
+					<input id='text-box-input'  type="password" class="form-control" name="password" required />
 				<!-- </div> -->
 				<br/>
 				<!-- <div class="form-group"> -->
