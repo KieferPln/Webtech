@@ -51,13 +51,14 @@ SELECT @event_name := name, @event_date := date, @event_url := url, @event_locat
             $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
             echo "De events met als onderwerp 'policy makers' zijn: <br> ";
             foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
-                echo $v;
+                echo $v ;
                 echo "<br>";
             }
             //$table = $stmt->fetchAll();
             //print_r($table);
              ?>
 
+            
             
 		</div>
 	</div>
