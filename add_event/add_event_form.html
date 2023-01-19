@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>
-Add event
-</title>
+    <title>
+        Add event
+    </title>
 </head>
+
 <body>
-<h1>Add event</h1>
+    <h1>Add event</h1>
 
-<form action="add_event.php" method="POST">
+    <form action="add_event.php" method="POST">
 
-<div class="new_event_info">Event name <input name="name" type="text"></div> <br>
-<div class="new_event_info">Date <input name="date" type="date"></div> <br>
-<div class="new_event_info">Description <input name="description" type="text"> </div> <br>
-<div class="new_event_info">Event URL <input name="url" type="url" placeholder="Start url with http or https"> </div> <br>
+        <div class="new_event_info">Event name <input name="name" type="text"></div>
+        <input name="date" type="date">
+        <div class="new_event_info">Description <input name="description" type="text"> </div>
+        <div class="new_event_info">Event URL <input name="url" type="url" placeholder="Start url with http or https">
+        </div>
 
-<!--
-<div class="new_event_info">Location(s) <br> 
+        <!--
+<div class="new_event_info">Location(s)  
     <input name="africa" type="checkbox" value="africa">
     <label for="africa">Africa</label>
     <input name="antarctica" type="checkbox" value="antarctica">
@@ -34,47 +37,46 @@ Add event
 </div>
 -->
 
-<label for="location">Location</label> 
-<select name="location" id="location">
-    <option value="africa">Africa</option>
-    <option value="antarctica">Antarctica</option>
-    <option value="asia">Asia</option>
-    <option value="europe">Europe</option>
-    <option value="north america">North America</option>
-    <option value="oceania">Oceania</option>
-    <option value="south america">South America</option>
-</select> 
-<br>
-<br>    
-<div class="new_event_info">Subjects <br> 
-    <input name="pollution" type="checkbox" value="pollution">
-    <label for="pollution">Pollution</label>
-    <input name="acidification" type="checkbox" value="acidification">
-    <label for="acidification">Acidification</label>
-    <input name="rising_temperatures" type="checkbox" value="rising_temperatures">
-    <label for="rising_temperatures">Rising temperatures</label>
-    <input name="eutrophication" type="checkbox" value="eutrophication">
-    <label for="eutrophication">Eutrophication</label>
-    <input name="overfishing" type="checkbox" value="overfishing">
-    <label for="overfishing">Overfishing</label>
-</div>
-<br>
- 
-<div class="new_event_info">Target audience <br> 
-    <input name="academics" type="checkbox" value="academics">
-    <label for="academics">Academics</label>
-    <input name="policy_makers" type="checkbox" value="policy_makers">
-    <label for="policy_makers">Policy makers</label>
-    <input name="environmentalists" type="checkbox" value="environmentalists">
-    <label for="environmentalists">Environmentalists</label>
-    <input name="concerned_citizens" type="checkbox" value="concerned_citizens">
-    <label for="concerned_citizens">Concerned citizens</label>
-    <input name="students" type="checkbox" value="students">
-    <label for="students">Students</label>
-</div>
-<br>
-<input type="submit" name="add_new_event" value="Submit">
+        <label for="location">Location</label>
+        <select name="location" id="location">
+            <option value="africa">Africa</option>
+            <option value="antarctica">Antarctica</option>
+            <option value="asia">Asia</option>
+            <option value="europe">Europe</option>
+            <option value="north america">North America</option>
+            <option value="oceania">Oceania</option>
+            <option value="south america">South America</option>
+        </select>
 
-</form>
+        <div class="new_event_info">Subjects
+            <input name="pollution" type="checkbox" value="pollution">
+            <label for="pollution">Pollution</label>
+            <input name="acidification" type="checkbox" value="acidification">
+            <label for="acidification">Acidification</label>
+            <input name="rising_temperatures" type="checkbox" value="rising_temperatures">
+            <label for="rising_temperatures">Rising temperatures</label>
+            <input name="eutrophication" type="checkbox" value="eutrophication">
+            <label for="eutrophication">Eutrophication</label>
+            <input name="overfishing" type="checkbox" value="overfishing">
+            <label for="overfishing">Overfishing</label>
+        </div>
+
+        <div class="new_event_info">Target audience
+            <input name="academics" type="checkbox" value="academics">
+            <label for="academics">Academics</label>
+            <input name="policy_makers" type="checkbox" value="policy_makers">
+            <label for="policy_makers">Policy makers</label>
+            <input name="environmentalists" type="checkbox" value="environmentalists">
+            <label for="environmentalists">Environmentalists</label>
+            <input name="concerned_citizens" type="checkbox" value="concerned_citizens">
+            <label for="concerned_citizens">Concerned citizens</label>
+            <input name="students" type="checkbox" value="students">
+            <label for="students">Students</label>
+        </div>
+
+        <input type="submit" name="add_new_event" value="Submit">
+
+    </form>
 </body>
+
 </html>

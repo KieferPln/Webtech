@@ -2,6 +2,7 @@ let popup = document.getElementById('popup')
 let nav = document.getElementById('nav')
 let infoPopup = document.getElementById('info-popup')
 let blurdiv = document.getElementById('blur')
+let addEventPopup = document.getElementById('add-event-popup')
 
 const getRectTopById = (id) => {
     console.log(document.getElementById(id).offsetTop)
@@ -21,9 +22,21 @@ nav_information.addEventListener('click', () => scrollTo(getRectTopById('informa
 // let nav_targets = document.getElementById('nav_targets')
 // nav_targets.addEventListener('click', () => scrollTo(getRectTopById('targets')), true);
 
-
 var popupIsTriggered = false
 var infoPopupIsTriggerd = false
+var addEventPopupIsTriggerd = false
+
+const toggleAddEventPopup = () => {
+    if (!addEventPopupIsTriggerd) {
+        addEventPopup.style.visibility = "visible"
+        main.style.overflow = 'hidden'
+    }
+    else {
+        addEventPopup.style.visibility = "visible"
+        main.style.overflow = 'auto'
+    }
+    addEventPopupIsTriggerd = !addEventPopupIsTriggerd
+}
 
 const togglePopup = () => {
     if (!popupIsTriggered) {
@@ -56,7 +69,6 @@ const toggleInfoPopup = (type) => {
     }
 
     if (!infoPopupIsTriggerd) {
-        infoPopup.style.opacity = "1"
         infoPopup.style.visibility = "visible"
         main.style.overflow = 'hidden'
 
@@ -65,7 +77,6 @@ const toggleInfoPopup = (type) => {
     }
 
     else {
-        infoPopup.style.opacity = "0"
         infoPopup.style.visibility = "hidden"
         main.style.overflow = 'auto'
 
