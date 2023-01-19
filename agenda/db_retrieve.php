@@ -3,3 +3,4 @@
 
 SELECT @event_name := name, @event_date := date, @event_url := url, @event_location := location, 
 @desc := description FROM events WHERE eventid = '@eventid';
+
