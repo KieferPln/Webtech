@@ -16,10 +16,10 @@
 				$_SESSION['user'] = $fetch['id'];
 				header("location: home.php");
 			} else{
-				echo "
-				<script>alert('Invalid username or password')</script>
-				<script>window.location = 'index.php'</script>
-				";
+			// Store error message in a session variable
+			$_SESSION['error_msg'] = "Invalid username or password!";
+			// Redirect to registration page
+			header('location: index.php');
 			}
 		}else{
 			// Store error message in a session variable
