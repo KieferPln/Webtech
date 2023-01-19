@@ -5,7 +5,7 @@ session_start()
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Registration</title>
+		<title>Life Below Water: Registration</title>
 		<link rel="stylesheet" type="text/css" href="./styles_reg.css"/>
 		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
