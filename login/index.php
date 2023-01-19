@@ -58,13 +58,13 @@
 				<div class="text_login">
 					<label>Username</label>
 					<br/>
-					<input type="text" class="form-control" name="username" />
+					<input type="text" class="form-control" name="username" required/>
 				<!-- </div>
 				<div class="form-group"> -->
 				<br>
 					<label>Password</label>
 					<br/>
-					<input type="password" class="form-control" name="password" />
+					<input type="password" class="form-control" name="password" required/>
 				<!-- </div> -->
 					<br>
 				<!-- <div class="form-group"> -->
