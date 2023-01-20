@@ -31,7 +31,20 @@ if(isset($_POST['add_new_event']))
     $eventid = $conn->lastInsertId();
 
     // for table event_subjects
-    if (isset($_POST['acidification'])) {
+    $subjects = array("acidification", "eutrophication", "overfishing", "pollution", "rising_temperatures");
+    foreach($subjects as $subject) {
+        if (isset($_POST[$subject])) {
+            $query = "INSERT INTO event_subjects (eventid, subject) VALUES (:eventid, :subject)";
+            $query_run = $conn->prepare($query);
+            $data = [
+                ':eventid' => $eventid,
+                ':subject' => $subject,
+            ];
+            $query_execute = $query_run->execute($data);
+        }
+    }
+
+    /*if (isset($_POST['acidification'])) {
         $subject = 'acidification'; 
         $query2 = "INSERT INTO event_subjects (eventid, subject) VALUES (:eventid, :subject)";
         $query_run2 = $conn->prepare($query2);
@@ -85,8 +98,24 @@ if(isset($_POST['add_new_event']))
         ];
         $query_execute2 = $query_run2->execute($data2);
     }  
+    */
+
 
     // for table event_audience
+    $audiences = array("academics", "policy_makers", "environmentalists", "concerned_citizens", "students");
+    foreach($audiences as $target_audience) {
+        if (isset($_POST[$target_audience])) {
+            $query = "INSERT INTO event_audience (eventid, target_audience) VALUES (:eventid, :target_audience)";
+            $query_run = $conn->prepare($query);
+            $data = [
+                ':eventid' => $eventid,
+                ':target_audience' => $target_audience,
+            ];
+            $query_execute = $query_run->execute($data);
+        }
+    }
+
+    /*
     if (isset($_POST['academics'])) {
         $target_audience = 'academics'; 
         $query2 = "INSERT INTO event_audience (eventid, target_audience) VALUES (:eventid, :target_audience)";
@@ -141,72 +170,10 @@ if(isset($_POST['add_new_event']))
         ];
         $query_execute2 = $query_run2->execute($data2);
     }  
-
-    /*
-    // for table 'event_locations'
-    $eventid = $conn->lastInsertId();
-    $africa = $_POST['africa'];
-    $antarctica = $_POST['antarctica'];
-    $asia = $_POST['asia'];
-    $north_america = $_POST['north_america'];
-    $europe = $_POST['europe'];
-    $oceania = $_POST['oceania'];
-    $south_america = $_POST['south_america'];
-
-    $query2 = "INSERT INTO event_locations (eventid, africa, antarctica, asia, europe, north_america, oceania, south_america) 
-    VALUES (:eventid, :africa, :antarctica, :asia, :europe, :north_america, :oceania, :south_america)";
-    $query_run2 = $conn->prepare($query2);
-
-    $data2 = [
-        ':eventid' => $eventid,
-        ':africa' => $africa,
-        ':antarctica' => $antarctica,
-        ':asia' => $asia,
-        ':europe' => $europe,
-        ':north_america' => $north_america,
-        ':oceania' => $oceania,
-        ':south_america' => $south_america,
-
-    ];
-    $query_execute2 = $query_run2->execute($data2);
-
-    // for table 'event_subjects'
-    $pollution = $_POST['pollution'];
-    $acidification = $_POST['acidification'];
-    $eutrophication = $_POST['eutrophication'];
-    $overfishing = $_POST['overfishing'];
-    $rising_temperatures = $_POST['rising_temperatures'];
-
-    $query3 = "INSERT INTO event_subjects (eventid, acidification, eutrophication, overfishing, pollution, rising_temperatures) 
-    VALUES (:eventid, :acidification, :eutrophication, :overfishing, :pollution, :rising_temperatures)";
-    $query_run3 = $conn->prepare($query3);
-
-    $data3 = [
-        ':eventid' => $eventid,
-        ':acidification' => $acidification,
-        ':eutrophication' => $eutrophication,
-        ':overfishing' => $overfishing,
-        ':pollution' => $pollution,
-        ':rising_temperatures' => $rising_temperatures,
-        
-    ];
-    $query_execute3 = $query_run3->execute($data3);
     */
 
-    /*
-    if($query_execute and $query_execute2 and $query_execute3)
-    {
-        $_SESSION['message'] = "Inserted Successfully";
-        header('Location: add_event.php');
-        exit(0);
-    }
-    else
-    {
-        $_SESSION['message'] = "Not Inserted";
-        header('Location: add_event.php');
-        exit(0);
-    }
-    */
+
 }
 
+header("location: index.php")
 ?>
