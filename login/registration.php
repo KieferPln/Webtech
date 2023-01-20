@@ -45,8 +45,12 @@ session_start()
 				<!-- </div> -->
 				<br/>
 				<!-- <div class="form-group"> -->
-					<button class="btn btn-primary form-control" name="register">Register</button>
 				</div>
+
+				<div class='register_button_place'>
+				<button style='color:#7864f5' name="register">Register</button>
+				</div>
+
 				<div class="login_button">
 				<p>Already have an account?<p> 
 				</div>

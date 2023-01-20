@@ -32,8 +32,20 @@
   -webkit-text-fill-color: transparent;
   margin-left: var(--gutter-s);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-transform: translate(-50%, -50%);
   z-index: 1;
+}
+
+.login_button_place {
+  position: fixed;
+  top: 58%;
+  left: 48%;
+}
+
+.register_button_place {
+  position: fixed;
+  top: 63%;
+  left: 47.5%;
 }
 
 .login_button {
@@ -55,7 +67,7 @@
   -webkit-text-fill-color: transparent;
   margin-left: var(--gutter-s);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-transform: translate(-50%, -50%);
   z-index: 1;
 }
 
@@ -63,7 +75,7 @@
 
   position: fixed;
   top: 70%;
-  left: 57%;
+  left: 58%;
   transform: translate(-50%, -50%);
   font-size: 1em;
   color: rgb(221, 221, 221);
@@ -78,7 +90,7 @@
   -webkit-text-fill-color: transparent;
   margin-left: var(--gutter-s);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-transform: translate(-50%, -50%);
   z-index: 1;
 }
 
@@ -100,7 +112,7 @@
   -webkit-text-fill-color: transparent;
   margin-left: var(--gutter-s);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-transform: translate(-50%, -50%);
   z-index: 1;
 }
 
@@ -110,10 +122,9 @@
 
 .text_login {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
+  top: 40%;
+  left: 41%;
+  font-size: 1em;
   color: rgb(221, 221, 221);
   font-weight: 700;
   width: fit-content;
@@ -127,7 +138,6 @@
   -webkit-text-fill-color: transparent;
   margin-left: var(--gutter-s);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   z-index: 1;
 }
 
@@ -194,8 +204,8 @@ transform: translate(-50%, -50%)
 }
 
 input:-webkit-autofill {
--webkit-box-shadow: 0 0 0px 1000px black inset !important;
--webkit-text-fill-color: white !important;
+-webkit-box-shadow: 0 0 0px 1000px #000b11 inset !important;
+-webkit-text-fill-color: #7663f5 !important;
 }
 
 #text-box-input {

@@ -56,8 +56,10 @@
 				<!-- </div> -->
 					<br>
 				<!-- <div class="form-group"> -->
-					<button class="btn btn-primary form-control" name="login">Log In</button>
 					
+				</div>
+				<div class='login_button_place'>
+				<button style='color:#7864f5' name="login">Log In</button>
 				</div>
 			</form>
 			<div class="login_button">
