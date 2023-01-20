@@ -394,8 +394,8 @@ button.close-button {
     position: relative;
 }
 
-button.close-button[type='dark'] span {
-    background-color: black;
+button.close-button span {
+    background-color: rgb(110, 110, 110);
 }
 
 button.close-button:hover span.cross-line:nth-child(2) {

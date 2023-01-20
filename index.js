@@ -32,7 +32,7 @@ const toggleAddEventPopup = () => {
         main.style.overflow = 'hidden'
     }
     else {
-        addEventPopup.style.visibility = "visible"
+        addEventPopup.style.visibility = "hidden"
         main.style.overflow = 'auto'
     }
     addEventPopupIsTriggerd = !addEventPopupIsTriggerd

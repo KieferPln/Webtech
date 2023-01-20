@@ -130,8 +130,8 @@
 
                     <div class="add-event-button-container">
                         <input type="submit" class="submit" name="add_new_event" value="Submit"></input>
-                        <button type="dark" class="close-button" onclick="toggleAddEventPopup()">
-                            <span class="cross-line" style="transform: rotate(-45deg);""></span>
+                        <button type="button" class="close-button" onclick="toggleAddEventPopup()">
+                            <span class="cross-line" style="transform: rotate(-45deg);"></span>
                         <span class=" cross-line" style="transform: rotate(45deg);"></span>
                         </button>
                     </div>
