@@ -79,7 +79,6 @@ const toggleInfoPopup = (type) => {
     else {
         infoPopup.style.visibility = "hidden"
         main.style.overflow = 'auto'
-        removeInfoText(type)
 
         if (popupIsTriggered) {
             popup.style.transform = "translateY(0%)"
