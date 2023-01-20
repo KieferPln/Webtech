@@ -490,7 +490,7 @@ p {
     padding: var(--gutter-l);
 }
 
-.tile-container *{
+.tile-container * {
     font-size: .9em;
 }
 
@@ -507,7 +507,9 @@ p {
     flex-direction: column;
     padding: var(--gutter-s);
     box-sizing: content-box;
+    border: 4px solid #5464f3;
     border-bottom: 10px solid #5464f3;
+
 }
 
 .tile::after {
