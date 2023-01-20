@@ -3,8 +3,7 @@ let nav = document.getElementById('nav')
 let infoPopup = document.getElementById('info-popup')
 let blurdiv = document.getElementById('blur')
 let addEventPopup = document.getElementById('add-event-popup')
-let infoHeader = document.getElementById('info-header')
-let infoContent = document.getElementById('info-content')
+let info = document.getElementById('info')
 
 const getRectTopById = (id) => {
     console.log(document.getElementById(id).offsetTop)
@@ -54,15 +53,21 @@ const togglePopup = () => {
 
 const insertInfoText = (type) => {
     const tileData = data[type]
-    var text = document.createTextNode(tileData.header);
+    const h = document.createElement('h2')
+    const c = document.createElement('p')
+    var header = document.createTextNode(tileData.header);
     var content = document.createTextNode(tileData.content);
-    infoHeader.appendChild(text)
-    infoContent.appendChild(content)
+    h.appendChild(header)
+    c.appendChild(content)
+    info.appendChild(h)
+    info.appendChild(c)
 }
 
 const removeInfoText = (type) => {
-    infoHeader.removeChild(text)
-    infoContent.removeChild(content)
+    if (info.hasChildNodes()) {
+        info.removeChild(info.children[1])
+        info.removeChild(info.children[1])
+    }
 }
 
 const toggleInfoPopup = (type) => {
@@ -79,6 +84,7 @@ const toggleInfoPopup = (type) => {
     else {
         infoPopup.style.visibility = "hidden"
         main.style.overflow = 'auto'
+        removeInfoText()
 
         if (popupIsTriggered) {
             popup.style.transform = "translateY(0%)"
