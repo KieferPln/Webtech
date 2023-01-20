@@ -52,22 +52,27 @@
                 <div class="tile-container">
                     <div onclick="toggleInfoPopup('1')" class="tile">
                         <div class="tile-content-container">
-                            Dit is Tile 1
+                            (Plastic) pollution
                         </div>
                     </div>
                     <div onclick="toggleInfoPopup('2')" class="tile">
                         <div class="tile-content-container">
-                            Dit is Tile 2
+                            Overfishing
                         </div>
                     </div>
                     <div onclick="toggleInfoPopup('3')" class="tile">
                         <div class="tile-content-container">
-                            Dit is Tile 3
+                            Eutrophication
                         </div>
                     </div>
-                    <div class="tile">
+                    <div onclick="toggleInfoPopup('4')" class="tile">
                         <div class="tile-content-container">
-                            Dit is Tile 4
+                            Acidification
+                        </div>
+                    </div>
+                    <div onclick="toggleInfoPopup('5')" class="tile">
+                        <div class="tile-content-container">
+                            Rising temperatures
                         </div>
                     </div>
                 </div>
@@ -131,17 +136,17 @@
                     <div class="add-event-button-container">
                         <input type="submit" class="submit" name="add_new_event" value="Submit"></input>
                         <button type="button" class="close-button" onclick="toggleAddEventPopup()">
-                            <span class="cross-line" style="transform: rotate(-45deg);"></span>
-                        <span class=" cross-line" style="transform: rotate(45deg);"></span>
+                        <span class="cross-line" style="transform: rotate(-45deg);"></span>
+                        <span class="cross-line" style="transform: rotate(45deg);"></span>
                         </button>
                     </div>
 
                     <div class="subjects-container">
                         <label style="font-weight: 500;" for="location">Main Information</label>
-                        <input placeholder="Event name" name="name" type="text">
-                        <input name="description" type="text" placeholder="Description">
-                        <input name="url" type="url" placeholder="Event URL ">
-                        <input name="date" type="date">
+                        <input placeholder="Event name" name="name" type="text" required>
+                        <input name="description" type="text" placeholder="Description" required>
+                        <input name="url" type="url" placeholder="Event URL" required>
+                        <input name="date" type="date" required>
                     </div>
 
                     <div class="subjects-container">
@@ -155,8 +160,8 @@
                             <option value="oceania">Oceania</option>
                             <option value="south america">South America</option>
                         </select>
-                        <input name="city" type="city" placeholder="City">
-                        <input name="address" type="address" placeholder="Address">
+                        <input name="city" type="city" placeholder="City" required>
+                        <input name="address" type="address" placeholder="Address" required>
                     </div>
 
                     <div class="subjects-container">
