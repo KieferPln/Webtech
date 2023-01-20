@@ -492,9 +492,8 @@ p {
 
 .tile {
     background-color: rgb(220, 220, 220);
-    width: 250px;
+    width: fit-content;
     height: 250px;
-    min-width: 250px;
     border-radius: var(--rounded);
     box-shadow: var(--shadow);
     position: relative;
@@ -502,6 +501,9 @@ p {
     transition: var(--transition-slow);
     display: flex;
     flex-direction: column;
+    padding: var(--gutter-s);
+    box-sizing: content-box;
+    border-bottom: 10px solid #5464f3;
 }
 
 .tile::after {
@@ -523,6 +525,7 @@ p {
     -webkit-transform: scale(1.1, 1.1);
     transform: scale(1.1, 1.1);
     z-index: 100;
+    cursor: default;
 }
 
 .tile:active {

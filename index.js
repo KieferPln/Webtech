@@ -96,11 +96,11 @@ const toggleInfoPopup = (type) => {
 
 
 const data = {
-    'Pollution': { header: 'Pollution', content: 'eokfw' },
-    'Overfishing': { header: 'Overfishing', content: 'eokfw' },
-    'Eutrophication': { header: 'Eutrophication', content: 'eokfw' },
-    'Acidification': { header: 'Acidification', content: 'eokfw' },
-    'Temperatures': { header: 'Temperatures', content: 'eokfw' }
+    'Pollution': { header: 'Pollution', content: 'This Is Pollution' },
+    'Overfishing': { header: 'Overfishing', content: 'This Is Overfishing' },
+    'Eutrophication': { header: 'Eutrophication', content: 'This Is Eutrophication' },
+    'Acidification': { header: 'Acidification', content: 'This Is Acidification' },
+    'Temperatures': { header: 'Temperatures', content: 'This Is Temperatures' }
 }
 
 
