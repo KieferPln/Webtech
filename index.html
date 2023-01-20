@@ -50,27 +50,27 @@
             <div id="information">
                 <h2 style="margin-top: var(--gutter-m);">Information</h2>
                 <div class="tile-container">
-                    <div onclick="toggleInfoPopup('1')" class="tile">
+                    <div onclick="toggleInfoPopup('Pollution')" class="tile">
                         <div class="tile-content-container">
                             (Plastic) pollution
                         </div>
                     </div>
-                    <div onclick="toggleInfoPopup('2')" class="tile">
+                    <div onclick="toggleInfoPopup('Overfishing')" class="tile">
                         <div class="tile-content-container">
                             Overfishing
                         </div>
                     </div>
-                    <div onclick="toggleInfoPopup('3')" class="tile">
+                    <div onclick="toggleInfoPopup('Eutrophication')" class="tile">
                         <div class="tile-content-container">
                             Eutrophication
                         </div>
                     </div>
-                    <div onclick="toggleInfoPopup('4')" class="tile">
+                    <div onclick="toggleInfoPopup('Acidification')" class="tile">
                         <div class="tile-content-container">
                             Acidification
                         </div>
                     </div>
-                    <div onclick="toggleInfoPopup('5')" class="tile">
+                    <div onclick="toggleInfoPopup('Temperatures')" class="tile">
                         <div class="tile-content-container">
                             Rising temperatures
                         </div>
@@ -136,8 +136,8 @@
                     <div class="add-event-button-container">
                         <input type="submit" class="submit" name="add_new_event" value="Submit"></input>
                         <button type="button" class="close-button" onclick="toggleAddEventPopup()">
-                        <span class="cross-line" style="transform: rotate(-45deg);"></span>
-                        <span class="cross-line" style="transform: rotate(45deg);"></span>
+                            <span class="cross-line" style="transform: rotate(-45deg);"></span>
+                            <span class="cross-line" style="transform: rotate(45deg);"></span>
                         </button>
                     </div>
 
@@ -285,6 +285,8 @@
                     <span class="cross-line" style="transform: rotate(-45deg);""></span>
                     <span class=" cross-line" style="transform: rotate(45deg);"></span>
                 </button>
+                <h2 id="info-header"></h2>
+                <p id="info-content"></p>
             </div>
         </div>
     </div>

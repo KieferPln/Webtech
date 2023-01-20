@@ -3,6 +3,8 @@ let nav = document.getElementById('nav')
 let infoPopup = document.getElementById('info-popup')
 let blurdiv = document.getElementById('blur')
 let addEventPopup = document.getElementById('add-event-popup')
+let infoHeader = document.getElementById('info-header')
+let infoContent = document.getElementById('info-content')
 
 const getRectTopById = (id) => {
     console.log(document.getElementById(id).offsetTop)
@@ -50,17 +52,17 @@ const togglePopup = () => {
     popupIsTriggered = !popupIsTriggered
 }
 
-const setInfo = (type) => {
-    switch (type) {
-        case 'Tile1':
-            return 'ok'
+const insertInfoText = (type) => {
+    const tileData = data[type]
+    var text = document.createTextNode(tileData.header);
+    var content = document.createTextNode(tileData.content);
+    infoHeader.appendChild(text)
+    infoContent.appendChild(content)
+}
 
-        case 'Tile2':
-            return 'ok'
-
-        default:
-            break;
-    }
+const removeInfoText = (type) => {
+    infoHeader.removeChild(text)
+    infoContent.removeChild(content)
 }
 
 const toggleInfoPopup = (type) => {
@@ -71,21 +73,35 @@ const toggleInfoPopup = (type) => {
     if (!infoPopupIsTriggerd) {
         infoPopup.style.visibility = "visible"
         main.style.overflow = 'hidden'
-
-        const bubble = document.createElement("h1");
-        infoPopup.appendChild(bubble)
+        insertInfoText(type)
     }
 
     else {
         infoPopup.style.visibility = "hidden"
         main.style.overflow = 'auto'
+        removeInfoText(type)
 
         if (popupIsTriggered) {
             popup.style.transform = "translateY(0%)"
             main.style.overflow = 'hidden'
         }
     }
-
     infoPopupIsTriggerd = !infoPopupIsTriggerd
-    console.log(type)
 }
+
+
+const data = {
+    'Pollution': { header: 'Pollution', content: 'eokfw' },
+    'Overfishing': { header: 'Overfishing', content: 'eokfw' },
+    'Eutrophication': { header: 'Eutrophication', content: 'eokfw' },
+    'Acidification': { header: 'Acidification', content: 'eokfw' },
+    'Temperatures': { header: 'Temperatures', content: 'eokfw' }
+}
+
+
+
+
+
+
+
+

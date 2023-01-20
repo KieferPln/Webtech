@@ -559,6 +559,10 @@ p {
     width: 500px;
     display: flex;
     flex-direction: column;
+    padding: var(--gutter-m);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter-m);
 }
 
 .login-container {
