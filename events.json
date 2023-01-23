@@ -1,0 +1,88 @@
+data:'[
+    {
+        "type": "header",
+        "version": "5.2.0",
+        "comment": "Export to JSON plugin for PHPMyAdmin"
+    },
+    {
+        "type": "database",
+        "name": "life_below_water"
+    },
+    {
+        "type": "table",
+        "name": "events",
+        "database": "life_below_water",
+        "data": [
+            {
+                "eventid": "1",
+                "name": "International Conference on Sea Level Rise and Coastal Regions 2023",
+                "date": "2023-06-22",
+                "description": " The International Research Conference is a federated organization dedicated to bringing together a significant number of diverse scholarly events for presentation within the conference program. Events will run over a span of time during the conference depending on the number and length of the presentations. With its high quality, it provides an exceptional value for students, academics and industry researchers.\r\n\r\nInternational Conference on Sea Level Rise and Coastal Regions aims to bring together leading academic scientists, researchers and research scholars to exchange and share their experiences and research results on all aspects of Sea Level Rise and Coastal Regions. It also provides a premier interdisciplinary platform for researchers, practitioners and educators to present and discuss the most recent innovations, trends, and concerns as well as practical challenges encountered and solutions adopted in the fields of Sea Level Rise and Coastal Regions. ",
+                "url": "https:\/\/waset.org\/sea-level-rise-and-coastal-regions-conference-in-june-2023-in-london",
+                "country": "",
+                "city": "",
+                "address": ""
+            },
+            {
+                "eventid": "54",
+                "name": "test met nieuwe php",
+                "date": "2023-01-03",
+                "description": "dankzij een hint",
+                "url": "https:\/\/www.bijeenkomsten.nl",
+                "country": "africa",
+                "city": "Amsterdam",
+                "address": "a"
+            },
+            {
+                "eventid": "55",
+                "name": "test met nieuwe php",
+                "date": "2023-01-03",
+                "description": "dankzij een hint",
+                "url": "https:\/\/www.bijeenkomsten.nl",
+                "country": "africa",
+                "city": "Amsterdam",
+                "address": "a"
+            },
+            {
+                "eventid": "56",
+                "name": "a",
+                "date": "2023-01-06",
+                "description": "a",
+                "url": "https:\/\/www.bijeenkomsten.nl",
+                "country": "antarctica",
+                "city": "a",
+                "address": "a"
+            },
+            {
+                "eventid": "57",
+                "name": "a",
+                "date": "2023-01-20",
+                "description": "a",
+                "url": "https:\/\/www.uva.nl",
+                "country": "africa",
+                "city": "a",
+                "address": "a"
+            },
+            {
+                "eventid": "58",
+                "name": "blijven testen 3",
+                "date": "2023-01-19",
+                "description": "b",
+                "url": "http:\/\/www.bijeenkomsten.nl",
+                "country": "africa",
+                "city": "b",
+                "address": "b"
+            },
+            {
+                "eventid": "59",
+                "name": "maandag",
+                "date": "2023-01-27",
+                "description": "ochtend",
+                "url": "https:\/\/www.bijeenkomsten.nl",
+                "country": "africa",
+                "city": "a",
+                "address": "a"
+            }
+        ]
+    }
+]'

@@ -20,7 +20,6 @@ const moveUp = async (element, speed) => {
     const height = getRandomArbitrary(15, 60)
 
     for (let i = 0; i < height; i++) {
-        if (i > (height - 10)) { size == 'scale(-2)' }
         if (shouldSwerve) { offset -= 1 }
         else { offset += 0 }
 

@@ -1,7 +1,3 @@
-<?php
-    session_start();
-?>
-
 <html lang="en">
 
 <head>
@@ -19,26 +15,18 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
-
 <body>
-
     <div class="main" id="main">
         <div class="header" id="header" style="padding: var(--gutter-l);">
             <p style="position: absolute; font-size: .6em; opacity: .5; top: var(--gutter-l);">Click anywhere to create
                 bubbles!</p>
             <div class="login-container">
-                <?php if(!isset($_SESSION['username'])) : ?>
                 <button class="login" onclick="window.location.href='./login';">
                     <i class="gg-user"></i> Log In
                 </button>
                 <div class="sign-up-button">
                     <a href="./login/registration.php">Or Sign Up</a>
                 </div>
-                <?php else : ?>
-                <button class="login" onclick="window.location.href='./login';">
-                <i class="gg-user"></i> <?php echo $_SESSION['username']?>
-                </button>                
-                <?php endif; ?>
             </div>
             <div style="width:fit-content; height: fit-content; display:flex; flex-direction: column;">
                 <h1>Life Below Water</h1>
@@ -52,9 +40,7 @@
                 <li id='nav_information'>Information</li>
                 <li id="nav_events">Events</li>
                 <li id='nav_about_us'>About Us</li>
-                <?php if(ISSET($_SESSION['username']) and $_SESSION['username'] == 'admin') : ?>
                 <li id="nav_add_event" onclick="toggleAddEventPopup()">Add Event *</li>
-                <?php endif; ?>
             </ul>
         </div>
 
@@ -93,8 +79,6 @@
                             Eutrophication
                         </div>
                     </div>
-                </div>
-                <div class="tile-container">
                     <div onclick="toggleInfoPopup('Acidification')" class="tile">
                         <div class="tile-content-container">
                             Acidification
@@ -103,11 +87,6 @@
                     <div onclick="toggleInfoPopup('Temperatures')" class="tile">
                         <div class="tile-content-container">
                             Rising temperatures
-                        </div>
-                    </div>
-                    <div onclick="toggleInfoPopup('Sources')" class="tile">
-                        <div class="tile-content-container">
-                            Sources & research
                         </div>
                     </div>
                 </div>
@@ -337,3 +316,5 @@
 
     </div>
 </body>
+
+</html>

@@ -18,10 +18,7 @@ let nav_events = document.getElementById('nav_events')
 nav_events.addEventListener('click', () => scrollTo(getRectTopById('events')), true);
 
 let nav_information = document.getElementById('nav_information')
-nav_information.addEventListener('click', () => scrollTo(getRectTopById('information')), true);
-
-// let nav_targets = document.getElementById('nav_targets')
-// nav_targets.addEventListener('click', () => scrollTo(getRectTopById('targets')), true);
+nav_information.addEventListener('click', () => scrollTo(getRectTopById('information')), true);;
 
 var popupIsTriggered = false
 var infoPopupIsTriggerd = false
@@ -51,25 +48,6 @@ const togglePopup = () => {
     popupIsTriggered = !popupIsTriggered
 }
 
-const insertInfoText = (type) => {
-    const tileData = data[type]
-    const h = document.createElement('h2')
-    const c = document.createElement('p')
-    var header = document.createTextNode(tileData.header);
-    var content = document.createTextNode(tileData.content);
-    h.appendChild(header)
-    c.appendChild(content)
-    info.appendChild(h)
-    info.appendChild(c)
-}
-
-const removeInfoText = (type) => {
-    if (info.hasChildNodes()) {
-        info.removeChild(info.children[1])
-        info.removeChild(info.children[1])
-    }
-}
-
 const toggleInfoPopup = (type) => {
     if (popupIsTriggered) {
         popup.style.transform = "translateY(100%)"
@@ -94,6 +72,24 @@ const toggleInfoPopup = (type) => {
     infoPopupIsTriggerd = !infoPopupIsTriggerd
 }
 
+const insertInfoText = (type) => {
+    const tileData = data[type]
+    const h = document.createElement('h2')
+    const c = document.createElement('p')
+    var header = document.createTextNode(tileData.header);
+    var content = document.createTextNode(tileData.content);
+    h.appendChild(header)
+    c.appendChild(content)
+    info.appendChild(h)
+    info.appendChild(c)
+}
+
+const removeInfoText = (type) => {
+    if (info.hasChildNodes()) {
+        info.removeChild(info.children[1])
+        info.removeChild(info.children[1])
+    }
+}
 
 const data = {
     'Pollution': { header: 'Pollution', content: 
