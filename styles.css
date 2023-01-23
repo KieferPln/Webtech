@@ -732,7 +732,7 @@ select:hover {
 .tile-content-container {
     padding: var(--gutter-s);
     font-weight: 600;
-    font-size: 3em;
+    font-size: 2em;
     height: 100%;
     width: 100%;
     display: flex;
