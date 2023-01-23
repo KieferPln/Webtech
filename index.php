@@ -1,3 +1,21 @@
+<!DOCTYPE html>
+
+<?php
+	require ('../connection.php');
+	session_start();
+ 
+	if(!ISSET($_SESSION['user'])){
+		header('location:index.php');
+	}
+?>
+
+<?php
+				$id = $_SESSION['user'];
+				$sql = $conn->prepare("SELECT * FROM `users` WHERE `id`='$id'");
+				$sql->execute();
+				$fetch = $sql->fetch();
+?>
+
 <html lang="en">
 
 <head>
