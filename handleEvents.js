@@ -15,3 +15,5 @@ fetch("fetch-events.php")
     .catch((error) => {
         // This is where you handle errors.
     });
+
+    
