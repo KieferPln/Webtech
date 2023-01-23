@@ -14,6 +14,7 @@
 			$fetch = $query->fetch();
 			if($row > 0) {
 				$_SESSION['user'] = $fetch['id'];
+				$_SESSION['username'] = $fetch['username'];
 				header("location: ../index.php");
 			} else{
 			// Store error message in a session variable

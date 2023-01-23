@@ -1,19 +1,5 @@
 <?php
-/*
-	require ('../connection.php');
-	session_start();
- 
-	if(!ISSET($_SESSION['user'])){
-		header('location:index.php');
-	}
-?>
-
-<?php
-				$id = $_SESSION['user'];
-				$sql = $conn->prepare("SELECT * FROM `users` WHERE `id`='$id'");
-				$sql->execute();
-				$fetch = $sql->fetch();
-                */
+    session_start();
 ?>
 
 <html lang="en">
@@ -33,18 +19,26 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
+
 <body>
+
     <div class="main" id="main">
         <div class="header" id="header" style="padding: var(--gutter-l);">
             <p style="position: absolute; font-size: .6em; opacity: .5; top: var(--gutter-l);">Click anywhere to create
                 bubbles!</p>
             <div class="login-container">
+                <?php if(!isset($_SESSION['username'])) : ?>
                 <button class="login" onclick="window.location.href='./login';">
                     <i class="gg-user"></i> Log In
                 </button>
                 <div class="sign-up-button">
                     <a href="./login/registration.php">Or Sign Up</a>
                 </div>
+                <?php else : ?>
+                <button class="login" onclick="window.location.href='./login';">
+                <i class="gg-user"></i> <?php echo $_SESSION['username']?>
+                </button>                
+                <?php endif; ?>
             </div>
             <div style="width:fit-content; height: fit-content; display:flex; flex-direction: column;">
                 <h1>Life Below Water</h1>
@@ -58,7 +52,9 @@
                 <li id='nav_information'>Information</li>
                 <li id="nav_events">Events</li>
                 <li id='nav_about_us'>About Us</li>
+                <?php if(ISSET($_SESSION['username']) and $_SESSION['username'] == 'admin') : ?>
                 <li id="nav_add_event" onclick="toggleAddEventPopup()">Add Event *</li>
+                <?php endif; ?>
             </ul>
         </div>
 
