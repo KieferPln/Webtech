@@ -1,7 +1,7 @@
-// this file is one folder higher on the server than the other files to prevent people from
-// accessing it.
-
 <?php
+/* this file is one folder higher on the server than the other files to prevent people from
+ accessing it. */
+ 
 $username = "daank";
 $password = "bWbkWfCXuNAqbWAtBvPTINkMHQqIjzwG";
 

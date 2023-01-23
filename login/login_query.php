@@ -1,7 +1,7 @@
 <?php
 	session_start();
  
-	require_once '../connection.php';
+	include('../../connection.php');
  
 	if(ISSET($_POST['login'])){
 		if($_POST['username'] != "" || $_POST['password'] != ""){
