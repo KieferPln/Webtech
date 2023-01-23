@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('../connection.php');
+require('../connection.php');
 
 if(isset($_POST['add_new_event']))
 {

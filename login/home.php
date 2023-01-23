@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-	include ('../../connection.php');
+	require ('../../connection.php');
 	session_start();
  
 	if(!ISSET($_SESSION['user'])){
