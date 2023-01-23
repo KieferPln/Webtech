@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-
 <?php
+/*
 	require ('../connection.php');
 	session_start();
  
@@ -14,6 +13,7 @@
 				$sql = $conn->prepare("SELECT * FROM `users` WHERE `id`='$id'");
 				$sql->execute();
 				$fetch = $sql->fetch();
+                */
 ?>
 
 <html lang="en">
@@ -341,5 +341,3 @@
 
     </div>
 </body>
-
-</html>
