@@ -1,5 +1,6 @@
 const bubble_layer = document.getElementById('bubble-layer')
 let main = document.getElementById('main')
+var bubbleCount = 0
 
 const delay = (time) => {
     return new Promise(resolve => setTimeout(resolve, time));
@@ -42,6 +43,8 @@ const createElement = async (speed, position) => {
 }
 
 const createBubbles = (e) => {
+    bubbleCount++
+    addCountToCookie(bubbleCount)
     const count = Math.round(getRandomArbitrary(3, 8))
     const speeds = generateSpeed(count)
     const position = { x: e.clientX, y: e.clientY + main.scrollTop }
@@ -49,6 +52,10 @@ const createBubbles = (e) => {
     for (let i = 0; i < count; i++) {
         createElement(speeds[i], position)
     }
+}
+
+const addCountToCookie = (bubbleCount) => {
+    
 }
 
 bubble_layer.addEventListener('mousedown', createBubbles, true);

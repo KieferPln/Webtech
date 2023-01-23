@@ -186,22 +186,6 @@
   height: 400px;
 }
 
-.alert-danger{
-  color: red;
-text-align: center;
-position: absolute;
-top: 25%;
-left: 50%;
-transform: translate(-50%, -50%)
-}
-.alert-success{
-  color: green;
-text-align: center;
-position: absolute;
-top: 25%;
-left: 50%;
-transform: translate(-50%, -50%)
-}
 
 input:-webkit-autofill {
 -webkit-box-shadow: 0 0 0px 1000px #000b11 inset !important;

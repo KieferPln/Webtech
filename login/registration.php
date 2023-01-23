@@ -2,7 +2,6 @@
 <?php
 session_start()
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -55,7 +54,7 @@ session_start()
 				<p>Already have an account?<p> 
 				</div>
 				<div class="Signin">
-					<p><a href="index.php">Log In!</a><p> 
+					<p><a href="login.php">Log In!</a><p> 
 				</div>
 			</form>
 		</div>

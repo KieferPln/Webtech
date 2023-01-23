@@ -1,0 +1,141 @@
+:root {
+    --gutter: 1.5em;
+    --gutter-s: 1em;
+    --rounded: 6px;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.07),
+        0 2px 4px rgba(0, 0, 0, 0.07),
+        0 4px 8px rgba(0, 0, 0, 0.07),
+        0 8px 16px rgba(0, 0, 0, 0.07),
+        0 16px 32px rgba(0, 0, 0, 0.07),
+        0 32px 64px rgba(0, 0, 0, 0.07);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+}
+
+body {
+    background-color: black;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    background: rgb(14, 135, 204);
+    background: linear-gradient(45deg, rgb(216, 216, 216) 30%, rgb(247, 247, 247) 80%);
+}
+
+.button-container {
+    display: flex;
+    width: 100%;
+    gap: var(--gutter-s);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#sign-in {
+    background-color: rgb(20, 20, 255);
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--gutter-s);
+    border-radius: var(--rounded);
+}
+
+#sign-in:hover {
+    opacity: 0.7;
+}
+
+a {
+    color: rgb(0, 0, 0);
+    font-size: .9em;
+}
+
+a:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+
+form {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: var(--rounded);
+    display: flex;
+    flex-direction: column;
+    padding: var(--gutter-s);
+    gap: var(--gutter-s);
+    box-shadow: var(--shadow);
+}
+
+input {
+    background-color: rgb(229, 229, 229);
+    padding: var(--gutter-s);
+    border-radius: var(--rounded);
+    min-width: 200px;
+    max-width: 400px;
+    letter-spacing: 1px;
+    border-radius: var(--rounded);
+    outline: none;
+    border: 0px;
+    font-size: .8em;
+    width: 250px;
+}
+
+input:hover {
+    opacity: .8;
+}
+
+input:focus {
+    opacity: 1;
+}
+
+input::placeholder {
+    opacity: 1;
+    color: rgb(60, 60, 60);
+}
+
+#buttons {
+    display: flex;
+    gap: .5em;
+    justify-content: center;
+    align-items: center;
+}
+
+#sign-up {
+    color: rgb(20, 20, 255);
+    font-weight: 600;
+}
+
+#buttons * {
+    font-size: .8em;
+}
+
+.alert-danger {
+    color: red;
+    text-align: center;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.alert-success {
+    color: green;
+    text-align: center;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}

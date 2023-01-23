@@ -20,13 +20,13 @@
 			// Store error message in a session variable
 			$_SESSION['error_msg'] = "Invalid username or password!";
 			// Redirect to registration page
-			header('location: index.php');
+			header('location: login.php');
 			}
 		}else{
 			// Store error message in a session variable
 			$_SESSION['error_msg'] = "Please fill in the required fields!";
 			// Redirect to registration page
-			header('location: index.php');
+			header('location: loign.php');
 		}
 	}
 ?>
