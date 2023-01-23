@@ -20,49 +20,54 @@
 <body>
 
     <div class="container">
-        <div class="col-md-8">
+        <canvas style="z-index:0;" id="canvas"></canvas>
+        <div  style="z-index:1;" class="col-md-8">
             <div class="alert-success" id="success_msg" style="display:
             <?php if(isset($_SESSION['message'])) echo 'block'; else echo 'none'; ?>;">
-            <?php if(isset($_SESSION['message'])) echo $_SESSION['message']['text']; unset($_SESSION['message']);?>
+                <?php if(isset($_SESSION['message'])) echo $_SESSION['message']['text']; unset($_SESSION['message']);?>
             </div>
             <div class="alert-danger" id="error_msg" style="display:
             <?php if(isset($_SESSION['error_msg'])) echo 'block'; else echo 'none'; ?>;">
-            <?php if(isset($_SESSION['error_msg'])) echo $_SESSION['error_msg']; unset($_SESSION['error_msg']);?>
+                <?php if(isset($_SESSION['error_msg'])) echo $_SESSION['error_msg']; unset($_SESSION['error_msg']);?>
             </div>
-                <?php if(isset($_SESSION['message'])): ?>
-                    <div class="alert alert-<?php echo $_SESSION['message']['alert'] ?> msg"><?php echo $_SESSION['message']['text'] ?></div>
-                <script>
-                    (function() {
-                        // removing the message 3 seconds after the page load
-                        setTimeout(function(){
-                            document.querySelector('.msg').remove();
-                        },3000)
-                    })();
-                </script>
-                <?php 
+            <?php if(isset($_SESSION['message'])): ?>
+            <div class="alert alert-<?php echo $_SESSION['message']['alert'] ?> msg">
+                <?php echo $_SESSION['message']['text'] ?>
+            </div>
+            <script>
+                (function () {
+                    // removing the message 3 seconds after the page load
+                    setTimeout(function () {
+                        document.querySelector('.msg').remove();
+                    }, 3000)
+                })();
+            </script>
+            <?php 
                     endif;
                     // clearing the message
                     unset($_SESSION['message']);
                 ?>
-        <form action="" class="">
-            <p style=" border-bottom: 1px solid rgb(239, 239, 239); padding-bottom: .5em; padding-left: .2em ; font-weight: 500;">
-                Log In</p>
-            <input type="username" placeholder="Username">
-            <input type="password" placeholder="Password">
+            <form action="" class="">
+                <p
+                    style=" border-bottom: 1px solid rgb(239, 239, 239); padding-bottom: .5em; padding-left: .2em ; font-weight: 500;">
+                    Log In</p>
+                <input type="username" placeholder="Username">
+                <input type="password" placeholder="Password">
 
-            <div class="button-container">
-                <a id="sign-in">Sign In</a>
+                <div class="button-container">
+                    <a id="sign-in">Sign In</a>
 
-                <div id="buttons">
-                    <p>Don't have an account? </p>
-                    <a href="registration.php"id="sign-up">
-                        Sign Up
-                    </a>
+                    <div id="buttons">
+                        <p>Don't have an account? </p>
+                        <a href="registration.php" id="sign-up">
+                            Sign Up
+                        </a>
+                    </div>
                 </div>
-            </div>
+        </div>
+        </form>
     </div>
-    </form>
-    </div>
+    <script src="background.js"></script>
 </body>
 
 </html>

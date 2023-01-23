@@ -30,7 +30,9 @@ body {
     justify-content: center;
     align-items: center;
     background: rgb(14, 135, 204);
-    background: linear-gradient(45deg, rgb(216, 216, 216) 30%, rgb(247, 247, 247) 80%);
+    background: linear-gradient(45deg, rgb(0, 8, 33) 30%, rgb(0, 2, 12) 80%);
+    z-index: 50;
+
 }
 
 .button-container {
@@ -138,4 +140,13 @@ input::placeholder {
     top: 25%;
     left: 50%;
     transform: translate(-50%, -50%)
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
 }
