@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	require_once('../connection.php');
+	require_once('../../connection.php');
  
 	// if(ISSET($_POST['register'])){
 	// 	if($_POST['username'] != "" || $_POST['email'] != "" || $_POST['password'] != ""){

@@ -14,7 +14,7 @@
 			$fetch = $query->fetch();
 			if($row > 0) {
 				$_SESSION['user'] = $fetch['id'];
-				header("location: home.php");
+				header("location: ../index.php");
 			} else{
 			// Store error message in a session variable
 			$_SESSION['error_msg'] = "Invalid username or password!";
@@ -23,7 +23,7 @@
 			}
 		}else{
 			// Store error message in a session variable
-			$_SESSION['error_msg'] = "Please fill up the required fields!";
+			$_SESSION['error_msg'] = "Please fill in the required fields!";
 			// Redirect to registration page
 			header('location: index.php');
 		}
