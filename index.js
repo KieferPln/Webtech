@@ -21,6 +21,9 @@ nav_events.addEventListener('click', () => scrollTo(getRectTopById('events')), t
 let nav_information = document.getElementById('nav_information')
 nav_information.addEventListener('click', () => scrollTo(getRectTopById('information')), true);;
 
+let nav_about_us = document.getElementById('nav_about_us')
+nav_about_us.addEventListener('click', () => scrollTo(getRectTopById('about_us')), true);;
+
 var popupIsTriggered = false
 var infoPopupIsTriggerd = false
 var addEventPopupIsTriggerd = false

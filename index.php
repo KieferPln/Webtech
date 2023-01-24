@@ -476,14 +476,13 @@
         
 
         <!-- *********** ABOUT US *********** -->
-            <div id="about-us">
+            <div id="about_us">
                 <h2 style="margin-top: var(--gutter-m)">About Us</h2>    
                 <p>Welcome to our website, created by a group of five first-year students studying Artificial Intelligence at the University of Amsterdam.</p>
                 <p>Our website is dedicated to raising awareness about the United Nations' Sustainable Development Goal 14: 'Life Below Water.'</p>
                 <p>Here, you will find information about current problems facing our oceans and the risks they pose to marine life and human communities.</p>
                 <p>We created this website from scratch as a way to educate and inform the public about the importance of protecting our oceans.</p>
                 <p>Join us in our mission to conserve and sustainably use the oceans, seas, and marine resources for sustainable development by educating yourself on this topic.</p>
-                <p></p>
             </div>
         </div>
 
