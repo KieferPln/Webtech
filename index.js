@@ -14,6 +14,7 @@ const scrollTo = (top) => {
     main.scrollTop = top
 }
 
+
 let nav_events = document.getElementById('nav_events')
 nav_events.addEventListener('click', () => scrollTo(getRectTopById('events')), true);
 
@@ -155,10 +156,28 @@ const data = {
     rising ocean temperatures. ' }
 }
 
+function fetchEvents(){
+    fetch("fetch-events.php")
+        .then((response) => {
+            if(!response.ok){ // Before parsing (i.e. decoding) the JSON data,
+                              // check for any errors.
+                // In case of an error, throw.
+                throw new Error("Something went wrong!");
+            }
+          
+            return response.json(); // Parse the JSON data.
+        })
+        .then((data) => {
+             // This is where you handle what to do with the response.
+              // Will alert: 42
+              console.log(data)
+        })
+        .catch((error) => {
+             alert(error)
+        });
+}
 
-
-
-
+console.log(fetchEvents())
 
 
 
