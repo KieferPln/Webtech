@@ -26,7 +26,7 @@
 			// Store error message in a session variable
 			$_SESSION['error_msg'] = "Please fill in the required fields!";
 			// Redirect to registration page
-			header('location: loign.php');
+			header('location: login.php');
 		}
 	}
 ?>

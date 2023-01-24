@@ -26,11 +26,11 @@
                 bubbles!</p>
             <div class="login-container">
                 <?php if(!isset($_SESSION['username'])) : ?>
-                <button class="login" onclick="window.location.href='./login';">
+                <button class="login" onclick="window.location.href='./login/login.php';">
                     <i class="gg-user"></i> Log In
                 </button>
                 <div class="sign-up-button">
-                    <a href="./login/registration.php">Or Sign Up</a>
+                    <a href="./login/register.php">Or Sign Up</a>
                 </div>
                 <?php else : ?>
                 <button class="login" onclick="window.location.href='index.php';">

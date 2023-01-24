@@ -18,22 +18,19 @@
 </head>
 
 <body>
-
     <div class="container">
         <canvas style="z-index:0;" id="canvas"></canvas>
-        <div  style="z-index:1;" class="col-md-8">
+        <div style="z-index:1;">
             <div class="alert-success" id="success_msg" style="display:
             <?php if(isset($_SESSION['message'])) echo 'block'; else echo 'none'; ?>;">
-                <?php if(isset($_SESSION['message'])) echo $_SESSION['message']['text']; unset($_SESSION['message']);?>
+            <?php if(isset($_SESSION['message'])) echo $_SESSION['message']['text']; unset($_SESSION['message']);?>
             </div>
             <div class="alert-danger" id="error_msg" style="display:
             <?php if(isset($_SESSION['error_msg'])) echo 'block'; else echo 'none'; ?>;">
-                <?php if(isset($_SESSION['error_msg'])) echo $_SESSION['error_msg']; unset($_SESSION['error_msg']);?>
+            <?php if(isset($_SESSION['error_msg'])) echo $_SESSION['error_msg']; unset($_SESSION['error_msg']);?>
             </div>
-            <?php if(isset($_SESSION['message'])): ?>
-            <div class="alert alert-<?php echo $_SESSION['message']['alert'] ?> msg">
-                <?php echo $_SESSION['message']['text'] ?>
-            </div>
+                <?php if(isset($_SESSION['message'])): ?>
+                    <div class="alert alert-<?php echo $_SESSION['message']['alert'] ?> msg"><?php echo $_SESSION['message']['text'] ?></div> 
             <script>
                 (function () {
                     // removing the message 3 seconds after the page load
@@ -46,28 +43,25 @@
                     endif;
                     // clearing the message
                     unset($_SESSION['message']);
-                ?>
-            <form action="" class="">
+            ?>
+            <form action="login_query.php" method="POST">
                 <p
                     style=" border-bottom: 1px solid rgb(239, 239, 239); padding-bottom: .5em; padding-left: .2em ; font-weight: 500;">
                     Log In</p>
-                <input type="username" placeholder="Username">
-                <input type="password" placeholder="Password">
-
+				    <input type="text" placeholder="Username" name="username" />
+				    <input type="password" placeholder="Password" name="password" />
                 <div class="button-container">
-                    <a id="sign-in">Sign In</a>
-
+                    <button id="sign-in" name="login">Sign In</button>
                     <div id="buttons">
                         <p>Don't have an account? </p>
-                        <a href="registration.php" id="sign-up">
+                        <a href="./register.php" id="sign-up">
                             Sign Up
                         </a>
                     </div>
                 </div>
+            </form>
         </div>
-        </form>
     </div>
     <script src="background.js"></script>
 </body>
-
 </html>
