@@ -551,8 +551,6 @@
         defer>
     </script>
     <script src="maps.js"></script>
-    <script src="handleEvents.js"></script>
-
     </div>
 </body>
 
