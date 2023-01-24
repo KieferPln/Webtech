@@ -33,9 +33,12 @@
                     <a href="./login/registration.php">Or Sign Up</a>
                 </div>
                 <?php else : ?>
-                <button class="login" onclick="window.location.href='./login';">
-                <i class="gg-user"></i> <?php echo $_SESSION['username']?>
-                </button>                
+                <button class="login" onclick="window.location.href='index.php';">
+                    <i class="gg-user"></i> <?php echo $_SESSION['username']?>
+                </button>
+                <div class="sign-up-button">
+                    <a href="logout.php">Log Out</a>   
+                </div>             
                 <?php endif; ?>
             </div>
             <div style="width:fit-content; height: fit-content; display:flex; flex-direction: column;">
