@@ -17,7 +17,7 @@
 <body>
 
     <div class="container">
-        <div class="alert-danger" id="error_msg" style="display:
+        <div class="alert-danger-register" id="error_msg" style="display:
 		<?php if(isset($_SESSION['error_msg'])) echo 'block'; else echo 'none'; ?>;">
 		<?php if(isset($_SESSION['error_msg'])) echo $_SESSION['error_msg']; unset($_SESSION['error_msg']);?>
 		</div>
