@@ -41,7 +41,7 @@
 	// 	}
 	// }
 	if(ISSET($_POST['register'])){
-		if($_POST['username'] != "" || $_POST['email'] != "" || $_POST['password'] != "" || $_POST['confirm_password'] != ""){
+		if($_POST['username'] != "" && $_POST['email'] != "" && $_POST['password'] != "" && $_POST['confirm_password'] != ""){
 			if($_POST['password'] != $_POST['confirm_password']){
 				// Store error message in a session variable
 				$_SESSION['error_msg'] = "Your passwords don't seem too match up, please try again.";
