@@ -477,8 +477,12 @@
 
         <!-- *********** ABOUT US *********** -->
             <div id="about_us">
-                <h2 style="margin-top: var(--gutter-m)">About Us</h2>    
+                <h2 style="margin-top: var(--gutter-m); text-align:center">About Us</h2> 
+                <br>
+                <p style="float:right" class="about-us-maps" id="map"></p>   
                 <p>Welcome to our website, created by a group of five first-year students studying Artificial Intelligence at the University of Amsterdam.</p>
+                <p>Our names are Daan Keller, Colin de Koning, Kiefer Plender, Julius de Groot & Milan Tool.</p>
+                <br>
                 <p>Our website is dedicated to raising awareness about the United Nations' Sustainable Development Goal 14: 'Life Below Water.'</p>
                 <p>Here, you will find information about current problems facing our oceans and the risks they pose to marine life and human communities.</p>
                 <p>We created this website from scratch as a way to educate and inform the public about the importance of protecting our oceans.</p>
