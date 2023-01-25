@@ -530,14 +530,14 @@
                     Bullet”, “Raining in the Snow”, “Penthouse in Heaven” en nog veel meer mooie nummers.
                 </p>
 
-                <!-- __ Doelgroep __ -->
+                <!-- __ Doelgraoep __ -->
                 <p style="font-size: .9em; font-weight: 600;">
                     Dit is een doelgroep
                 </p>
             </div>
             <div class="button-container">
                 <button class="close-button" onclick="togglePopup()">
-                    <span class="cross-line" style="transform: rotate(-45deg);""></span>
+                    <span class="cross-line" style="transform: rotate(-45deg);"></span>
                         <span class=" cross-line" style="transform: rotate(45deg);"></span>
                 </button>
                 <button class="sign-up-button">
