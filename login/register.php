@@ -1,3 +1,6 @@
+<?php
+session_start()
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,10 +20,11 @@
 <body>
 
     <div class="container">
+        
         <div class="alert-danger" id="error_msg" style="display:
-		<?php if(isset($_SESSION['error_msg'])) echo 'block'; else echo 'none'; ?>;">
-		<?php if(isset($_SESSION['error_msg'])) echo $_SESSION['error_msg']; unset($_SESSION['error_msg']);?>
-		</div>
+            <?php if(isset($_SESSION['error_msg'])) echo 'block'; else echo 'none'; ?>;">
+            <?php if(isset($_SESSION['error_msg'])) echo $_SESSION['error_msg']; unset($_SESSION['error_msg']);?>
+        </div>
         <canvas style="z-index:0;" id="canvas"></canvas>
         <form style="z-index: 1;" action="register_query.php" method="POST">
             <p style="border-bottom: 1px solid rgb(239, 239, 239); padding-bottom: .5em; padding-left: .2em ;">
