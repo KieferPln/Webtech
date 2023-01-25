@@ -43,6 +43,6 @@
             </div>
         </form>
     </div>
-    <script src="./background.js"></script>
+    <!--<script src="./background.js"></script>-->
 </body>
 </html>
