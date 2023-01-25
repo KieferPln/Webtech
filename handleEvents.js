@@ -20,6 +20,4 @@
 //     });
 
 
-import json from './events.json'; //with path
-console.log(json)
-console.log(eventData)
+
