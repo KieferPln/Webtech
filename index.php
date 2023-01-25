@@ -104,6 +104,11 @@
                             Rising temperatures
                         </div>
                     </div>
+                    <div onclick="toggleInfoPopup('Sources')" class="tile">
+                        <div class="tile-content-container">
+                            Research & Our Sources
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -487,6 +492,7 @@
                 <p>Here, you will find information about current problems facing our oceans and the risks they pose to marine life and human communities.</p>
                 <p>We created this website from scratch as a way to educate and inform the public about the importance of protecting our oceans.</p>
                 <p>Join us in our mission to conserve and sustainably use the oceans, seas, and marine resources for sustainable development by educating yourself on this topic.</p>
+                <p>You've visited this website 
             </div>
         </div>
 

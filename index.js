@@ -156,7 +156,11 @@ const data = {
     to 90% of coral reefs. An even higher increase of 2°C would cause the disappearance of 99% of coral \
     reefs. At this point, there would be no way of reestablishing coral ecosystems. A third danger is \
     the increase of probability of marine heatwaves. These heatwaves compound the regular dangers of \
-    rising ocean temperatures. ' }
+    rising ocean temperatures. ' },
+
+    'Sources': { header: 'Sources', content:
+    'Content still needs to be added.'
+    }
 }
 
 function fetchEvents(){
