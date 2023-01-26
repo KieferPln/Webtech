@@ -33,7 +33,7 @@
                     <a href="./login/register.php">Or Sign Up</a>
                 </div>
                 <?php else : ?>
-                <button class="login" onclick="window.location.href='index.php';">
+                    <button class="login" onclick="window.location.href='index.php';">
                     <i class="gg-user"></i> <?php echo $_SESSION['username']?>
                 </button>
                 <div class="dropdown-content">
@@ -43,7 +43,7 @@
                 </div>
                 <!--<div class="sign-up-button">
                     <a href="logout.php">Log Out</a>   
-                </div>       -->       
+                </div> -->
                 <?php endif; ?>
             </div>
             <div style="width:fit-content; height: fit-content; display:flex; flex-direction: column;">
@@ -69,10 +69,15 @@
             <div class="cookie-container">
                 <div class="cookie-subcontainer">
                     <div class="cookies">
-                        <p>This website uses cookies to ensure you get the best experience on our website.
-                            <a href=" ">More info.</a>
+                        <br>
+                        <p style='text-align:center'>This website uses cookies to ensure you get the best experience on our website.
+                            <a style='font-weight:bold' onclick="toggleInfoPopup('privacy')">
+                            More info
+                            </a>
                         </p>
-                        <button id="cookie-btn">Accept</button>
+                        <br>
+                        <button style='display: grid; margin:auto; color:black; font-weight:bold' id="cookie-btn">Accept</button>
+                        <br>
                     </div>
                 </div>
             </div>
@@ -109,21 +114,23 @@
                             Rising temperatures
                         </div>
                     </div>
+                    <div onclick="toggleInfoPopup('Sources')" class="tile">
+                        <div class="tile-content-container">
+                            Research & Our Sources
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- *********** EVENTS *********** -->
             <div id="events">
-                <h2 style="margin-top: var(--g utter-m)">Upcoming Events</h2>
+                <h2 style="margin-top: var(--gutter-m)">Upcoming Events</h2>
                 <div id='event-container' class=" event-container">
             </div>
 
             <!-- *********** ADD EVENT *********** -->
             <div id="add-event-popup">
-
-
                 <form action="add_event.php" method="POST" class="add-event-container">
-
                     <div class="add-event-button-container">
                         <input type="submit" class="submit" name="add_new_event" value="Submit"></input>
                         <button type="button" class="close-button" onclick="toggleAddEventPopup()">
@@ -135,9 +142,9 @@
                     <div class="subjects-container">
                         <label style="font-weight: 500;" for="location">Main Information</label>
                         <input placeholder="Event name" name="name" type="text" required>
-                        <input name="description" type="text" placeholder="Description" required>
+                        <textarea name="description" type="text" rows="5" placeholder="Description" required></textarea>
                         <input name="url" type="url" placeholder="Event URL" required>
-                        <input name="date" type="date" required>
+                        <input name="date" type="date" min="<?php echo date("Y-m-d"); ?>" max="2025-12-31" required>
                     </div>
 
                     <div class="subjects-container">
@@ -385,7 +392,6 @@
                             <input name="pollution" type="checkbox" value="pollution" placeholder="polluton">
                             <label for="pollution">Pollution</label>
                         </div>
-
                         <div class="row">
                             <input name="acidification" type="checkbox" value="acidification">
                             <label for="acidification">Acidification</label>
@@ -394,19 +400,15 @@
                             <input name="rising_temperatures" type="checkbox" value="rising_temperatures">
                             <label for="rising_temperatures">Rising temperatures</label>
                         </div>
-
                         <div class="row">
                             <input name="eutrophication" type="checkbox" value="eutrophication">
                             <label for="eutrophication">Eutrophication</label>
                         </div>
-
                         <div class="row">
                             <input name="overfishing" type="checkbox" value="overfishing">
                             <label for="overfishing">Overfishing</label>
                         </div>
                     </div>
-
-
                     <div class="subjects-container">
                         <label style="font-weight: 500;" for="location"> Target audience</label>
 
@@ -426,12 +428,10 @@
                             <input name="concerned_citizens" type="checkbox" value="concerned_citizens">
                             <label for="concerned_citizens">Concerned citizens</label>
                         </div>
-
                         <div class="row">
                             <input name="students" type="checkbox" value="students">
                             <label for="students">Students</label>
                         </div>
-
                     </div>
                 </form>
             </div>
@@ -439,12 +439,17 @@
 
         <!-- *********** ABOUT US *********** -->
             <div id="about_us">
-                <h2 style="margin-top: var(--gutter-m)">About Us</h2>    
+                <h2 style="margin-top: var(--gutter-m); text-align:center">About Us</h2> 
+                <br>
+                <p style="float:right" class="about-us-maps" id="map"></p>   
                 <p>Welcome to our website, created by a group of five first-year students studying Artificial Intelligence at the University of Amsterdam.</p>
+                <p>Our names are Daan Keller, Colin de Koning, Kiefer Plender, Julius de Groot & Milan Tool.</p>
+                <br>
                 <p>Our website is dedicated to raising awareness about the United Nations' Sustainable Development Goal 14: 'Life Below Water.'</p>
                 <p>Here, you will find information about current problems facing our oceans and the risks they pose to marine life and human communities.</p>
                 <p>We created this website from scratch as a way to educate and inform the public about the importance of protecting our oceans.</p>
                 <p>Join us in our mission to conserve and sustainably use the oceans, seas, and marine resources for sustainable development by educating yourself on this topic.</p>
+                <p>You've visited this website 
             </div>
         </div>
 
@@ -453,26 +458,23 @@
             <div></div>
 
             <div id="map"></div>
-
-            <!-- _______PHP________ -->
-
             <div class="text-container">
                 <div class="pop-up-header">
-                    <!-- __ Naam __ -->
+                    <!-- _ Naam _ -->
                     <h3 id='event-name'></h3>
-                    <!-- __ Tags __ -->
+                    <!-- _ Tags _ -->
                     <div class="tag">Tag</div>
                     <div class="tag">Water</div>
                     <div class="tag">Muziek</div>
                 </div>
 
-                <!-- __ Omschrijving __ -->
+                <!-- _ Omschrijving _ -->
                 <a id='event-url'>Bekijk de website</a>
 
-                <!-- __ Omschrijving __ -->
+                <!-- _ Omschrijving _ -->
                 <p id='event-description'></p>
 
-                <!-- __ Doelgroep __ -->
+                <!-- _ Doelgroep _ -->
                 <p style="font-size: .9em; font-weight: 600;">
                     Dit is een doelgroep
                 </p>
@@ -501,9 +503,9 @@
     </div>
 
     <div class="scroll-top-container"></div>
-    <script src="handleEvents.js"></script>
     <script src="bubbles.js"></script>
     <script src="index.js"></script>
+    <script src="events.js"></script>
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
         defer>
