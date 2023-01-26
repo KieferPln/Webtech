@@ -178,9 +178,9 @@
                     <div class="subjects-container">
                         <label style="font-weight: 500;" for="location">Main Information</label>
                         <input placeholder="Event name" name="name" type="text" required>
-                        <input name="description" type="text" placeholder="Description" required>
+                        <textarea name="description" type="text" rows="5" placeholder="Description" required></textarea>
                         <input name="url" type="url" placeholder="Event URL" required>
-                        <input name="date" type="date" required>
+                        <input name="date" type="date" min="<?php echo date("Y-m-d"); ?>" max="2025-12-31" required>
                     </div>
 
                     <div class="subjects-container">
