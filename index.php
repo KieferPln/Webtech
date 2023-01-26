@@ -503,9 +503,9 @@
     </div>
 
     <div class="scroll-top-container"></div>
+    <script src="handleEvents.js"></script>
     <script src="bubbles.js"></script>
     <script src="index.js"></script>
-    <script src="events.js"></script>
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
         defer>
