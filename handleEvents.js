@@ -17,6 +17,7 @@ const emptyEventPopup = () => {
 
 const getTagsByEventId = async (id) => {
     const response = await fetch("fetch-tags.php");
+    console.log('ok')
     const data = await response.json();
     if (!data) {
         return getTagsByEventId();

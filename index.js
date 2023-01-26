@@ -211,6 +211,7 @@ const createEvent = (name, date, id) => {
     container.appendChild(eventName)
     container.appendChild(eventDate)
     container.addEventListener('click', () => { togglePopup(), currentEvent = id }, true);
+    
     return container
 }
 
