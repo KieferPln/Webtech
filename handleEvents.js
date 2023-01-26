@@ -35,10 +35,6 @@ const getTagsByEventId = async (id) => {
     } else {
         return data.filter((tag) => tag.eventid === id);
     }
-
-    if (!data) return getTagsByEventId();
-    return data.filter((tag) => tag.eventid == id);
-
 }
 
 const getEvents = async () => {
