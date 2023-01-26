@@ -51,7 +51,7 @@
 				    <input type="text" placeholder="Username" name="username" />
 				    <input type="password" placeholder="Password" name="password" />
                 <div class="button-container">
-                    <button id="sign-in" name="login">Sign In</button>
+                    <button id="sign-in" name="login">Log In</button>
                     <div id="buttons">
                         <p>Don't have an account? </p>
                         <a href="./register.php" id="sign-up">

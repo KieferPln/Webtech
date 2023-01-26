@@ -27,7 +27,7 @@ session_start()
         <canvas style="z-index:0;" id="canvas"></canvas>
         <form style="z-index: 1;" action="register_query.php" method="POST">
             <p style="border-bottom: 1px solid rgb(239, 239, 239); padding-bottom: .5em; padding-left: .2em ;">
-                Register</p>
+                Sign Up</p>
 
             <input type="username" placeholder="Username" name="username"/>
             <input type="email" placeholder="Email" name="email"/>
@@ -40,7 +40,7 @@ session_start()
                 <div id="buttons">
                     <p>Already have an account? </p>
                     <a href="./login.php" id="sign-up">
-                        Sign In
+                        Log In
                     </a>
                 </div>
                 <div id="buttons">
