@@ -470,10 +470,7 @@
                 <div class="pop-up-header">
                     <!-- _ Naam _ -->
                     <h3 id='event-name'></h3>
-                    <!-- _ Tags _ -->
-                    <div class="tag">Tag</div>
-                    <div class="tag">Water</div>
-                    <div class="tag">Muziek</div>
+                    <div id="event-tags"></div>
                 </div>
 
                 <!-- _ Omschrijving _ -->

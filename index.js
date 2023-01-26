@@ -47,7 +47,9 @@ const togglePopup = () => {
 
         getEvents().then(events => {
             const event = events.find((event) => event.eventid == currentEvent)
-            fillEventPopup(event)
+            getTagsByEventId(event.eventid).then(tags => {        
+                fillEventPopup(event,tags)
+            }).catch(err => console.log(err))
         }).catch(err => console.log(err))
 
     }
@@ -157,8 +159,7 @@ const data = {
     are a risk to coastal areas. This is caused by the increased chance of extreme events such as \
     coastal flooding, landslides and erosion. Not only the 2 billion people living in coastal areas are \
     at risk. All life in coastal areas is under threat from rising sea levels. Second, rising \
-    temperatures also cause loss of marine biodiversity and damage to marine ecosystems in non-coastal \
-    areas. The UN has estimated that 60% of marine ecosystems are currently being used in an \
+    temperatu(getTagsByEventId(e UN has estimated that 60% of marine ecosystems are currently being used in an \
     unsustainable way or are otherwise degrading. Even worse, they estimate that half of marine species \
     may be facing extinction by 2100.\n \
     \n \
