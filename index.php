@@ -72,11 +72,11 @@
                         <br>
                         <p style='text-align:center'>This website uses cookies to ensure you get the best experience on our website.
                             <a onclick="toggleInfoPopup('privacy')">
-                            More Info
+                            More info
                             </a>
                         </p>
                         <br>
-                        <button style='display: grid; margin:auto' id="cookie-btn">Accept</button>
+                        <button style='display: grid; margin:auto; color:black' id="cookie-btn">Accept</button>
                         <br>
                     </div>
                 </div>
