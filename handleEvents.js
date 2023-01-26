@@ -42,3 +42,11 @@ const getEventsById = async (id) => {
     if (!data) return getResult();
     return data.filter((event) => event.eventid === id);
 }
+
+const getEvents = async () => {
+    const response = await fetch("fetch-events.php");
+    const data = await response.json();
+
+    if (!data) return getResult();
+    return data
+}
