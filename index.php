@@ -109,8 +109,51 @@
 
             <!-- *********** EVENTS *********** -->
             <div id="events">
-                <h2 style="margin-top: var(--g utter-m)">Upcoming Events</h2>
-                <div id='event-container' class=" event-container">
+                <h2 style="margin-top: var(--gutter-m)">Upcoming Events</h2>
+                <div class=" event-container">
+                    <div class="event" onclick="togglePopup()">
+                        <span class=" circle"></span>
+                        <div class="name">
+                            Ms. Jones
+                        </div>
+                        <div class="date">
+                            16-05-22
+                        </div>
+                    </div>
+                </div>
+                <div class="event-container">
+                    <div class="event" onclick="togglePopup()">
+                        <span class=" circle"></span>
+                        <div class="name">
+                            Ms. Jones
+                        </div>
+                        <div class="date">
+                            16-05-22
+                        </div>
+                    </div>
+                </div>
+                <div class="event-container">
+                    <div class="event" onclick="togglePopup()">
+                        <span class=" circle"></span>
+                        <div class="name">
+                            Ms. Jones
+                        </div>
+                        <div class="date">
+                            16-05-22
+                        </div>
+                    </div>
+                </div>
+                <div class="event-container">
+                    <div class="event" onclick="toggleEventPopup()">
+                        <span class=" circle"></span>
+                        <div class="name">
+                            Ms. Jones
+                        </div>
+                        <div class="date">
+                            16-05-22
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- *********** ADD EVENT *********** -->
@@ -448,13 +491,12 @@
             <div></div>
 
             <div id="map"></div>
-
-            <!-- _______PHP________ -->
-
             <div class="text-container">
                 <div class="pop-up-header">
+
                     <!-- __ Naam __ -->
-                    <h3 id='event-name'></h3>
+                    <h3>Ms. Jones</h3>
+
                     <!-- __ Tags __ -->
                     <div class="tag">Tag</div>
                     <div class="tag">Water</div>
@@ -462,12 +504,19 @@
                 </div>
 
                 <!-- __ Omschrijving __ -->
-                <a id='event-url'>Bekijk de website</a>
+                <a href="https://www.google.com">Bekijk de website</a>
 
                 <!-- __ Omschrijving __ -->
-                <p id='event-description'></p>
+                <p>
+                    Op dit album vind je naast de live versie van de nieuwe single “Freedom” ondermeer, “Red
+                    Bullet”, “Raining in the Snow”, “Penthouse in Heaven” en nog veel meer mooie nummers.
+                    Op dit album vind je naast de live versie van de nieuwe single “Freedom” ondermeer, “Red
+                    Bullet”, “Raining in the Snow”, “Penthouse in Heaven” en nog veel meer mooie nummers.
+                    Op dit album vind je naast de live versie van de nieuwe single “Freedom” ondermeer, “Red
+                    Bullet”, “Raining in the Snow”, “Penthouse in Heaven” en nog veel meer mooie nummers.
+                </p>
 
-                <!-- __ Doelgroep __ -->
+                <!-- __ Doelgraoep __ -->
                 <p style="font-size: .9em; font-weight: 600;">
                     Dit is een doelgroep
                 </p>
