@@ -1,5 +1,6 @@
-<link rel="shortcut icon" type="image/x-icon" href="../favicon/favicon.ico">
 <?php session_start(); ?>
+<link rel="shortcut icon" type="image/x-icon" href="../favicon/favicon.ico">
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,28 +22,19 @@
     <div class="container">
         <canvas style="z-index:0;" id="canvas"></canvas>
         <div style="z-index:1;">
-            <div class="alert-success" id="success_msg" style="display:
-            <?php if(isset($_SESSION['message'])) echo 'block'; else echo 'none'; ?>;">
-            <?php if(isset($_SESSION['message'])) echo $_SESSION['message']['text']; unset($_SESSION['message']);?>
-            </div>
-            <div class="alert-danger" id="error_msg" style="display:
-            <?php if(isset($_SESSION['error_msg'])) echo 'block'; else echo 'none'; ?>;">
-            <?php if(isset($_SESSION['error_msg'])) echo $_SESSION['error_msg']; unset($_SESSION['error_msg']);?>
-            </div>
-                <?php if(isset($_SESSION['message'])): ?>
-                    <div class="alert alert-<?php echo $_SESSION['message']['alert'] ?> msg"><?php echo $_SESSION['message']['text'] ?></div> 
-            <script>
-                (function () {
-                    // removing the message 3 seconds after the page load
-                    setTimeout(function () {
-                        document.querySelector('.msg').remove();
-                    }, 3000)
-                })();
-            </script>
+            <?php if(isset($_SESSION['succes_message'])): ?>
+                <div class="alert-success">
+                    <?php echo $_SESSION['succes_message']; ?>
+                </div>
+            <?php elseif(isset($_SESSION['error_message'])): ?>
+                <div class="alert-danger">
+                    <?php echo $_SESSION['error_message']; ?>
+                </div>
             <?php 
-                    endif;
-                    // clearing the message
-                    unset($_SESSION['message']);
+                endif;
+                // clearing the message
+                unset($_SESSION['error_message']);
+                unset($_SESSION['succes_message']);
             ?>
             <form action="change_email_query.php" method="POST">
                 <p
