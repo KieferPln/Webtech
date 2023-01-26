@@ -25,6 +25,8 @@ const getTagsByEventId = async (id) => {
     }
 }
 
+console.log(getTagsByEventId(54))
+
 const getEvents = async () => {
     const response = await fetch("fetch-events.php");
     const data = await response.json();

@@ -467,6 +467,7 @@
             src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCgChWZJFpPrN7BscHSIlp-obMXI1x-hTw
                 &q=Space+Needle,Seattle+WA">
         </iframe>
+        
             <div class="text-container">
                 <div class="pop-up-header">
                     <!-- _ Naam _ -->
