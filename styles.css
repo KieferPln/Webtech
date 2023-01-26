@@ -557,6 +557,12 @@ p {
     gap: var(--gutter-m);
 }
 
+.information-popup-content p {
+    letter-spacing: 2px;
+    line-height: 1.4em;
+    font-weight: 300;
+}
+
 .login-container {
     width: fit-content;
     height: fit-content;
@@ -763,27 +769,27 @@ select:hover {
     text-align: center;
 }
 
-.cookie-container{
-     width: 1600px;
+.cookie-container {
+    width: 1600px;
     margin: auto;
 }
 
-.cookie-subcontainer{
+.cookie-subcontainer {
     width: 90%;
-    margin: auto; 
+    margin: auto;
 }
 
-#cookies{
+#cookies {
     width: 100%;
     position: fixed;
     bottom: 0;
     color: white;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 10000;
     display: none;
 }
 
-.cookie{
+.cookie {
     min-height: 70px;
     display: flex;
     justify-content: space-between;
@@ -793,13 +799,13 @@ select:hover {
 
 }
 
-.cookies a{
+.cookies a {
     color: rgba(255, 187, 0, 0.811);
     font-weight: 500;
     text-decoration: none;
 }
 
-#cookie-btn{
+#cookie-btn {
     border-radius: 5px;
     padding: 8px 12px 8px 12px;
     font-size: 1rem;
@@ -811,15 +817,15 @@ select:hover {
     float:right;
 }
 
-@media(max-width:1600px){
-    .cookie-container{
+@media(max-width:1600px) {
+    .cookie-container {
         width: 100%;
     }
 }
 
-@media(max-width:1024px){
-.cookies{
-    padding: 10px 0;
-}
+@media(max-width:1024px) {
+    .cookies {
+        padding: 10px 0;
+    }
 
 }
