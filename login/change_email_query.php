@@ -11,14 +11,12 @@
 		}
         else{
             try{
-                $username = $_POST['username']
-                $new_email = $_POST['new_email'];
-                $new_email_repeat = $_POST['new_email_repeat'];
+                $username = $_POST['username'];
+                $email = $_POST['new_email'];
                 $conn->setattribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
                 // Check if username or email already exists in the database
-                $stmt = $conn->prepare("SELECT * FROM `users` WHERE `username` = :username OR `email` = :email");
-                $stmt->bindParam(':username', $username);
+                $stmt = $conn->prepare("UPDATE users SET email = $email WHERE username == $username");
                 $stmt->bindParam(':email', $email);
                 $stmt->execute();
                 if ($stmt->rowCount() > 0) {
