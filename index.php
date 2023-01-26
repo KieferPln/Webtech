@@ -490,7 +490,7 @@
             </div>
             <div class="button-container">
                 <button class="close-button" onclick="togglePopup()">
-                    <span class="cross-line" style="transform: rotate(-45deg);""></span>
+                    <span class="cross-line" style="transform: rotate(-45deg);"></span>
                         <span class=" cross-line" style="transform: rotate(45deg);"></span>
                 </button>
                 <button class="sign-up-button">
