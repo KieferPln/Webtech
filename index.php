@@ -69,10 +69,15 @@
             <div class="cookie-container">
                 <div class="cookie-subcontainer">
                     <div class="cookies">
-                        <p>This website uses cookies to ensure you get the best experience on our website.
-                            <a href=" ">More info.</a>
+                        <br>
+                        <p style='text-align:center'>This website uses cookies to ensure you get the best experience on our website.
+                            <a onclick="toggleInfoPopup('privacy')">
+                            More Info
+                            </a>
                         </p>
-                        <button id="cookie-btn">Accept</button>
+                        <br>
+                        <button style='display: grid; margin:auto' id="cookie-btn">Accept</button>
+                        <br>
                     </div>
                 </div>
             </div>

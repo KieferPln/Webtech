@@ -808,6 +808,7 @@ select:hover {
     border: 3px solid rgba(102, 0, 255, 0.811);
     background-color: rgb(255, 255, 255);
     color: rgb(102, 0, 255, 0.811);
+    float:right;
 }
 
 @media(max-width:1600px){
