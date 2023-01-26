@@ -52,7 +52,7 @@ const togglePopup = () => {
         }).catch(err => console.log(err))
 
     }
-    else {>
+    else {
         popup.style.transform = "translateY(100%)"
         main.style.overflow = 'auto'
         emptyEventPopup()
