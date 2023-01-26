@@ -35,10 +35,4 @@ const getEvents = async () => {
     }
 }
 
-// getEvents().then(events => {
-//     const event = events.find((event) => event.eventid == 1)
-//     fillEventPopup(event)
-//     console.log(event)
-// }).catch(err => console.log(err))
-
 

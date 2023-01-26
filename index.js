@@ -204,13 +204,11 @@ const createEvent = (name, date, id) => {
     container.appendChild(eventName)
     container.appendChild(eventDate)
     container.addEventListener('click', () => { togglePopup(), currentEvent = id }, true);
-
     return container
 }
 
 const appendEvents = () => {
     getEvents().then(events => {
-        console.log(events)
         for (let i = 0; i < events.length; i++) {
             eventContainer.appendChild(createEvent(events[i].name, '0', events[i].eventid))
         }
