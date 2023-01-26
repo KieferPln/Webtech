@@ -12,7 +12,8 @@
         else{
             try{
                 $username = $_POST['username'];
-                $email = $_POST['new_email'];
+                $new_email = $_POST['new_email'];
+                $new_email_repeat = $_POST['new_email_repeat'];
                 $conn->setattribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
                 // Check if username or email already exists in the database
