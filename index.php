@@ -457,7 +457,16 @@
         <div class="pop-up-container" id="popup">
             <div></div>
 
-            <div id="map"></div>
+        <iframe
+            width="600"
+            height="450"
+            style="border:0"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCgChWZJFpPrN7BscHSIlp-obMXI1x-hTw
+                &q=Space+Needle,Seattle+WA">
+        </iframe>
             <div class="text-container">
                 <div class="pop-up-header">
                     <!-- _ Naam _ -->

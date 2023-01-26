@@ -170,11 +170,14 @@ const data = {
     the increase of probability of marine heatwaves. These heatwaves compound the regular dangers of \
     rising ocean temperatures. ' },
 
-    'Sources': { header: 'Sources', content:
-    'Content still needs to be added.'},
+    'Sources': {
+        header: 'Sources', content:
+            'Content still needs to be added.'
+    },
 
-    'privacy': { header: 'Privacy Statement', content:
-    "Our website uses cookies to enhance your browsing experience and gather information about how our site is used.\
+    'privacy': {
+        header: 'Privacy Statement', content:
+            "Our website uses cookies to enhance your browsing experience and gather information about how our site is used.\
     By continuing to use our site, you consent to our use of cookies in accordance with our privacy policy. \
     We use cookies to personalize content and ads, to provide social media features and to analyze our traffic. \
     We also share information about your use of our site with our social media, advertising and analytics partners \
@@ -184,6 +187,10 @@ const data = {
 
 }
 
+
+const changeMapsLocation = (location) => {
+
+}
 
 const eventContainer = document.getElementById('event-container')
 
@@ -210,7 +217,7 @@ const createEvent = (name, date, id) => {
 const appendEvents = () => {
     getEvents().then(events => {
         for (let i = 0; i < events.length; i++) {
-            eventContainer.appendChild(createEvent(events[i].name, '0', events[i].eventid))
+            eventContainer.appendChild(createEvent(events[i].name, events[i].date, events[i].eventid))
         }
     }).catch(err => console.log(err))
 }
