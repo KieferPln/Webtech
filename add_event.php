@@ -44,63 +44,6 @@ if(isset($_POST['add_new_event']))
         }
     }
 
-    /*if (isset($_POST['acidification'])) {
-        $subject = 'acidification'; 
-        $query2 = "INSERT INTO event_subjects (eventid, subject) VALUES (:eventid, :subject)";
-        $query_run2 = $conn->prepare($query2);
-        $data2 = [
-            ':eventid' => $eventid,
-            ':subject' => $subject,
-        ];
-        $query_execute2 = $query_run2->execute($data2);
-    }  
-
-    if (isset($_POST['eutrophication'])) {
-        $subject = 'eutrophication'; 
-        $query2 = "INSERT INTO event_subjects (eventid, subject) VALUES (:eventid, :subject)";
-        $query_run2 = $conn->prepare($query2);
-        $data2 = [
-            ':eventid' => $eventid,
-            ':subject' => $subject,
-        ];
-        $query_execute2 = $query_run2->execute($data2);
-    }  
-
-    if (isset($_POST['overfishing'])) {
-        $subject = 'overfishing'; 
-        $query2 = "INSERT INTO event_subjects (eventid, subject) VALUES (:eventid, :subject)";
-        $query_run2 = $conn->prepare($query2);
-        $data2 = [
-            ':eventid' => $eventid,
-            ':subject' => $subject,
-        ];
-        $query_execute2 = $query_run2->execute($data2);
-    }  
-
-    if (isset($_POST['pollution'])) {
-        $subject = 'pollution'; 
-        $query2 = "INSERT INTO event_subjects (eventid, subject) VALUES (:eventid, :subject)";
-        $query_run2 = $conn->prepare($query2);
-        $data2 = [
-            ':eventid' => $eventid,
-            ':subject' => $subject,
-        ];
-        $query_execute2 = $query_run2->execute($data2);
-    } 
-
-    if (isset($_POST['rising_temperatures'])) {
-        $subject = 'rising_temperatures'; 
-        $query2 = "INSERT INTO event_subjects (eventid, subject) VALUES (:eventid, :subject)";
-        $query_run2 = $conn->prepare($query2);
-        $data2 = [
-            ':eventid' => $eventid,
-            ':subject' => $subject,
-        ];
-        $query_execute2 = $query_run2->execute($data2);
-    }  
-    */
-
-
     // for table event_audience
     $audiences = array("academics", "policy_makers", "environmentalists", "concerned_citizens", "students");
     foreach($audiences as $target_audience) {
@@ -114,65 +57,6 @@ if(isset($_POST['add_new_event']))
             $query_execute = $query_run->execute($data);
         }
     }
-
-    /*
-    if (isset($_POST['academics'])) {
-        $target_audience = 'academics'; 
-        $query2 = "INSERT INTO event_audience (eventid, target_audience) VALUES (:eventid, :target_audience)";
-        $query_run2 = $conn->prepare($query2);
-        $data2 = [
-            ':eventid' => $eventid,
-            ':target_audience' => $target_audience,
-        ];
-        $query_execute2 = $query_run2->execute($data2);
-    }  
-
-    if (isset($_POST['policy_makers'])) {
-        $target_audience = 'policy_makers'; 
-        $query2 = "INSERT INTO event_audience (eventid, target_audience) VALUES (:eventid, :target_audience)";
-        $query_run2 = $conn->prepare($query2);
-        $data2 = [
-            ':eventid' => $eventid,
-            ':target_audience' => $target_audience,
-        ];
-        $query_execute2 = $query_run2->execute($data2);
-    }  
-
-    if (isset($_POST['environmentalists'])) {
-        $target_audience = 'environmentalists'; 
-        $query2 = "INSERT INTO event_audience (eventid, target_audience) VALUES (:eventid, :target_audience)";
-        $query_run2 = $conn->prepare($query2);
-        $data2 = [
-            ':eventid' => $eventid,
-            ':target_audience' => $target_audience,
-        ];
-        $query_execute2 = $query_run2->execute($data2);
-    }  
-
-    if (isset($_POST['concerned_citizens'])) {
-        $target_audience = 'concerned_citizens'; 
-        $query2 = "INSERT INTO event_audience (eventid, target_audience) VALUES (:eventid, :target_audience)";
-        $query_run2 = $conn->prepare($query2);
-        $data2 = [
-            ':eventid' => $eventid,
-            ':target_audience' => $target_audience,
-        ];
-        $query_execute2 = $query_run2->execute($data2);
-    }  
-
-    if (isset($_POST['students'])) {
-        $target_audience = 'students'; 
-        $query2 = "INSERT INTO event_audience (eventid, target_audience) VALUES (:eventid, :target_audience)";
-        $query_run2 = $conn->prepare($query2);
-        $data2 = [
-            ':eventid' => $eventid,
-            ':target_audience' => $target_audience,
-        ];
-        $query_execute2 = $query_run2->execute($data2);
-    }  
-    */
-
-
 }
 
 header("location: index.php")
