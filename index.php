@@ -457,17 +457,15 @@
         <div class="pop-up-container" id="popup">
             <div></div>
 
-        <iframe
+            <iframe
             width="600"
             height="450"
             style="border:0"
             loading="lazy"
             allowfullscreen
             referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCgChWZJFpPrN7BscHSIlp-obMXI1x-hTw
-                &q=Space+Needle,Seattle+WA">
-        </iframe>
-        
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDXSG_YOOUXxeFLXwEREWCCaPPnIead_EI&q=Space+Needle,Seattle+WA">
+            </iframe>
             <div class="text-container">
                 <div class="pop-up-header">
                     <!-- _ Naam _ -->
