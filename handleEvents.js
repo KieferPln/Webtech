@@ -30,11 +30,10 @@ const getTagsByEventId = async (id) => {
     const response = await fetch("fetch_subjects.php");
     console.log('ok')
     const data = await response.json();
-    if (!data) {
-        return getTagsByEventId();
-    } else {
-        return data.filter((tag) => tag.eventid === id);
-    }
+
+    if (!data) return getTagsByEventId();
+    return data.filter((tag) => tag.eventid == id);
+
 }
 
 const getEvents = async () => {
