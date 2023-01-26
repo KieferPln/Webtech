@@ -187,18 +187,6 @@ const data = {
 
 const eventContainer = document.getElementById('event-container')
 
-{/* <div class="event" onclick="togglePopup()">
-                        <span class=" circle"></span>
-                        <div class="name">
-                            Ms. Jones
-                        </div>
-                        <div class="date">
-                            16-05-22
-                        </div>
-                    </div> */}
-
-
-
 const createEvent = (name, date, id) => {
     const container = document.createElement('div')
     const circle = document.createElement('span')
