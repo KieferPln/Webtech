@@ -58,6 +58,11 @@
                             Sign Up
                         </a>
                     </div>
+                    <div id="buttons">
+                        <a href="../index.php" id="sign-up">
+                            Return to homepage
+                        </a>
+                    </div>
                 </div>
             </form>
         </div>
