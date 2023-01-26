@@ -1,5 +1,5 @@
 <?php
-require('./connection.php');
+require('../connection.php');
 session_start();
 $sql = $conn->prepare('SELECT * FROM events_subjects');
 $sql->execute();
