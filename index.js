@@ -1,19 +1,19 @@
+var currentEvent = 0
 let popup = document.getElementById('popup')
 let nav = document.getElementById('nav')
 let infoPopup = document.getElementById('info-popup')
 let blurdiv = document.getElementById('blur')
 let addEventPopup = document.getElementById('add-event-popup')
 let info = document.getElementById('info')
+var bubbleCount = 0
 
 const getRectTopById = (id) => {
-    console.log(document.getElementById(id).offsetTop)
     return document.getElementById(id).offsetTop - nav.clientHeight;
 }
 
 const scrollTo = (top) => {
     main.scrollTop = top
 }
-
 
 let nav_events = document.getElementById('nav_events')
 nav_events.addEventListener('click', () => scrollTo(getRectTopById('events')), true);
@@ -44,10 +44,17 @@ const togglePopup = () => {
     if (!popupIsTriggered) {
         popup.style.transform = "translateY(0%)"
         main.style.overflow = 'hidden'
+
+        getEvents().then(events => {
+            const event = events.find((event) => event.eventid == currentEvent)
+            fillEventPopup(event)
+        }).catch(err => console.log(err))
+
     }
     else {
         popup.style.transform = "translateY(100%)"
         main.style.overflow = 'auto'
+        emptyEventPopup()
     }
     popupIsTriggered = !popupIsTriggered
 }
@@ -96,8 +103,9 @@ const removeInfoText = (type) => {
 }
 
 const data = {
-    'Pollution': { header: 'Pollution', content: 
-    "Due to an increase in plastic consumption and ineffective waste management strategies, more \
+    'Pollution': {
+        header: 'Pollution', content:
+            "Due to an increase in plastic consumption and ineffective waste management strategies, more \
     plastic than ever is ending up in the ocean. Of all the waste that finds its way to the ocean, 85% \
     is plastic. In 2021, more than 17 million metric tons of plastic entered the ocean. Instead of \
     becoming less, this number is projected to double or triple by 2040. \
@@ -108,15 +116,17 @@ const data = {
     The complete dangers of microplastics are still unknown, but it is clear that they find their way \
     into our food and water supplies, and eventually into our bodies." },
 
-    'Overfishing': { header: 'Overfishing', content:
-    "Overfishing has the obvious consequence of reducing population levels of marine life, thereby \
+    'Overfishing': {
+        header: 'Overfishing', content:
+            "Overfishing has the obvious consequence of reducing population levels of marine life, thereby \
     threatening overfished species with extinction. This threatens food supplies and entire marine \
     ecosystems. Another consequence is that overfishing impacts the ability the ocean has to store \
     carbon, which is a crucial part of climate change mitigation (as mentioned in the 'rising \
     temperatures' section)."},
 
-    'Eutrophication': { header: 'Eutrophication', content:
-    "Eutrophication occurs when nutrients are added to the environment. This is predominantly caused by \
+    'Eutrophication': {
+        header: 'Eutrophication', content:
+            "Eutrophication occurs when nutrients are added to the environment. This is predominantly caused by \
     washout of agricultural fertilizers which are rich in phosphorus and nitrogen. Other possible causes \
     are sewage disposal and the intentional adding of nutrients to attract economically or \
     recreationally important marine species. These added nutrients cause an increase in algae and plant \
@@ -128,17 +138,19 @@ const data = {
     An example of a dead zone is along the Gulf Coast of the United States. In 2021, this area \
     was 16.405 square kilometers. Another example is along the coast of Chili, where in 2016 23 million \
     dead salmon washed ashore. This was attributed to algae blooms, caused by eutrophication." },
-    
-    'Acidification': { header: 'Acidification', content: 
-    "A quarter of annual carbon emissions are absorbed by the ocean. This reduces the immediate impact of \
+
+    'Acidification': {
+        header: 'Acidification', content:
+            "A quarter of annual carbon emissions are absorbed by the ocean. This reduces the immediate impact of \
     climate change. However, it also causes the ocean to increase in acidity. This poses a danger to \
     marine ecosystems, fisheries, and coastal protection due to reduction of coral reefs. It is \
     projected that acidification will increase in coming years. This is not only problematic due to the \
     aforementioned reasons, it also reduces the ocean's ability to absord carbon emissions in the \
     future, thereby worsening climate change." },
 
-    'Temperatures': { header: 'Temperatures', content:
-    'Ocean temperatures are rising because they absorb the largest part of the excess energy and heat \
+    'Temperatures': {
+        header: 'Temperatures', content:
+            'Ocean temperatures are rising because they absorb the largest part of the excess energy and heat \
     from greenhouse gas emissions. It is estimated that oceans have absorbed approxiamately 90% of \
     warmth created by increased emissions. This comes with several risks. First of all, rising ocean \
     temperature causes polar ice to melt, which in turn causes sea-levels to rise. Rising ocean levels \
@@ -159,32 +171,63 @@ const data = {
     rising ocean temperatures. ' },
 
     'Sources': { header: 'Sources', content:
-    'Content still needs to be added.'
-    }
+    'Content still needs to be added.'},
+
+    'privacy': { header: 'Privacy Statement', content:
+    "Our website uses cookies to enhance your browsing experience and gather information about how our site is used.\
+    By continuing to use our site, you consent to our use of cookies in accordance with our privacy policy. \
+    We use cookies to personalize content and ads, to provide social media features and to analyze our traffic. \
+    We also share information about your use of our site with our social media, advertising and analytics partners \
+    who may combine it with other information that you've provided to them or that they've collected from your use of their services. \
+    You can control the use of cookies at the individual browser level, but if you choose to disable cookies, it may limit your use of certain features or functions on our website. \
+    Our privacy policy is subject to change and updates without notice. You can access our privacy policy at any time by visiting our website."},
+
 }
 
-function fetchEvents(){
-    fetch("fetch-events.php")
-        .then((response) => {
-            if(!response.ok){ // Before parsing (i.e. decoding) the JSON data,
-                              // check for any errors.
-                // In case of an error, throw.
-                throw new Error("Something went wrong!");
-            }
-          
-            return response.json(); // Parse the JSON data.
-        })
-        .then((data) => {
-             // This is where you handle what to do with the response.
-              // Will alert: 42
-              console.log(data)
-        })
-        .catch((error) => {
-             alert(error)
-        });
+
+const eventContainer = document.getElementById('event-container')
+
+{/* <div class="event" onclick="togglePopup()">
+                        <span class=" circle"></span>
+                        <div class="name">
+                            Ms. Jones
+                        </div>
+                        <div class="date">
+                            16-05-22
+                        </div>
+                    </div> */}
+
+
+
+const createEvent = (name, date, id) => {
+    const container = document.createElement('div')
+    const circle = document.createElement('span')
+    const eventName = document.createElement('div')
+    const eventDate = document.createElement('div')
+    const titleNode = document.createTextNode(name)
+    const dateNode = document.createTextNode(date)
+    container.classList.add('event')
+    eventDate.classList.add('date')
+    circle.classList.add('circle')
+    eventName.classList.add('name')
+    eventName.appendChild(titleNode)
+    eventDate.appendChild(dateNode)
+    container.appendChild(circle)
+    container.appendChild(eventName)
+    container.appendChild(eventDate)
+    container.addEventListener('click', () => { togglePopup(), currentEvent = id }, true);
+
+    return container
 }
 
-console.log(fetchEvents())
+const appendEvents = () => {
+    getEvents().then(events => {
+        console.log(events)
+        for (let i = 0; i < events.length; i++) {
+            eventContainer.appendChild(createEvent(events[i].name, '0', events[i].eventid))
+        }
+    }).catch(err => console.log(err))
+}
 
-
+appendEvents()
 
