@@ -45,7 +45,8 @@ const togglePopup = () => {
         popup.style.transform = "translateY(0%)"
         main.style.overflow = 'hidden'
 
-        getEventsById(currentEvent).then(event => {
+        getEvents().then(events => {
+            const event = events.find((event) => event.eventid == currentEvent)
             getTagsByEventId(event.eventid).then(tags => {        
                 fillEventPopup(event,tags)
             }).catch(err => console.log(err))

@@ -27,20 +27,14 @@ const createTag = (name) => {
 }
 
 const getTagsByEventId = async (id) => {
-    const response = await fetch("fetch-tags.php");
+    const response = await fetch("fetch_subjects.php");
+    console.log('ok')
     const data = await response.json();
-
-    if (!data) return getTagsByEventId();
-    return data.filter((tag) => tag.eventid == id);
-
-}
-
-const getEventsById = async (id) => {
-    const response = await fetch("fetch-events.php");
-    const data = await response.json();
-
-    if (!data) return getResult();
-    return data.filter((event) => event.eventid === id);
+    if (!data) {
+        return getTagsByEventId();
+    } else {
+        return data.filter((tag) => tag.eventid === id);
+    }
 }
 
 const getEvents = async () => {
@@ -48,5 +42,7 @@ const getEvents = async () => {
     const data = await response.json();
 
     if (!data) return getResult();
-    return data
+    return data;
 }
+
+
