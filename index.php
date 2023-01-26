@@ -442,13 +442,13 @@
                 <h2 style="margin-top: var(--gutter-m); text-align:center">About Us</h2> 
                 <br>
                 <p style="float:right" class="about-us-maps" id="map"></p>   
-                <p>Welcome to our website, created by a group of five first-year students studying Artificial Intelligence at the University of Amsterdam.</p>
-                <p>Our names are Daan Keller, Colin de Koning, Kiefer Plender, Julius de Groot & Milan Tool.</p>
+                <p style='font-weight:300'>Welcome to our website, created by a group of five first-year students studying Artificial Intelligence at the University of Amsterdam.</p>
+                <p style='font-weight:300'>Our names are Daan Keller, Colin de Koning, Kiefer Plender, Julius de Groot & Milan Tool.</p>
                 <br>
-                <p>Our website is dedicated to raising awareness about the United Nations' Sustainable Development Goal 14: 'Life Below Water.'</p>
-                <p>Here, you will find information about current problems facing our oceans and the risks they pose to marine life and human communities.</p>
-                <p>We created this website from scratch as a way to educate and inform the public about the importance of protecting our oceans.</p>
-                <p>Join us in our mission to conserve and sustainably use the oceans, seas, and marine resources for sustainable development by educating yourself on this topic.</p>
+                <p style='font-weight:300'>Our website is dedicated to raising awareness about the United Nations' Sustainable Development Goal 14: 'Life Below Water.'</p>
+                <p style='font-weight:300'>Here, you will find information about current problems facing our oceans and the risks they pose to marine life and human communities.</p>
+                <p style='font-weight:300'>We created this website from scratch as a way to educate and inform the public about the importance of protecting our oceans.</p>
+                <p style='font-weight:300'>Join us in our mission to conserve and sustainably use the oceans, seas, and marine resources for sustainable development by educating yourself on this topic.</p>
                 <p>You've visited this website 
             </div>
         </div>
@@ -457,15 +457,20 @@
         <div class="pop-up-container" id="popup">
             <div></div>
 
-            <div id="map"></div>
+            <iframe
+            width="600"
+            height="450"
+            style="border:0"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDXSG_YOOUXxeFLXwEREWCCaPPnIead_EI&q=Space+Needle,Seattle+WA">
+            </iframe>
             <div class="text-container">
                 <div class="pop-up-header">
                     <!-- _ Naam _ -->
                     <h3 id='event-name'></h3>
-                    <!-- _ Tags _ -->
-                    <div class="tag">Tag</div>
-                    <div class="tag">Water</div>
-                    <div class="tag">Muziek</div>
+                    <div id="event-tags"></div>
                 </div>
 
                 <!-- _ Omschrijving _ -->
@@ -481,7 +486,7 @@
             </div>
             <div class="button-container">
                 <button class="close-button" onclick="togglePopup()">
-                    <span class="cross-line" style="transform: rotate(-45deg);""></span>
+                    <span class="cross-line" style="transform: rotate(-45deg);"></span>
                         <span class=" cross-line" style="transform: rotate(45deg);"></span>
                 </button>
                 <button class="sign-up-button">

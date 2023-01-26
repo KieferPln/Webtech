@@ -45,9 +45,10 @@ const togglePopup = () => {
         popup.style.transform = "translateY(0%)"
         main.style.overflow = 'hidden'
 
-        getEvents().then(events => {
-            const event = events.find((event) => event.eventid == currentEvent)
-            fillEventPopup(event)
+        getEventsById(currentEvent).then(event => {
+            getTagsByEventId(event.eventid).then(tags => {        
+                fillEventPopup(event,tags)
+            }).catch(err => console.log(err))
         }).catch(err => console.log(err))
 
     }
@@ -157,8 +158,7 @@ const data = {
     are a risk to coastal areas. This is caused by the increased chance of extreme events such as \
     coastal flooding, landslides and erosion. Not only the 2 billion people living in coastal areas are \
     at risk. All life in coastal areas is under threat from rising sea levels. Second, rising \
-    temperatures also cause loss of marine biodiversity and damage to marine ecosystems in non-coastal \
-    areas. The UN has estimated that 60% of marine ecosystems are currently being used in an \
+    temperatu(getTagsByEventId(e UN has estimated that 60% of marine ecosystems are currently being used in an \
     unsustainable way or are otherwise degrading. Even worse, they estimate that half of marine species \
     may be facing extinction by 2100.\n \
     \n \
@@ -170,11 +170,14 @@ const data = {
     the increase of probability of marine heatwaves. These heatwaves compound the regular dangers of \
     rising ocean temperatures. ' },
 
-    'Sources': { header: 'Sources', content:
-    'Content still needs to be added.'},
+    'Sources': {
+        header: 'Sources', content:
+            'Content still needs to be added.'
+    },
 
-    'privacy': { header: 'Privacy Statement', content:
-    "Our website uses cookies to enhance your browsing experience and gather information about how our site is used.\
+    'privacy': {
+        header: 'Privacy Statement', content:
+            "Our website uses cookies to enhance your browsing experience and gather information about how our site is used.\
     By continuing to use our site, you consent to our use of cookies in accordance with our privacy policy. \
     We use cookies to personalize content and ads, to provide social media features and to analyze our traffic. \
     We also share information about your use of our site with our social media, advertising and analytics partners \
@@ -184,6 +187,10 @@ const data = {
 
 }
 
+
+const changeMapsLocation = (location) => {
+
+}
 
 const eventContainer = document.getElementById('event-container')
 
@@ -204,15 +211,14 @@ const createEvent = (name, date, id) => {
     container.appendChild(eventName)
     container.appendChild(eventDate)
     container.addEventListener('click', () => { togglePopup(), currentEvent = id }, true);
-
+    
     return container
 }
 
 const appendEvents = () => {
     getEvents().then(events => {
-        console.log(events)
         for (let i = 0; i < events.length; i++) {
-            eventContainer.appendChild(createEvent(events[i].name, '0', events[i].eventid))
+            eventContainer.appendChild(createEvent(events[i].name, events[i].date, events[i].eventid))
         }
     }).catch(err => console.log(err))
 }
