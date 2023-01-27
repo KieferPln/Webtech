@@ -29,7 +29,7 @@ session_start()
             <p style="border-bottom: 1px solid rgb(239, 239, 239); padding-bottom: .5em; padding-left: .2em ;">
                 Sign Up</p>
 
-            <input type="username" placeholder="Username" name="username"/>
+            <input type="username" placeholder="Username" name="username" maxlength="27"/>
             <input type="email" placeholder="Email" name="email"/>
             <input type="password" placeholder="Password" name="password"/>
             <input type="password" placeholder="Confirm Password" name="confirm_password"/>

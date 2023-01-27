@@ -45,6 +45,14 @@
 					$password = hash('sha256', $_POST['password']);
 					$conn->setattribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
+					// Check if the username is too long
+					if (strlen($username) > 27) {
+						// Store error message in a session variable
+						$_SESSION['error_msg'] = "Username is too long, please choose a shorter one!";
+						// Redirect to registration page
+						header('location: ./register.php');
+						exit();
+					}
 					// Check if username or email already exists in the database
 					$stmt = $conn->prepare("SELECT * FROM `users` WHERE `username` = :username OR `email` = :email");
 					$stmt->bindParam(':username', $username);
