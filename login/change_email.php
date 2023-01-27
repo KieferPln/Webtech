@@ -45,6 +45,12 @@
                 <div class="button-container">
                     <button id="sign-in" name="change_email">Change Email</button>
                     <div id="buttons">
+                        <p>Change password instead? </p>
+                        <a href="./change_password.php" id="sign-up">
+                            Click Here
+                        </a>
+                    </div>
+                    <div id="buttons">
                         <a href="../index.php" id="sign-up">
                             Return to homepage
                         </a>

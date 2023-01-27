@@ -31,13 +31,13 @@ if(ISSET($_POST['change_password'])){
                 
             } else{
                 // Store error message in a session variable
-                $_SESSION['error_message'] = "Incorrect current password.";
+                $_SESSION['error_message'] = "Incorrect current password!";
                 header('location: change_password.php');
             }
         
         }
         else {
-            $_SESSION['error_message'] = "New passwords don't match.";
+            $_SESSION['error_message'] = "New passwords don't match!";
             header('location: change_password.php');
         }
     }

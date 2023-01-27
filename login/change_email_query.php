@@ -5,7 +5,7 @@
 	// Start of the database entry
 	if(ISSET($_POST['change_email'])){
 		if($_POST['new_email'] != $_POST['new_email_repeat']){
-			$_SESSION['error_message'] = "The addresses you entered don't match.";
+			$_SESSION['error_message'] = "The emails you entered don't match!";
 				// Redirect to previous page
 				header('location: change_email.php');
 		}
@@ -18,7 +18,7 @@
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':username', $username);
             $stmt->execute();
-			$_SESSION['succes_message'] = "Address succesfully changed.";
+			$_SESSION['succes_message'] = "Email succesfully changed!";
             header('location: change_email.php');
             }
         }
