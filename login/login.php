@@ -48,7 +48,7 @@
                 <p
                     style=" border-bottom: 1px solid rgb(239, 239, 239); padding-bottom: .5em; padding-left: .2em ; font-weight: 500;">
                     Log In</p>
-				    <input type="text" placeholder="Username" name="username" />
+				    <input type="text" placeholder="Username" name="username" maxlength="27"/>
 				    <input type="password" placeholder="Password" name="password" />
                 <div class="button-container">
                     <button id="sign-in" name="login">Log In</button>
