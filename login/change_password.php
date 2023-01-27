@@ -39,12 +39,12 @@
             <form action="change_password_query.php" method="POST">
                 <p
                     style=" border-bottom: 1px solid rgb(239, 239, 239); padding-bottom: .5em; padding-left: .2em ; font-weight: 500;">
-                    Change password</p>
-				    <input type="password" placeholder="Old password" name="old_password" required/>
-				    <input type="password" placeholder="New password" name="new_password" required/>
-                    <input type="password" placeholder="Repeat new password" name="new_password_repeat" required/>
+                    Change Password</p>
+				    <input type="password" placeholder="Old Password" name="old_password" required/>
+				    <input type="password" placeholder="New Password" name="new_password" required/>
+                    <input type="password" placeholder="Repeat New Password" name="new_password_repeat" required/>
                 <div class="button-container">
-                    <button id="sign-in" name="change_password">Change password</button>
+                    <button id="sign-in" name="change_password">Change Password</button>
                     <div id="buttons">
                         <a href="../index.php" id="sign-up">
                             Return to homepage

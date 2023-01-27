@@ -39,11 +39,11 @@
             <form action="change_email_query.php" method="POST">
                 <p
                     style=" border-bottom: 1px solid rgb(239, 239, 239); padding-bottom: .5em; padding-left: .2em ; font-weight: 500;">
-                    Change email</p>
-				    <input type="text" placeholder="New email" name="new_email" required/>
-				    <input type="text" placeholder="Repeat new email" name="new_email_repeat" required/>
+                    Change Email</p>
+				    <input type="text" placeholder="New Email" name="new_email" required/>
+				    <input type="text" placeholder="Repeat New Email" name="new_email_repeat" required/>
                 <div class="button-container">
-                    <button id="sign-in" name="change_email">Change email</button>
+                    <button id="sign-in" name="change_email">Change Email</button>
                     <div id="buttons">
                         <a href="../index.php" id="sign-up">
                             Return to homepage

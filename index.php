@@ -37,8 +37,8 @@
                     <i class="gg-user"></i> <?php echo $_SESSION['username']?>
                 </button>
                 <div class="dropdown-content">
-                    <a href="../login/change_password.php">Change password</a>
-                    <a href="../login/change_email.php">Change email</a>
+                    <a href="../login/change_password.php">Change Password</a>
+                    <a href="../login/change_email.php">Change Email</a>
                     <a href="logout.php">Log Out</a>
                 </div>
                 <!--<div class="sign-up-button">
