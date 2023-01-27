@@ -31,7 +31,7 @@ if(isset($_POST['add_new_event']))
     $eventid = $conn->lastInsertId();
 
     // for table event_subjects
-    $subjects = array("acidification", "eutrophication", "overfishing", "pollution", "rising_temperatures");
+    $subjects = array("Acidification", "Eutrophication", "Overfishing", "Pollution", "Rising Temperatures");
     foreach($subjects as $subject) {
         if (isset($_POST[$subject])) {
             $query = "INSERT INTO event_subjects (eventid, subject) VALUES (:eventid, :subject)";

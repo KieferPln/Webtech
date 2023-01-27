@@ -389,24 +389,24 @@
                     <div class="subjects-container">
                         <label style="font-weight: 500;" for="location">Subjects</label>
                         <div class="row">
-                            <input name="pollution" type="checkbox" value="pollution" placeholder="polluton">
-                            <label for="pollution">Pollution</label>
+                            <input name="Pollution" type="checkbox" value="Pollution" placeholder="Pollution">
+                            <label for="Pollution">Pollution</label>
                         </div>
                         <div class="row">
-                            <input name="acidification" type="checkbox" value="acidification">
-                            <label for="acidification">Acidification</label>
+                            <input name="Acidification" type="checkbox" value="Acidification">
+                            <label for="Acidification">Acidification</label>
                         </div>
                         <div class="row">
-                            <input name="rising_temperatures" type="checkbox" value="rising_temperatures">
-                            <label for="rising_temperatures">Rising temperatures</label>
+                            <input name="Rising Temperatures" type="checkbox" value="Rising Temperatures">
+                            <label for="Rising Temperatures">Rising Temperatures</label>
                         </div>
                         <div class="row">
-                            <input name="eutrophication" type="checkbox" value="eutrophication">
-                            <label for="eutrophication">Eutrophication</label>
+                            <input name="Eutrophication" type="checkbox" value="Eutrophication">
+                            <label for="Eutrophication">Eutrophication</label>
                         </div>
                         <div class="row">
-                            <input name="overfishing" type="checkbox" value="overfishing">
-                            <label for="overfishing">Overfishing</label>
+                            <input name="Overfishing" type="checkbox" value="Overfishing">
+                            <label for="Overfishing">Overfishing</label>
                         </div>
                     </div>
                     <div class="subjects-container">
