@@ -441,7 +441,14 @@
             <div id="about_us">
                 <h2 style="margin-top: var(--gutter-m); text-align:center">About Us</h2> 
                 <br>
-                <p style="float:right" class="about-us-maps" id="map"></p>   
+            <iframe
+            loading="lazy"
+            allowfullscreen
+                    width=200,
+                    heigth=200
+            referrerpolicy="no-referrer-when-downgrade"
+            src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyDXSG_YOOUXxeFLXwEREWCCaPPnIead_EI&q=52.3538275,4.956128">
+            </iframe>
                 <p style='font-weight:300'>Welcome to our website, created by a group of five first-year students studying Artificial Intelligence at the University of Amsterdam.</p>
                 <p style='font-weight:300'>Our names are Daan Keller, Colin de Koning, Kiefer Plender, Julius de Groot & Milan Tool.</p>
                 <br>
@@ -458,13 +465,11 @@
             <div></div>
 
             <iframe
-            width="600"
-            height="450"
-            style="border:0"
             loading="lazy"
             allowfullscreen
+            id="iframe-maps"
             referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDXSG_YOOUXxeFLXwEREWCCaPPnIead_EI&q=Space+Needle,Seattle+WA">
+            src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyDXSG_YOOUXxeFLXwEREWCCaPPnIead_EI&q=Space+Needle,Seattle+WA">
             </iframe>
             <div class="text-container">
                 <div class="pop-up-header">
