@@ -42,11 +42,14 @@ window.addEventListener("load", cookieMessage);
 // COOKIES-BUBBLECOUNTER
 
 function addCountToCookie(count) {
-    var d = new Date();
-    d.setTime(d.getTime() + (365*24*60*60*1000));
-    var expires = "expires="+ d.toUTCString();
-    document.cookie = "bubbleCount=" + count + ";" + expires + ";path=/";
+    if(getCookie("cookie") === "true") {
+        var d = new Date();
+        d.setTime(d.getTime() + (365*24*60*60*1000));
+        var expires = "expires="+ d.toUTCString();
+        document.cookie = "bubbleCount=" + count + ";" + expires + ";path=/";
+    }
 }
+
 
 function getCountFromCookie() {
     var name = "bubbleCount=";
@@ -63,3 +66,28 @@ function getCountFromCookie() {
     }
     return "";
 }
+
+// DECLINE BUTTON
+
+document.querySelector("#decline-btn").addEventListener("click", () => {
+    document.querySelector("#cookies").style.display = "none";
+    });
+
+    cookieMessage = () => {
+        if(!getCookie("cookie"))
+            document.querySelector("#cookies").style.display = "block";
+        else if(getCookie("cookie") === "true") {
+            let visits = parseInt(getCookie("visits")) + 1;
+            setCookie("visits", visits, 365);
+        }
+        document.querySelector("#decline-btn").addEventListener("click", () => {
+            document.querySelector("#cookies").style.display = "none";
+            setCookie("cookie", false, 30);
+        });
+    }
+
+    document.querySelector("#decline-btn").addEventListener("click", () => {
+        document.querySelector("#cookies").style.display = "none";
+        setCookie("bubbleCount", 0, 365);
+    });
+    

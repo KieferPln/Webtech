@@ -76,12 +76,16 @@
                             </a>
                         </p>
                         <br>
-                        <button style='display: grid; margin:auto; color:black; font-weight:bold' id="cookie-btn">Accept</button>
+                        <div class="cookie-btns">
+                            <button style='display: grid; margin:auto; color:black; font-weight:bold' id="cookie-btn">Accept</button>
+                            <button style='display: grid; margin:auto; color:black; font-weight:bold' id="decline-btn">Decline</button>
+                        </div>
                         <br>
                     </div>
                 </div>
             </div>
         </div>
+
         <script src="cookies.js"></script>
         <div id="content">
 

@@ -829,7 +829,14 @@ select:hover {
     text-decoration: none;
 }
 
-#cookie-btn {
+.cookie-btns {
+    display: flex;
+    justify-content: center;
+    width: 15%;
+    margin: auto;
+}
+
+#cookie-btn, #decline-btn {
     border-radius: 5px;
     padding: 8px 12px 8px 12px;
     font-size: 1rem;
@@ -838,7 +845,9 @@ select:hover {
     border: 3px solid rgba(102, 0, 255, 0.811);
     background-color: rgb(255, 255, 255);
     color: rgb(102, 0, 255, 0.811);
+    margin: 0 5px 0 5px;
 }
+
 
 @media(max-width:1600px) {
     .cookie-container {
