@@ -269,6 +269,9 @@ const changeMapsLocation = (location) => {
 const eventContainer = document.getElementById('event-container')
 const favoriteButton = document.getElementById('favorite-button')
 
+// dit is alleen om overzichtelijk bij Upcoming Events te laten zien dat het toevoegen en verwijderen
+// van events bij favorieten werkt. kan er in principe uit voor we inleveren maar kan misschien 
+// ergens anders voor worden gebruikt.
 $.ajax({
     url: "fetch-favorites.php",
     type: "GET",
@@ -281,8 +284,8 @@ $.ajax({
     }
 }); 
 
-
 const toggleFavorite = (eventid, button) => {
+    // AJAX call to remove the event if it is a favorite or add if it isn't
     $.ajax({
         url: "toggle-favorite.php",
         type: "POST",
@@ -290,6 +293,7 @@ const toggleFavorite = (eventid, button) => {
         success: function(response) {
             console.log(response);
             const img = button.querySelector('img');
+            // switch the image to reflect the updated favorite-status
             if (img.src.endsWith('cross.svg')) {
                 img.src = 'check.svg';
             } else if (img.src.endsWith('check.svg')) {
@@ -335,7 +339,7 @@ const appendEvents = () => {
         type: "GET",
         dataType: "json",
         success: function(response) {
-            // if they are logged in, show the favorites button along with the events
+            // if they are logged in, get the user's favorites
             if (response.loggedIn) {
                 $.ajax({
                     url: "fetch-favorites.php",
@@ -348,6 +352,7 @@ const appendEvents = () => {
     
                         getEvents().then(events => {
                             for (let i = 0; i < events.length; i++) {
+                                // only show the favorite button if the user is logged in
                                 const favorite_button = document.createElement('button');
                                 favorite_button.type="button";
                                 const favorite_img = document.createElement('img');
@@ -361,8 +366,10 @@ const appendEvents = () => {
                                 edit_button.type="button";
                                 const edit_img = document.createElement('img');
                                 edit_img.src = 'edit.png';
+                                // only show the edit_button if the logged in user is the admin
                                 if (response.isAdmin) {
                                     edit_button.appendChild(edit_img);
+                                    eventContainer.appendChild(edit_button);
                                 }
                                 favorite_button.appendChild(favorite_img);
                                 favorite_button.addEventListener('click', () => toggleFavorite(events[i].eventid, favorite_button));                    
@@ -370,13 +377,12 @@ const appendEvents = () => {
                                 eventContainer.appendChild(favorite_button);
                                 edit_button.classList.add("edit-button");
                                 edit_button.addEventListener('click', () => toggleAddEventPopup(events[i].eventid));
-                                eventContainer.appendChild(edit_button);
                                 eventContainer.appendChild(createEvent(events[i].name, events[i].date, events[i].eventid));
                             }
                         }).catch(err => console.log(err))
                     }
                 });
-            // if they aren't logged in, only show the events
+            // if they aren't logged in, only show the events without favorite/edit button
             } else {
                 getEvents().then(events => {
                     for (let i = 0; i < events.length; i++) {
