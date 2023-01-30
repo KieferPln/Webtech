@@ -95,34 +95,13 @@ function debounce(func) {
     };
 }
 
-function connect() {
-    for (let a = 0; a < particlesArray.length; a++) {
-
-        for (let b = a; b < particlesArray.length; b++) {
-
-            let distance = getDistance(particlesArray[a].x, particlesArray[a].y, particlesArray[b].x, particlesArray[b].y)
-
-            if (distance < .9 * (canvas.height / 7)) {
-                ctx.strokeStyle = 'rgba(255,255,255,0.2)'
-                ctx.lineWidth = 1
-                ctx.beginPath();
-                ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                ctx.stroke()
-            };
-        }
-    }
-}
-
 function animate() {
     requestAnimationFrame(animate)
     ctx.clearRect(0, 0, innerWidth, innerHeight);
 
     for (let i = 0; i < particlesArray.length; i++) {
         particlesArray[i].update()
-
     }
-    connect()
 }
 
 // resize event

@@ -192,9 +192,10 @@
                 <p id='event-description'></p>
 
                 <!-- _ Doelgroep _ -->
-                <p style="font-size: .9em; font-weight: 600;">
+                <!-- <p style="font-size: .9em; font-weight: 600;">
                     Dit is een doelgroep
-                </p>
+                </p> -->
+                <p id='event-audience'></p>
             </div>
             <div class="button-container">
                 <button class="close-button" onclick="togglePopup()">
