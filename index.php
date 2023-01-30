@@ -22,8 +22,7 @@
 <body>
     <div class="main" id="main">
         <div class="header" id="header" style="padding: var(--gutter-l);">
-            <p style="position: absolute; font-size: .6em; opacity: .5; top: var(--gutter-l);">Click anywhere to create
-                bubbles!</p>
+            <p style="position: absolute; font-size: .6em; opacity: .5; top: var(--gutter-l);">Click anywhere to create bubbles! <br><br> <span id="bubble-count"></span></p>
             <div class="login-container">
                 <?php if(!isset($_SESSION['username'])) : ?>
                 <button class="login" onclick="window.location.href='./login/login.php';">

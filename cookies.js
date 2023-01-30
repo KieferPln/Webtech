@@ -21,10 +21,10 @@ document.querySelector("#cookie-btn").addEventListener("click", () => {
     document.querySelector("#cookies").style.display = "none";
     setCookie("cookie", true, 30);
     if (!getCookie("visits")) {
-        setCookie("visits", 1, 365);
+        setCookie("visits", 1, 30);
     } else {
         let visits = parseInt(getCookie("visits")) + 1;
-        setCookie("visits", visits, 365);
+        setCookie("visits", visits, 30);
     }
 });
 
@@ -33,7 +33,7 @@ cookieMessage = () => {
         document.querySelector("#cookies").style.display = "block";
     else if(getCookie("cookie") === "true") {
         let visits = parseInt(getCookie("visits")) + 1;
-        setCookie("visits", visits, 365);
+        setCookie("visits", visits, 30);
     }
 }
 
@@ -41,14 +41,21 @@ window.addEventListener("load", cookieMessage);
 
 // COOKIES-BUBBLECOUNTER
 
-function addCountToCookie(count) {
-    if(getCookie("cookie") === "true") {
-        var d = new Date();
-        d.setTime(d.getTime() + (365*24*60*60*1000));
-        var expires = "expires="+ d.toUTCString();
-        document.cookie = "bubbleCount=" + count + ";" + expires + ";path=/";
+ //checks if the value of "cookie" is true or false. 
+
+ function acceptedCookies() {
+    const cookieValue = getCookie("cookie");
+    return cookieValue === "true";
+  }
+
+  function addCountToCookie(count) {
+    if (acceptedCookies()) {
+      var d = new Date();
+      d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000));
+      var expires = "expires=" + d.toUTCString();
+      document.cookie = "bubbleCount=" + count + ";" + expires + ";path=/";
     }
-}
+  }
 
 
 function getCountFromCookie() {
@@ -67,6 +74,24 @@ function getCountFromCookie() {
     return "";
 }
 
+  function displayBubbleCount() {
+    const bubbleCount = getCountFromCookie();
+    const bubbleCountDisplay = document.getElementById("bubble-count");
+    if (!acceptedCookies()) {
+      bubbleCountDisplay.innerHTML = "accept the cookies to see how many bubbles you have created!";
+    } else if (bubbleCount === 0) {
+      bubbleCountDisplay.innerHTML = "you have not made any bubbles yet!";
+    } else if (bubbleCount === 1) {
+      bubbleCountDisplay.innerHTML = "you have made <b>1</b> bubble!";
+    } else {
+      bubbleCountDisplay.innerHTML = `you have made <b>${bubbleCount}</b> bubbles!`;
+    }
+  }
+  
+  // Call the function when the page is loaded
+  displayBubbleCount();
+
+
 // DECLINE BUTTON
 
 document.querySelector("#decline-btn").addEventListener("click", () => {
@@ -78,7 +103,7 @@ document.querySelector("#decline-btn").addEventListener("click", () => {
             document.querySelector("#cookies").style.display = "block";
         else if(getCookie("cookie") === "true") {
             let visits = parseInt(getCookie("visits")) + 1;
-            setCookie("visits", visits, 365);
+            setCookie("visits", visits, 30);
         }
         document.querySelector("#decline-btn").addEventListener("click", () => {
             document.querySelector("#cookies").style.display = "none";
@@ -88,6 +113,15 @@ document.querySelector("#decline-btn").addEventListener("click", () => {
 
     document.querySelector("#decline-btn").addEventListener("click", () => {
         document.querySelector("#cookies").style.display = "none";
-        setCookie("bubbleCount", 0, 365);
+        setCookie("bubbleCount", 0, 30);
     });
+
+    /* sets the "bubbleCount" cookie value to an empty string and sets the expiration date to a time 
+    in the past. This way the bubblecount cookie won't appear in the database when the user
+    declines the cookies..*/
+
+    document.querySelector("#decline-btn").addEventListener("click", () => {
+        document.querySelector("#cookies").style.display = "none";
+        document.cookie = "bubbleCount=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      });
     
