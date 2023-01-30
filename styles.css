@@ -889,3 +889,25 @@ select:hover {
     height: 300px;
     min-height: 300px;
 }
+
+button.menu{
+    background-color: red;
+    width: fit-content;
+    height: fit-content;
+    padding: var(--gutter-s);
+}
+
+#event-audience{
+    display: flex;
+    gap: var(--gutter-m);
+    max-width: 100%;
+    overflow-y: auto;
+    align-items: center;
+}
+
+.audience{
+    background-color: white;
+    color: black;
+    padding: var(--gutter-xs);
+    border-radius: var(--rounded);
+}
