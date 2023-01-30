@@ -251,13 +251,13 @@ const data = {
 
     'privacy': {
         header: 'Privacy Statement', content:
-            "Our website uses cookies to enhance your browsing experience and gather information about how our site is used.\
-    By continuing to use our site, you consent to our use of cookies in accordance with our privacy policy. \
-    We use cookies to personalize content and ads, to provide social media features and to analyze our traffic. \
-    We also share information about your use of our site with our social media, advertising and analytics partners \
-    who may combine it with other information that you've provided to them or that they've collected from your use of their services. \
-    You can control the use of cookies at the individual browser level, but if you choose to disable cookies, it may limit your use of certain features or functions on our website. \
-    Our privacy policy is subject to change and updates without notice. You can access our privacy policy at any time by visiting our website."},
+    "Our website uses cookies to enhance your browsing experience and gather information about how our site is used.\
+    By continuing to use our site, you consent to our use of cookies in accordance with our privacy statement: \
+    We use cookies to personalize content, to provide features and to analyze our traffic. \
+    You can control the use of cookies at the individual browser level, but if you choose to disable cookies, \
+    it may limit your use of certain features or functions on our website. \
+    Our privacy policy is subject to change and updates without notice. \
+    You can access our privacy policy at any time by visiting our website."},
 
 }
 
@@ -351,6 +351,7 @@ const appendEvents = () => {
                                 const favorite_button = document.createElement('button');
                                 favorite_button.type="button";
                                 const favorite_img = document.createElement('img');
+                                //set the initial favorite_img depending on database info
                                 if (eventids.includes(events[i].eventid)) {
                                     favorite_img.src = 'check.svg';
                                 } else {

@@ -234,6 +234,28 @@ ul.nav-container li:hover {
     color: black;
 }
 
+.edit-button {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: var(--gutter-m);
+    gap: var(--gutter-m);
+    z-index: 9999;
+}
+
+.favorite-button {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: var(--gutter-m);
+    gap: var(--gutter-m);
+    z-index: 9999;
+}
+
 .event-container {
     width: fit-content;
     height: fit-content;
