@@ -1,9 +1,14 @@
+
+//Function to set the cookie with a name, value and expiration date.
+
 setCookie = (cName, cValue, expDays) => {
     let date = new Date();
     date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
     const expires = "expires=" + date.toUTCString();
     document.cookie = cName + "=" + cValue + "; " + expires + "; path =/";
 }
+
+//Function to retrieve the value of a cookie.
 
 getCookie = (cName) => {
     const name = cName + "=";
@@ -17,6 +22,8 @@ getCookie = (cName) => {
     return value;
 }
 
+// Event handler for hiding the cookie message and setting "cookie" and "visits" cookies
+
 document.querySelector("#cookie-btn").addEventListener("click", () => {
     document.querySelector("#cookies").style.display = "none";
     setCookie("cookie", true, 30);
@@ -27,6 +34,8 @@ document.querySelector("#cookie-btn").addEventListener("click", () => {
         setCookie("visits", visits, 30);
     }
 });
+
+//If the cookies are not accepted, the cookiemessage will appear.
 
 cookieMessage = () => {
     if(!getCookie("cookie"))
@@ -41,22 +50,26 @@ window.addEventListener("load", cookieMessage);
 
 // COOKIES-BUBBLECOUNTER
 
- //checks if the value of "cookie" is true or false. 
+ //Function to checks if the value of "cookie" is true. 
 
- function acceptedCookies() {
+function acceptedCookies() {
     const cookieValue = getCookie("cookie");
     return cookieValue === "true";
-  }
+}
 
-  function addCountToCookie(count) {
+  //checks if the cookies are accepted. If they are, the count value is added to the
+  //bubblecount cookie.
+
+function addCountToCookie(count) {
     if (acceptedCookies()) {
       var d = new Date();
       d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000));
       var expires = "expires=" + d.toUTCString();
       document.cookie = "bubbleCount=" + count + ";" + expires + ";path=/";
     }
-  }
+}
 
+//
 
 function getCountFromCookie() {
     var name = "bubbleCount=";
@@ -73,6 +86,10 @@ function getCountFromCookie() {
     }
     return "";
 }
+
+
+// Function to display the amount of bubbles that the user has created. When the user
+//hasn't accepted the cookies, it will display "accept the cookies to see how many bubbles you have created!".
 
   function displayBubbleCount() {
     const bubbleCount = getCountFromCookie();
@@ -92,10 +109,10 @@ function getCountFromCookie() {
   displayBubbleCount();
 
 
-// DECLINE BUTTON
+    //when the user clicks on the decline button, the message will go away.
 
-document.querySelector("#decline-btn").addEventListener("click", () => {
-    document.querySelector("#cookies").style.display = "none";
+    document.querySelector("#decline-btn").addEventListener("click", () => {
+        document.querySelector("#cookies").style.display = "none";
     });
 
     cookieMessage = () => {
@@ -110,6 +127,8 @@ document.querySelector("#decline-btn").addEventListener("click", () => {
             setCookie("cookie", false, 30);
         });
     }
+
+    // 
 
     document.querySelector("#decline-btn").addEventListener("click", () => {
         document.querySelector("#cookies").style.display = "none";

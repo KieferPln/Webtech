@@ -22,6 +22,7 @@
     <div class="container">
         <canvas style="z-index:0;" id="canvas"></canvas>
         <div style="z-index:1;">
+        <!-- check if succes/error message is set to display this message -->
             <?php if(isset($_SESSION['succes_message'])): ?>
                 <div class="alert-success">
                     <?php echo $_SESSION['succes_message']; ?>

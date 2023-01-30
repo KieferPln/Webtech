@@ -24,6 +24,8 @@
         <div class="header" id="header" style="padding: var(--gutter-l);">
             <p style="position: absolute; font-size: .6em; opacity: .5; top: var(--gutter-l);">Click anywhere to create bubbles! <br><br> <span id="bubble-count"></span></p>
             <div class="login-container">
+
+                <!--if the user is not logged in, the log in and the register button will be displayed -->
                 <?php if(!isset($_SESSION['username'])) : ?>
                 <button class="login" onclick="window.location.href='./login/login.php';">
                     <i class="gg-user"></i> Log In
@@ -31,6 +33,8 @@
                 <div class="sign-up-button">
                     <a href="./login/register.php">Or Sign Up</a>
                 </div>
+                
+                <!--if the user is logged in, show the username -->
                 <?php else : ?>
                     <button class="login" onclick="window.location.href='index.php';">
                     <i class="gg-user"></i> <?php echo $_SESSION['username']?>
@@ -40,9 +44,6 @@
                     <a href="../login/change_email.php">Change Email</a>
                     <a href="logout.php">Log Out</a>
                 </div>
-                <!--<div class="sign-up-button">
-                    <a href="logout.php">Log Out</a>   
-                </div> -->
                 <?php endif; ?>
             </div>
             <div style="width:fit-content; height: fit-content; display:flex; flex-direction: column;">
@@ -57,6 +58,8 @@
                 <li id='nav_information'>Information</li>
                 <li id="nav_events">Events</li>
                 <li id='nav_about_us'>About Us</li>
+                
+                <!-- if username is set to 'admin', show 'add event' button in navigation bar -->
                 <?php if(ISSET($_SESSION['username']) and $_SESSION['username'] == 'admin') : ?>
                 <li id="nav_add_event" onclick="toggleAddEventPopup()">Add Event *</li>
                 <?php endif; ?>
@@ -84,7 +87,6 @@
                 </div>
             </div>
         </div>
-
         <script src="cookies.js"></script>
         <div id="content">
 
@@ -147,6 +149,7 @@
                         <input placeholder="Event name" name="name" type="text" required>
                         <textarea name="description" type="text" rows="5" placeholder="Description" required></textarea>
                         <input name="url" type="url" placeholder="Event URL" required>
+                        <!--php code sets the minimum allowed date for the date input field to the current date. -->
                         <input name="date" type="date" min="<?php echo date("Y-m-d"); ?>" max="2025-12-31" required>
                     </div>
 
