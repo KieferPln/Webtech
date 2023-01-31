@@ -69,7 +69,7 @@ if(isset($_POST['name']))
     $delete_statement->bindValue(':eventid', $eventid);
     $delete_statement->execute();
 
-    $audiences = array("Academics", "Policy makers", "Environmentalists", "Concerned citizens", "Students");
+    $audiences = array("Academics", "Policy Makers", "Environmentalists", "Concerned Citizens", "Students");
     foreach($audiences as $target_audience) {
         if (isset($_POST[$target_audience])) {
             $query = "INSERT INTO event_audience (eventid, target_audience) VALUES (:eventid, :target_audience)";

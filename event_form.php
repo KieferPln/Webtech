@@ -311,16 +311,16 @@
                 <label for="Academics">Academics</label>
             </div>
             <div class="row">
-                <input name="Policy makers" type="checkbox" value="Policy makers">
-                <label for="Policy makers">Policy makers</label>
+                <input name="Policy Makers" type="checkbox" value="Policy Makers">
+                <label for="Policy Makers">Policy Makers</label>
             </div>
             <div class="row">
                 <input name="Environmentalists" type="checkbox" value="Environmentalists">
                 <label for="Environmentalists">Environmentalists</label>
             </div>
             <div class="row">
-                <input name="Concerned citizens" type="checkbox" value="Concerned citizens">
-                <label for="Concerned citizens">Concerned citizens</label>
+                <input name="Concerned Citizens" type="checkbox" value="Concerned Citizens">
+                <label for="Concerned Citizens">Concerned Citizens</label>
             </div>
             <div class="row">
                 <input name="students" type="checkbox" value="students">
