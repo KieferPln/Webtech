@@ -1,24 +1,32 @@
 <?php
 session_start();
-require('../connection.php');
+
+if (file_exists('../connection.php')) {
+    require('../connection.php');
+} else {
+    $_SESSION['database-error'] = "Failed to connect to database.";
+    header("Location: index.php");
+    exit();
+}
 
 $eventid = $_GET["eventid"];
-
 $query = "SELECT * FROM events WHERE eventid = :eventid";
 $query_run = $conn->prepare($query);
 $query_run->execute([':eventid' => $eventid]);
 $result = $query_run->fetch(PDO::FETCH_ASSOC);
 
 if ($result) {
-  $name = $result['name'];
-  $date = $result['date'];
-  $description = $result['description'];
-  $url = $result['url'];
-  $country = $result['country'];
-  $city = $result['city'];
-  $address = $result['address'];
+    $name = $result['name'];
+    $date = $result['date'];
+    $description = $result['description'];
+    $url = $result['url'];
+    $country = $result['country'];
+    $city = $result['city'];
+    $address = $result['address'];
 } else {
-  // error handling
+    $_SESSION['database-error'] = "Error retrieving event from database.";
+    header("Location: index.php");
+    exit();
 }
 
 $subjects_query = "SELECT subject FROM event_subjects WHERE eventid = :eventid";

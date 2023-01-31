@@ -1,12 +1,18 @@
 <?php
 session_start();
-require('../connection.php');
+
+if (file_exists('../connection.php')) {
+    require('../connection.php');
+} else {
+    $_SESSION['database-error'] = "Failed to connect to database.";
+    header("Location: index.php");
+    exit();
+}
+
 $username = $_SESSION['username'];
 $eventid = $_POST['eventid'];
 
-try {
-    $conn;
-    
+try {    
     // check if the event is in the user's favorites
     $check_favorite = $conn->prepare("SELECT * FROM favorites WHERE username = :username AND eventid = :eventid");
     $check_favorite->bindParam(':username', $username);
