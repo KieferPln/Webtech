@@ -134,6 +134,9 @@
             </div>
 
             <!-- *********** ADD EVENT *********** -->
+            
+            <!-- the form is long because there are 150+ countries in the drop
+            down list so we put it in a seperate file  -->
             <script> 
                 $(function(){
                 $("#event_form").load("event_form.php"); 
