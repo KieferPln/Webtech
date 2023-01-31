@@ -1,8 +1,13 @@
 <?php
 	session_start();
  
-	require('../../connection.php');
-	
+	if (file_exists('../../connection.php')) {
+		require('../../connection.php');
+	  } else {
+		$_SESSION['database-error'] = "Failed to connect to database.";
+		header("Location: ../index.php");
+		exit();
+	  }
 
 	if(ISSET($_POST['login'])){
 		if($_POST['username'] != "" || $_POST['password'] != ""){

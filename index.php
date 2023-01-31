@@ -46,6 +46,12 @@
                 </div>
                 <?php endif; ?>
             </div>
+            <?php if (isset($_SESSION['database-error'])) : ?>
+                <div class="alert-danger">
+                    <?php echo $_SESSION['database-error'];
+                          unset($_SESSION['database-error']);?>
+                </div>
+            <?php endif; ?>
             <div style="width:fit-content; height: fit-content; display:flex; flex-direction: column;">
                 <h1>Life Below Water</h1>
                 <h2 style="width: 80%">Conserve and sustainably use the oceans, seas and marine resources for
