@@ -307,20 +307,20 @@
             <label style="font-weight: 500;" for="location"> Target audience</label>
 
             <div class="row">
-                <input name="academics" type="checkbox" value="Academics">
-                <label for="academics">Academics</label>
+                <input name="Academics" type="checkbox" value="Academics">
+                <label for="Academics">Academics</label>
             </div>
             <div class="row">
-                <input name="policy_makers" type="checkbox" value="Policy makers">
-                <label for="policy_makers">Policy makers</label>
+                <input name="Policy makers" type="checkbox" value="Policy makers">
+                <label for="Policy makers">Policy makers</label>
             </div>
             <div class="row">
-                <input name="environmentalists" type="checkbox" value="Environmentalists">
-                <label for="environmentalists">Environmentalists</label>
+                <input name="Environmentalists" type="checkbox" value="Environmentalists">
+                <label for="Environmentalists">Environmentalists</label>
             </div>
             <div class="row">
-                <input name="concerned_citizens" type="checkbox" value="Concerned citizens">
-                <label for="concerned_citizens">Concerned citizens</label>
+                <input name="Concerned citizens" type="checkbox" value="Concerned citizens">
+                <label for="Concerned citizens">Concerned citizens</label>
             </div>
             <div class="row">
                 <input name="students" type="checkbox" value="students">

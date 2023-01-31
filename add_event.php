@@ -45,7 +45,7 @@ if(isset($_POST['add_new_event']))
     }
 
     // for table event_audience
-    $audiences = array("academics", "policy_makers", "environmentalists", "concerned_citizens", "students");
+    $audiences = array("Academics", "Policy makers", "Environmentalists", "Concerned Citizens", "Students");
     foreach($audiences as $target_audience) {
         if (isset($_POST[$target_audience])) {
             $query = "INSERT INTO event_audience (eventid, target_audience) VALUES (:eventid, :target_audience)";
