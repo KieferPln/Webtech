@@ -282,7 +282,8 @@ const appendEvents = () => {
         }	
     });	
 }	
-appendEvents();
+
+appendEvents()
 
 const data = {
     'Pollution': {

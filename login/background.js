@@ -69,7 +69,7 @@ function init() {
     particlesArray = []
     let numberOfParticles = 50;
     for (let i = 0; i < numberOfParticles; i++) {
-        let size = 1
+        let size = math.random() * 7 + 3 
         let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2)
         let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2)
         let directionX = (Math.random() * 5) - 2.5

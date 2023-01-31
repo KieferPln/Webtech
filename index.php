@@ -139,9 +139,26 @@
 
             <!-- *********** EVENTS *********** -->
             <div id="events">
-            <h2 id="upcoming" style="margin-top: var(--gutter-m)">Upcoming Events. My favorites:</h2>	
+            <div class="column">
+                    <h2>Upcoming Events</h2>
+                    <div class="row">
+                        <select id='select-subject'onchange="filterEventsbySubjects()" name="Filter">
+                            <option value="">Alle Events</option>    
+                            <option value="Pollution">Pollution</option>
+                            <option value="Acidification">Acidification</option>
+                            <option value="Rising Temperatures">Rising Temperatures</option>
+                            <option value="Eutrophication">Eutrophication</option>
+                            <option value="Overfishing">Overfishing</option>                                                
+                        </select>
+                        
+                        <select name="Filter">
+                            <option value="ok">Alle Events</option>
+                        </select>
+                        <button class="favorites">Show favorites</button>
+                    </div>
+                </div>
                 <div id='event-container' class=" event-container"> 	
-                    <div id='favorite-button' class="favorite-button"> </div>	
+    
                 </div>
 
             <!-- *********** ADD EVENT *********** -->

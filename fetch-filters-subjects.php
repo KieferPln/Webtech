@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-
 
 if (file_exists('../connection.php')) {
     require('../connection.php');
@@ -11,21 +9,16 @@ if (file_exists('../connection.php')) {
     exit();
 }
 
-$sql = $conn->prepare('SELECT event_subjects.id FROM event_subjects WHERE event_subjects.subject = :filterSubjects');
-$sql->bindValue(':filterSubjects', $_COOKIE['filter_subjects']);
+$sql = $conn->prepare('SELECT events.* FROM events JOIN event_subjects ON events.eventid = event_subjects.eventid WHERE event_subjects.subject = :subject AND events.date >= CURDATE() ORDER BY events.date ASC');
+$sql->bindValue(':subject', $_COOKIE['filter_subjects']);
 $sql->execute();
-$EventSubjectIDs = $sql->fetchAll(PDO::FETCH_COLUMN);
+$events = $sql->fetchAll();
 
-if (!empty($EventSubjectIDs)) {
-    $EventSubjectIDs = implode(',', $EventSubjectIDs);
-    $sql = $conn->prepare('SELECT * FROM events WHERE events.eventid in (:EventSubjectIDs) AND events.date >= CURDATE() ORDER BY events.date ASC');
-    $sql->bindValue(':EventSubjectIDs', $EventSubjectIDs);
-    $sql->execute();
-    $fetch = $sql->fetchAll();
-    echo json_encode($fetch);
-    }
+header('Content-Type: application/json');
 
-else {
-    echo "There are no events with these filters";
+if (!empty($events)) {
+    echo json_encode($events);
+} else {
+    echo json_encode(array("message" => "There are no events with this subject"));
 }
 ?>

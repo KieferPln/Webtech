@@ -7,6 +7,7 @@ const eventUrl = document.getElementById('event-url')
 const eventTags = document.getElementById('event-tags')
 const eventAudience = document.getElementById('event-audience')
 const maps = document.getElementById('iframe-maps')
+const subjectSelect = document.getElementById('select-subject')
 
 const fillEventPopup = (data, tags, audience) => {
     eventName.appendChild(document.createTextNode(data.name ? data.name : 'Geen naam gevonden'))
@@ -31,7 +32,6 @@ const emptyEventPopup = () => {
     eventTags.innerHTML = ''
     eventName.innerHTML = ''
     eventDescription.innerHTML = ''
-    eventUrl.innerHTML = ''
     eventAudience.innerHTML = ''
     maps.setAttribute('src', MAPS_URL)
 }
@@ -59,13 +59,26 @@ const getAudienceByEventId = async (id) => {
 }
 
 const getEvents = async () => {
-    const response = await fetch("fetch-events.php");
-    const data = await response.json();
+    var response;
+    if(getCookie('filter_subjects'))
+    {
+        response = await fetch("fetch-filters-subjects.php");}
 
+    else(response = await fetch("fetch-events.php"))
+
+    const data = await response.json();
+    console.log(data)
     if (!data) return getResult();
     return data;
 }
 
-const filterEventsOnAudience = () =>{
-    setCookie('event-filter',)
+
+function filterEventsbySubjects(){
+    let value = subjectSelect.value
+    setCookie('filter_subjects',value,1)
+
+    
+        eventContainer.innerHTML = ''
+        console.log('ok')
+        appendEvents(); return
 }

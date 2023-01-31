@@ -102,6 +102,7 @@ a {
 #events {
     background-color: transparent;
     height: fit-content;
+  
 }
 
 h1 {
@@ -257,13 +258,21 @@ ul.nav-container li:hover {
 }
 
 .event-container {
-    width: fit-content;
-    height: fit-content;
+    width: 600px;
+    height: 500px;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: var(--gutter-m);
     gap: var(--gutter-m);
+}
+
+.event-container {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.event-container::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 
 .event-container:hover {
@@ -921,4 +930,59 @@ button.menu{
     top: 25%;
     left: 50%;
     transform: translate(-50%, -50%)
+}
+
+select,
+button.favorites {
+    appearance: none;
+    background-color: red;
+    background-color: rgb(229, 229, 229);
+    border-radius: var(--rounded);
+    padding: var(--gutter-m);
+    font-size: 1em;
+    font-weight: 500;
+    width: fit-content;
+}
+
+select:hover,
+button.favorites:hover {
+    opacity: 0.8;
+}
+
+select {
+    width: auto;
+    width:150px;
+}
+
+button.favorites {
+    background-color: #1962ff;
+    color: white;
+    font-weight: 500;
+}
+
+button.favorites:hover {
+    opacity: 0.8;
+}
+
+.row {
+    display: flex;
+    gap: var(--gutter-m);
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    display: flex;
+    border-radius: 0;
+}
+#events .row{
+    padding-bottom: var(--gutter-s);
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter-m);
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+    display: flex;
 }
