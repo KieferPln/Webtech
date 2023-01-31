@@ -1,6 +1,13 @@
 <?php
 	session_start();
-	require_once('../../connection.php');
+	
+	if (file_exists('../../connection.php')) {
+		require('../../connection.php');
+	} else {
+		$_SESSION['error_msg'] = "Failed to connect to database.";
+		header("Location: register.php");
+		exit();
+	}
 
 	// Rate limiter to prevent too many registration attempts
 	$ip_address = $_SERVER['REMOTE_ADDR'];
@@ -13,11 +20,10 @@
 		$attempts = $_SESSION['registration_attempts'][$ip_address]['attempts'];
 		$last_attempt = $_SESSION['registration_attempts'][$ip_address]['last_attempt'];
 		
-		// Check if the number of attempts exceeds the limit
+		// Check if the number of attempts exceeds the limit and if so, sleep until
+		// the limiter expires
 		if ($attempts >= $limit) {
-			// Calculate the time remaining until the rate limit resets
 			$time_remaining = 300 - ($current_time - $last_attempt);
-			// Sleep for the time remaining
 			sleep($time_remaining);
 		}
 	}
@@ -32,10 +38,8 @@
 	if(ISSET($_POST['register'])){
 		if($_POST['username'] != "" && $_POST['email'] != "" && $_POST['password'] != "" && $_POST['confirm_password'] != ""){
 			if($_POST['password'] != $_POST['confirm_password']){
-				// Store error message in a session variable
-				$_SESSION['error_msg'] = "Your passwords don't seem too match up, please try again.";
-				// Redirect to registration page
-				header('location: ./register.php');
+				$_SESSION['error_msg'] = "The entered passwords don't match, please try again.";
+				header('location: register.php');
 			}
 			else{
 				try{
@@ -47,10 +51,8 @@
 		
 					// Check if the username is too long
 					if (strlen($username) > 27) {
-						// Store error message in a session variable
 						$_SESSION['error_msg'] = "Username is too long, please choose a shorter one!";
-						// Redirect to registration page
-						header('location: ./register.php');
+						header('location: register.php');
 						exit();
 					}
 					// Check if username or email already exists in the database
@@ -58,11 +60,10 @@
 					$stmt->bindParam(':username', $username);
 					$stmt->bindParam(':email', $email);
 					$stmt->execute();
+					// redirect to registration if the username exists
 					if ($stmt->rowCount() > 0) {
-						// Store error message in a session variable
 						$_SESSION['error_msg'] = "Username or email already exists, please choose a different one!";
-						// Redirect to registration page
-						header('location: ./register.php');
+						header('location: register.php');
 						exit();
 					}else{
 						// Insert new user into the database
@@ -70,18 +71,15 @@
 						$conn->exec($sql);
 						$_SESSION['message']=array("text"=>"User successfully created!","alert"=>"info");
 						$conn = null;
-						header('location: ./login.php');
+						header('location: login.php');
 					}
 				}catch(PDOException $e){
 					echo $e->getMessage();
 				}
 			}
 		}else{
-			// Store error message in a session variable
 			$_SESSION['error_msg'] = "Please fill in the required fields!";
-			// Redirect to registration page
-			header('location: ./register.php');
+			header('location: register.php');
 		}
-	}
-	
+	}	
 ?>

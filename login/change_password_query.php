@@ -1,7 +1,14 @@
 <?php
 
 session_start();
-require_once('../../connection.php');
+
+if (file_exists('../../connection.php')) {
+    require('../../connection.php');
+  } else {
+    $_SESSION['error_message'] = "Failed to connect to database.";
+    header("Location: change_password.php");
+    exit();
+  }
 
 if(ISSET($_POST['change_password'])){
     // Check if all fields are filled in
