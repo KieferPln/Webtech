@@ -19,6 +19,10 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>	
+<script> 	
+</script>
+
 <body>
     <div class="main" id="main">
         <div class="header" id="header" style="padding: var(--gutter-l);">
@@ -135,9 +139,10 @@
 
             <!-- *********** EVENTS *********** -->
             <div id="events">
-                <h2 style="margin-top: var(--gutter-m)">Upcoming Events</h2>
-                <div id='event-container' class=" event-container">
-            </div>
+            <h2 id="upcoming" style="margin-top: var(--gutter-m)">Upcoming Events. My favorites:</h2>	
+                <div id='event-container' class=" event-container"> 	
+                    <div id='favorite-button' class="favorite-button"> </div>	
+                </div>
 
             <!-- *********** ADD EVENT *********** -->
             
@@ -211,9 +216,10 @@
                     <span class="cross-line" style="transform: rotate(-45deg);"></span>
                         <span class=" cross-line" style="transform: rotate(45deg);"></span>
                 </button>
+                <?php if(isset($_SESSION['username'])) : ?>	
                 <button class="sign-up-button">
-                    Add
                     <i class="gg-add"></i>
+                <?php endif; ?>	
                 </button>
             </div>
         </div>
@@ -239,6 +245,7 @@
         defer>
     </script>
     <script src="maps.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </div>
 </body>
 

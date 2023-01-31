@@ -28,17 +28,86 @@ var popupIsTriggered = false
 var infoPopupIsTriggerd = false
 var addEventPopupIsTriggerd = false
 
-const toggleAddEventPopup = () => {
-    if (!addEventPopupIsTriggerd) {
-        addEventPopup.style.visibility = "visible"
-        main.style.overflow = 'hidden'
+const toggleAddEventPopup = (eventid = undefined) => {	
+    if (!addEventPopupIsTriggerd) {	
+        if (eventid) {	
+            // Make an AJAX call to retrieve the data of the event with the given id	
+            fetch(`retrieve_event.php?eventid=${eventid}`)	
+            .then(response => {	
+                console.log("response: ", response); // add this line	
+                return response.json();	
+            })	
+            .then(data => {	
+                console.log("data: ", data)	
+                return data;	
+            })	
+            .catch(error => console.error('Error:', error))	
+            .then(data => {	
+            // Populate the form fields with the retrieved data	
+            console.log(data);	
+            //document.getElementById('edit-id').innerHTML = "Editing event " + data.eventid;	
+            document.getElementById('edit-id').value = data.eventid;	
+            document.getElementById('name').value = data.name;	
+            document.getElementById('date').value = data.date;	
+            document.getElementById('description').value = data.description;	
+            document.getElementById('url').value = data.url;	
+            document.getElementById('country').value = data.country;	
+            document.getElementById('city').value = data.city;	
+            document.getElementById('address').value = data.address;	
+            document.getElementById("submit-edit").style.visibility = "visible";            	
+            // subjects checkboxes	
+            var subjects = document.querySelectorAll(".subjects-container input[type='checkbox']");	
+            for (var i = 0; i < subjects.length; i++) {	
+            if (data.subjects.includes(subjects[i].value)) {	
+            subjects[i].checked = true;	
+            }	
+            }	
+            // audience checkboxes	
+            var audience = document.querySelectorAll(".subjects-container input[type='checkbox']");	
+            for (var i = 0; i < audience.length; i++) {	
+            if (data.audience.includes(audience[i].value)) {	
+            audience[i].checked = true;	
+            }	
+            }	
+            })	
+            .catch(error => console.error('Error:', error));	
+        } else {	
+            document.getElementById('edit-id').innerHTML = "Adding new event";	
+            document.getElementById('name').value = '';	
+            document.getElementById('date').value = '';	
+            document.getElementById('description').value = '';	
+            document.getElementById('url').value = '';	
+            document.getElementById('country').value = '';	
+            document.getElementById('city').value = '';	
+            document.getElementById('address').value = '';	
+            document.getElementById("submit-edit").style.visibility = "hidden";            	
+            const checkboxes = document.querySelectorAll("input[type='checkbox']");	
+            for (let checkbox of checkboxes) {	
+                checkbox.checked = false;	
+            }	
+        }	
+    addEventPopup.style.visibility = "visible"	
+    main.style.overflow = 'hidden'
     }
     else {
-        addEventPopup.style.visibility = "hidden"
-        main.style.overflow = 'auto'
+        addEventPopup.style.visibility = "hidden";	
+        document.getElementById("submit-edit").style.visibility = "hidden";	
+        main.style.overflow = 'auto';
     }
     addEventPopupIsTriggerd = !addEventPopupIsTriggerd
-}
+    var eventid = null;	
+};
+
+/* TEST	
+$.ajax({	
+    type: "GET",	
+    url: "retrieve_event.php",	
+    data: { eventid: 69 },	
+    success: function(response) {	
+      console.log(response);	
+    }	
+  });	
+*/
 
 const togglePopup = () => {
     if (!popupIsTriggered) {
@@ -170,8 +239,8 @@ const data = {
     temperature causes polar ice to melt, which in turn causes sea-levels to rise. Rising ocean levels \
     are a risk to coastal areas. This is caused by the increased chance of extreme events such as \
     coastal flooding, landslides and erosion. Not only the 2 billion people living in coastal areas are \
-    at risk. All life in coastal areas is under threat from rising sea levels. Second, rising \
-    temperature UN has estimated that 60% of marine ecosystems are currently being used in an \
+    at risk. All life in coastal areas is under threat from rising sea levels. Second, the UN has \
+    estimated that 60% of marine ecosystems are currently being used in an \
     unsustainable way or are otherwise degrading. Even worse, they estimate that half of marine species \
     may be facing extinction by 2100.\
     ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ \
@@ -206,6 +275,35 @@ const changeMapsLocation = (location) => {
 }
 
 const eventContainer = document.getElementById('event-container')
+const favoriteButton = document.getElementById('favorite-button')	
+$.ajax({	
+    url: "fetch-favorites.php",	
+    type: "GET",	
+    dataType: "json",	
+    success: function(favorite_events) {	
+        var eventids = favorite_events.map(function(event) {	
+            return event.eventid;	
+        });	
+        $("#upcoming").append(" " + eventids.join(", "));	
+    }	
+}); 	
+
+const toggleFavorite = (eventid, button) => {	
+    $.ajax({	
+        url: "toggle-favorite.php",	
+        type: "POST",	
+        data: { eventid: eventid },	
+        success: function(response) {	
+            console.log(response);	
+            const img = button.querySelector('img');	
+            if (img.src.endsWith('cross.svg')) {	
+                img.src = 'check.svg';	
+            } else if (img.src.endsWith('check.svg')) {	
+                img.src = 'cross.svg';	
+            }	
+        }	
+    });	
+}
 
 const createEvent = (name, date, id) => {
     const container = document.createElement('div')
@@ -214,6 +312,8 @@ const createEvent = (name, date, id) => {
     const eventDate = document.createElement('div')
     const titleNode = document.createTextNode(name)
     const dateNode = document.createTextNode(date)
+    const eventid = document.createElement('button')	
+    eventid.innerHTML = id
     container.classList.add('event')
     eventDate.classList.add('date')
     circle.classList.add('circle')
@@ -223,18 +323,70 @@ const createEvent = (name, date, id) => {
     container.appendChild(circle)
     container.appendChild(eventName)
     container.appendChild(eventDate)
+    container.appendChild(eventid)
     container.addEventListener('click', () => { togglePopup(), currentEvent = id }, true);
     
     return container
 }
 
 const appendEvents = () => {
-    getEvents().then(events => {
-        for (let i = 0; i < events.length; i++) {
-            eventContainer.appendChild(createEvent(events[i].name, events[i].date, events[i].eventid))
-        }
-    }).catch(err => console.log(err))
-}
-
-appendEvents()
+    // check if the user is logged in	
+    $.ajax({	
+        url: "check-login.php",	
+        type: "GET",	
+        dataType: "json",	
+        success: function(response) {	
+            // if they are logged in, show the favorites button along with the events	
+            if (response.loggedIn) {	
+                $.ajax({	
+                    url: "fetch-favorites.php",	
+                    type: "GET",	
+                    dataType: "json",	
+                    success: function(favorite_events) {	
+                        var eventids = favorite_events.map(function(event) {	
+                            return event.eventid;	
+                        });	
+    	
+                        getEvents().then(events => {	
+                            for (let i = 0; i < events.length; i++) {	
+                                const favorite_button = document.createElement('button');	
+                                favorite_button.type="button";	
+                                const favorite_img = document.createElement('img');	
+                                //set the initial favorite_img depending on database info	
+                                if (eventids.includes(events[i].eventid)) {	
+                                    favorite_img.src = 'check.svg';	
+                                } else {	
+                                    favorite_img.src = 'cross.svg';	
+                                }	
+                                const edit_button = document.createElement('button');	
+                                edit_button.type="button";	
+                                const edit_img = document.createElement('img');	
+                                edit_img.src = 'edit.png';	
+                                if (response.isAdmin) {	
+                                    edit_button.appendChild(edit_img);	
+                                }	
+                                favorite_button.appendChild(favorite_img);	
+                                favorite_button.addEventListener('click', () => toggleFavorite(events[i].eventid, favorite_button));                    	
+                                favorite_button.classList.add("favorite-button");	
+                                eventContainer.appendChild(favorite_button);	
+                                edit_button.classList.add("edit-button");	
+                                edit_button.addEventListener('click', () => toggleAddEventPopup(events[i].eventid));	
+                                eventContainer.appendChild(edit_button);	
+                                eventContainer.appendChild(createEvent(events[i].name, events[i].date, events[i].eventid));	
+                            }	
+                        }).catch(err => console.log(err))	
+                    }	
+                });	
+            // if they aren't logged in, only show the events	
+            } else {	
+                getEvents().then(events => {	
+                    for (let i = 0; i < events.length; i++) {	
+                        eventContainer.appendChild(createEvent(events[i].name, events[i].date, events[i].eventid));	
+                    }	
+                }).catch(err => console.log(err))	
+            }	
+        }	
+    });	
+}	
+appendEvents();
 
