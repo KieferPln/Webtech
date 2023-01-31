@@ -401,6 +401,7 @@ span.circle {
     border-top: 2px solid rgb(195, 195, 195);
     gap: var(--gutter-s);
     z-index: 100000;
+    overflow-y: auto;
 }
 
 .pop-up-container h1 {
@@ -901,7 +902,6 @@ button.menu{
     display: flex;
     gap: var(--gutter-m);
     max-width: 100%;
-    overflow-y: auto;
     align-items: center;
 }
 
@@ -910,6 +910,8 @@ button.menu{
     color: black;
     padding: var(--gutter-xs);
     border-radius: var(--rounded);
+    height: fit-content;
+    display: flex;
 }
 
 .alert-danger {

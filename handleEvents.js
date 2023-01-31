@@ -32,7 +32,7 @@ const emptyEventPopup = () => {
     eventName.innerHTML = ''
     eventDescription.innerHTML = ''
     eventUrl.innerHTML = ''
-    eventAudience.innerhtml = ''
+    eventAudience.innerHTML = ''
     maps.setAttribute('src', MAPS_URL)
 }
 

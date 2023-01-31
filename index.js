@@ -113,7 +113,7 @@ const togglePopup = () => {
     if (!popupIsTriggered) {
         popup.style.transform = "translateY(0%)"
         main.style.overflow = 'hidden'
-
+        emptyEventPopup()
         getEvents().then(events => {
             const event = events.find((event) => event.eventid == currentEvent)
             getTagsByEventId(event.eventid).then(tags => {        
@@ -335,7 +335,15 @@ const appendEvents = () => {
         url: "check-login.php",	
         type: "GET",	
         dataType: "json",	
+        error: ()=>{
+            getEvents().then(events => {	
+                for (let i = 0; i < events.length; i++) {	
+                    eventContainer.appendChild(createEvent(events[i].name, events[i].date, events[i].eventid));	
+                }	
+            }).catch(err => console.log(err))	
+        },
         success: function(response) {	
+            console.log(response.loggedIn)
             // if they are logged in, show the favorites button along with the events	
             if (response.loggedIn) {	
                 $.ajax({	
@@ -379,11 +387,7 @@ const appendEvents = () => {
                 });	
             // if they aren't logged in, only show the events	
             } else {	
-                getEvents().then(events => {	
-                    for (let i = 0; i < events.length; i++) {	
-                        eventContainer.appendChild(createEvent(events[i].name, events[i].date, events[i].eventid));	
-                    }	
-                }).catch(err => console.log(err))	
+            
             }	
         }	
     });	
