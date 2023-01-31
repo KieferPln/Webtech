@@ -102,7 +102,7 @@
                 <div class="tile-container">
                     <div onclick="toggleInfoPopup('Pollution')" class="tile">
                         <div class="tile-content-container">
-                            (Plastic) pollution
+                            (Plastic) Pollution
                         </div>
                     </div>
                     <div onclick="toggleInfoPopup('Overfishing')" class="tile">
@@ -122,7 +122,7 @@
                     </div>
                     <div onclick="toggleInfoPopup('Temperatures')" class="tile">
                         <div class="tile-content-container">
-                            Rising temperatures
+                            Rising Temperatures
                         </div>
                     </div>
                     <div onclick="toggleInfoPopup('Sources')" class="tile">
