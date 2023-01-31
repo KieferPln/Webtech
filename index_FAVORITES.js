@@ -45,7 +45,6 @@ const toggleAddEventPopup = (eventid = undefined) => {
             .then(data => {
             // Populate the form fields with the retrieved data
             console.log(data);
-            //document.getElementById('edit-id').innerHTML = "Editing event " + data.eventid;
             document.getElementById('edit-id').value = data.eventid;
             document.getElementById('name').value = data.name;
             document.getElementById('date').value = data.date;
@@ -75,7 +74,6 @@ const toggleAddEventPopup = (eventid = undefined) => {
             .catch(error => console.error('Error:', error));
 
         } else {
-            document.getElementById('edit-id').innerHTML = "Adding new event";
             document.getElementById('name').value = '';
             document.getElementById('date').value = '';
             document.getElementById('description').value = '';
