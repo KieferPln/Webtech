@@ -34,7 +34,7 @@ const toggleAddEventPopup = (eventid = undefined) => {
             // Make an AJAX call to retrieve the data of the event with the given id
             fetch(`retrieve_event.php?eventid=${eventid}`)
             .then(response => {
-                console.log("response: ", response); // add this line
+                console.log("response: ", response);
                 return response.json();
             })
             .then(data => {
@@ -101,17 +101,6 @@ const toggleAddEventPopup = (eventid = undefined) => {
     var eventid = null;
 };
 
-
-/* TEST
-$.ajax({
-    type: "GET",
-    url: "retrieve_event.php",
-    data: { eventid: 69 },
-    success: function(response) {
-      console.log(response);
-    }
-  });
-*/
 
 const togglePopup = () => {
     if (!popupIsTriggered) {
