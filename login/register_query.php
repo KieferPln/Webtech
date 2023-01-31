@@ -35,51 +35,53 @@
 	);
 
 	// Start of the database entry
-	if(ISSET($_POST['register'])){
+	if(isset($_POST['register'])){
 		if($_POST['username'] != "" && $_POST['email'] != "" && $_POST['password'] != "" && $_POST['confirm_password'] != ""){
-			if($_POST['password'] != $_POST['confirm_password']){
-				$_SESSION['error_msg'] = "The entered passwords don't match, please try again.";
-				header('location: register.php');
-			}
-			else{
-				try{
-					$username = $_POST['username'];
-					$email = $_POST['email'];
-					// md5 encrypted
-					$password = hash('sha256', $_POST['password']);
-					$conn->setattribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		
-					// Check if the username is too long
-					if (strlen($username) > 27) {
-						$_SESSION['error_msg'] = "Username is too long, please choose a shorter one!";
-						header('location: register.php');
-						exit();
-					}
-					// Check if username or email already exists in the database
-					$stmt = $conn->prepare("SELECT * FROM `users` WHERE `username` = :username OR `email` = :email");
-					$stmt->bindParam(':username', $username);
-					$stmt->bindParam(':email', $email);
-					$stmt->execute();
-					// redirect to registration if the username exists
-					if ($stmt->rowCount() > 0) {
-						$_SESSION['error_msg'] = "Username or email already exists, please choose a different one!";
-						header('location: register.php');
-						exit();
-					}else{
-						// Insert new user into the database
-						$sql = "INSERT INTO `users` (username, email, password) VALUES ('$username', '$email', '$password')";
-						$conn->exec($sql);
-						$_SESSION['message']=array("text"=>"User successfully created!","alert"=>"info");
-						$conn = null;
-						header('location: login.php');
-					}
-				}catch(PDOException $e){
-					echo $e->getMessage();
-				}
-			}
-		}else{
-			$_SESSION['error_msg'] = "Please fill in the required fields!";
+		  if($_POST['password'] != $_POST['confirm_password']){
+			$_SESSION['error_msg'] = "The entered passwords don't match, please try again.";
 			header('location: register.php');
+		  }
+		  else{
+			try{
+			  $username = htmlspecialchars(trim($_POST['username']));
+			  $email = htmlspecialchars(trim($_POST['email']));
+			  $password = password_hash(trim($_POST['password']), PASSWORD_DEFAULT);
+			  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	  
+			  // Check if the username is too long
+			  if (strlen($username) > 27) {
+				$_SESSION['error_msg'] = "Username is too long, please choose a shorter one!";
+				header('location: register.php');
+				exit();
+			  }
+			  // Check if username or email already exists in the database
+			  $stmt = $conn->prepare("SELECT * FROM `users` WHERE `username` = :username OR `email` = :email");
+			  $stmt->bindParam(':username', $username);
+			  $stmt->bindParam(':email', $email);
+			  $stmt->execute();
+			  // redirect to registration if the username exists
+			  if ($stmt->rowCount() > 0) {
+				$_SESSION['error_msg'] = "Username or email already exists, please choose a different one!";
+				header('location: register.php');
+				exit();
+			  }else{
+				// Insert new user into the database
+				$stmt = $conn->prepare("INSERT INTO `users` (username, email, password) VALUES (:username, :email, :password)");
+				$stmt->bindParam(':username', $username);
+				$stmt->bindParam(':email', $email);
+				$stmt->bindParam(':password', $password);
+				$stmt->execute();
+				$_SESSION['message']=array("text"=>"User successfully created!","alert"=>"info");
+				header('location: login.php');
+			  }
+			}catch(PDOException $e){
+			  echo $e->getMessage();
+			}
+		  }
+		}else{
+		  $_SESSION['error_msg'] = "Please fill in the required fields!";
+		  header('location: register.php');
 		}
-	}	
+	  }
+		  
 ?>
