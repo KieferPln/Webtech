@@ -11,8 +11,8 @@ if (file_exists('../connection.php')) {
     exit();
 }
 
-$sql = $conn->prepare('SELECT event_subjects.id FROM event_subjects WHERE event_subjects.subject = :filter');
-$sql->bindValue(':filter', $_COOKIE['filter']);
+$sql = $conn->prepare('SELECT event_subjects.id FROM event_subjects WHERE event_subjects.subject = :filterSubjects');
+$sql->bindValue(':filterSubjects', $_COOKIE['filter_subjects']);
 $sql->execute();
 $EventSubjectIDs = $sql->fetchAll(PDO::FETCH_COLUMN);
 
