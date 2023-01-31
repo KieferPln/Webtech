@@ -108,7 +108,7 @@ const removeInfoText = (type) => {
 
 const data = {
     'Pollution': {
-        header: 'Pollution', content:
+        header: '(Plastic) Pollution', content:
             "Due to an increase in plastic consumption and ineffective waste management strategies, more \
     plastic than ever is ending up in the ocean. Of all the waste that finds its way to the ocean, 85% \
     is plastic. In 2021, more than 17 million metric tons of plastic entered the ocean. Instead of \
