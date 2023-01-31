@@ -47,7 +47,6 @@ const createTag = (name) => {
 const getTagsByEventId = async (id) => {
     const response = await fetch("fetch-tags.php");
     const data = await response.json();
-
     if (!data) return getTagsByEventId();
     return data.filter((tag) => tag.eventid == id);
 }
@@ -56,7 +55,6 @@ const getAudienceByEventId = async (id) => {
     const response = await fetch("fetch-audience.php");
     const data = await response.json();
     if (!data) return getAudienceByEventId();
-    console.log('audience', data.filter((audience) => audience.eventid == id))
     return data.filter((audience) => audience.eventid == id);
 }
 
@@ -68,4 +66,6 @@ const getEvents = async () => {
     return data;
 }
 
-
+const filterEventsOnAudience = () =>{
+    setCookie('event-filter',)
+}
