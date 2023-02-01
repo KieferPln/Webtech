@@ -152,7 +152,12 @@
                         </select>
                         
                         <select name="Filter">
-                            <option value="ok">All audiences</option>
+                            <option value="">All audiences</option>
+                            <option value="Pollution">Academics</option>
+                            <option value="Acidification">Policy Makers</option>
+                            <option value="Rising Temperatures">Environmentalists</option>
+                            <option value="Eutrophication">Concerned Citizens</option>
+                            <option value="Overfishing">Students</option> 
                         </select>
                         <button class="favorites">Show favorites</button>
                     </div>
