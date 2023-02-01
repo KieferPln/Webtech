@@ -54,7 +54,8 @@ const toggleAddEventPopup = (eventid = undefined) => {
             document.getElementById('country').value = data.country;	
             document.getElementById('city').value = data.city;	
             document.getElementById('address').value = data.address;	
-            document.getElementById("submit-edit").style.visibility = "visible";            	
+            document.getElementById("submit-edit").style.visibility = "visible";
+            document.getElementById("submit-delete").style.visibility = "visible";            	            	
             // subjects checkboxes	
             var subjects = document.querySelectorAll(".subjects-container input[type='checkbox']");	
             for (var i = 0; i < subjects.length; i++) {	
@@ -80,7 +81,8 @@ const toggleAddEventPopup = (eventid = undefined) => {
             document.getElementById('country').value = '';	
             document.getElementById('city').value = '';	
             document.getElementById('address').value = '';	
-            document.getElementById("submit-edit").style.visibility = "hidden";            	
+            document.getElementById("submit-edit").style.visibility = "hidden"; 
+            document.getElementById("submit-delete").style.visibility = "hidden";            	           	
             const checkboxes = document.querySelectorAll("input[type='checkbox']");	
             for (let checkbox of checkboxes) {	
                 checkbox.checked = false;	
@@ -92,6 +94,7 @@ const toggleAddEventPopup = (eventid = undefined) => {
     else {
         addEventPopup.style.visibility = "hidden";	
         document.getElementById("submit-edit").style.visibility = "hidden";	
+        document.getElementById("submit-delete").style.visibility = "hidden";	
         main.style.overflow = 'auto';
     }
     addEventPopupIsTriggerd = !addEventPopupIsTriggerd
