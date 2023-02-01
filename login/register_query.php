@@ -9,6 +9,8 @@
 		exit();
 	}
 
+	/* UIT TIJDENS TESTEN
+
 	// Rate limiter to prevent too many registration attempts
 	$ip_address = $_SERVER['REMOTE_ADDR'];
 	$current_time = time();
@@ -34,6 +36,8 @@
 		'last_attempt' => $current_time
 	);
 
+	*/
+	
 	// Start of the database entry
 	if(isset($_POST['register'])){
 		if($_POST['username'] != "" && $_POST['email'] != "" && $_POST['password'] != "" && $_POST['confirm_password'] != ""){
