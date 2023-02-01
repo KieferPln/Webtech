@@ -9,8 +9,8 @@ if (file_exists('../connection.php')) {
     exit();
 }
 
-$username = $_SESSION['username'];
-$sql = $conn->prepare("SELECT eventid FROM favorites WHERE username = '$username' ");
+$id = $_SESSION['user'];
+$sql = $conn->prepare("SELECT eventid FROM favorites WHERE id = '$id' ");
 $sql->execute();
 $fetch = $sql->fetchAll();
 echo json_encode($fetch)

@@ -24,6 +24,7 @@
         <div class="add-event-button-container">
             <input type="submit" class="submit" name="event_form" value="Add new event"></input>
             <button type="submit" id="submit-edit" class="submit" formaction="edit_event.php">Submit changes</button>
+            <button type="submit" id="submit-delete" class="submit" formaction="delete_event.php">Delete event</button>
             <!-- <input type="button" class="submit" name="add_new_event" value="Submit changes"></input> -->
             <button type="button" class="close-button" onclick="toggleAddEventPopup()">
                 <span class="cross-line" style="transform: rotate(-45deg);"></span>
