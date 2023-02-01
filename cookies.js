@@ -100,7 +100,7 @@ function getCountFromCookie() {
     } else if (bubbleCount === 1) {
       bubbleCountDisplay.innerHTML = "You have made <b>1</b> bubble!";
     } else {
-      bubbleCountDisplay.innerHTML = "You have made <b>${bubbleCount}</b> bubbles!";
+      bubbleCountDisplay.innerHTML = `You have made <b>${bubbleCount}</b> bubbles!`;
     }
   }
   
