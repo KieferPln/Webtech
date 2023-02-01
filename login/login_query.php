@@ -15,7 +15,8 @@
 			$password = hash('sha256', $_POST['password']);
 			$sql = "SELECT * FROM `users` WHERE `username`=? AND `password`=? ";
 			$query = $conn->prepare($sql);
-			$query->execute(array($username,$password));
+			$sql->bindParam(':username', $username);
+			$sql->bindParam(':password', $password);
 			$row = $query->rowCount();
 			$fetch = $query->fetch();
 			if($row > 0) {

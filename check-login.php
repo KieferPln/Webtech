@@ -4,7 +4,7 @@
     // in the agenda
     if (isset($_SESSION['username'])) {
         $result['loggedIn'] = true;
-        if ($_SESSION['username'] == 'admin') {
+        if ($_SESSION['user'] == '1') {
             $result['isAdmin'] = true;
         } else {
             $result['isAdmin'] = false;
