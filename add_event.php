@@ -9,7 +9,7 @@ if (file_exists('../connection.php')) {
     exit();
 }
 
-if(isset($_POST['add_new_event']))
+if(isset($_POST['add_event']))
 {
     // for table 'events'
     $name = $_POST['name'];
