@@ -8,6 +8,8 @@ const eventTags = document.getElementById('event-tags')
 const eventAudience = document.getElementById('event-audience')
 const maps = document.getElementById('iframe-maps')
 const subjectSelect = document.getElementById('select-subject')
+const audienceSelect = document.getElementById('select-audience')
+let favorites_select = ''
 
 const fillEventPopup = (data, tags, audience) => {
     eventName.appendChild(document.createTextNode(data.name ? data.name : 'Geen naam gevonden'))
@@ -60,10 +62,35 @@ const getAudienceByEventId = async (id) => {
 
 const getEvents = async () => {
     var response;
-    if(getCookie('filter_subjects'))
-    {
-        response = await fetch("fetch-filters-subjects.php");}
 
+    if(getCookie('filter_subjects') && getCookie('filter_audience') && getCookie('favorites_select')) 
+    {
+        response = await fetch("fetch-favorites-events-multiple.php");
+    }
+    else if(getCookie('filter_subjects') && getCookie('filter_audience')) 
+    {
+        response = await fetch("fetch-filters-multiple.php");
+    }
+    else if(getCookie('filter_subjects') && getCookie('favorites_select')) 
+    {
+        response = await fetch("fetch-favorites-events-subjects.php");
+    }
+    else if(getCookie('filter_audience') && getCookie('favorites_select')) 
+    {
+        response = await fetch("fetch-favorites-events-audience.php");
+    }
+    else if(getCookie('filter_subjects'))
+    {
+        response = await fetch("fetch-filters-subjects.php");
+    }
+    else if(getCookie('favorites_select'))
+    {
+        response = await fetch("fetch-favorites-events.php");
+    }
+    else if(getCookie('filter_audience'))
+    {
+        response = await fetch("fetch-filters-audience.php");
+    }
     else(response = await fetch("fetch-events.php"))
 
     const data = await response.json();
@@ -71,7 +98,6 @@ const getEvents = async () => {
     if (!data) return getResult();
     return data;
 }
-
 
 function filterEventsbySubjects(){
     let value = subjectSelect.value
@@ -81,4 +107,28 @@ function filterEventsbySubjects(){
         eventContainer.innerHTML = ''
         console.log('ok')
         appendEvents(); return
+}
+
+function filterEventsbyAudience(){
+    let value = audienceSelect.value
+    setCookie('filter_audience',value,1)
+
+    
+        eventContainer.innerHTML = ''
+        console.log('ok')
+        appendEvents(); return
+}
+
+function showFavorites(){
+    if (favorites_select === ''){
+        favorites_select = true
+    }
+    else{
+        favorites_select = ''
+    }
+        setCookie('favorites_select',favorites_select,1)
+
+    eventContainer.innerHTML = ''
+    console.log('ok')
+    appendEvents(); return
 }

@@ -49,7 +49,7 @@
 			try{
 			  $username = htmlspecialchars(trim($_POST['username']));
 			  $email = htmlspecialchars(trim($_POST['email']));
-			  $password = password_hash(trim($_POST['password']), PASSWORD_DEFAULT);
+			  $password = hash('sha256', trim($_POST['password']));
 			  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	  
 			  // Check if the username is too long

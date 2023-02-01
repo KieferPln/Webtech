@@ -10,7 +10,6 @@ if (file_exists('../connection.php')) {
 }
 
 $sql = $conn->prepare('SELECT events.* FROM events JOIN favorites ON events.eventid = favorites.eventid WHERE favorites.id = :id AND events.date >= CURDATE() ORDER BY events.date ASC');
-$sql->bindValue(':audience', $_COOKIE['filter_audience']);
 $sql->bindValue(':id', $_SESSION['user']);
 $sql->execute();
 $events = $sql->fetchAll();
