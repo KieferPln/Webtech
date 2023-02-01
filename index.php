@@ -153,6 +153,11 @@
                         
                         <select name="Filter">
                             <option value="ok">All audiences</option>
+                            <option value="Pollution">Pollution</option>
+                            <option value="Acidification">Acidification</option>
+                            <option value="Rising Temperatures">Rising Temperatures</option>
+                            <option value="Eutrophication">Eutrophication</option>
+                            <option value="Overfishing">Overfishing</option> 
                         </select>
                         <button class="favorites">Show favorites</button>
                     </div>
