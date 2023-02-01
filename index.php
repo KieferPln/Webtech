@@ -143,7 +143,7 @@
                     <h2>Upcoming Events</h2>
                     <div class="row">
                         <select id='select-subject'onchange="filterEventsbySubjects()" name="Filter">
-                            <option value="">Alle Events</option>    
+                            <option value="">All subjects</option>    
                             <option value="Pollution">Pollution</option>
                             <option value="Acidification">Acidification</option>
                             <option value="Rising Temperatures">Rising Temperatures</option>
@@ -152,7 +152,7 @@
                         </select>
                         
                         <select name="Filter">
-                            <option value="ok">Alle Events</option>
+                            <option value="ok">All audiences</option>
                         </select>
                         <button class="favorites">Show favorites</button>
                     </div>

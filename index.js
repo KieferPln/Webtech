@@ -184,10 +184,10 @@ const toggleFavorite = (eventid, button) => {
         success: function(response) {	
             console.log(response);	
             const img = button.querySelector('img');	
-            if (img.src.endsWith('cross.svg')) {	
-                img.src = 'check.svg';	
-            } else if (img.src.endsWith('check.svg')) {	
-                img.src = 'cross.svg';	
+            if (img.src.endsWith('favorite_yes.png')) {	
+                img.src = 'favorite_no.png';	
+            } else if (img.src.endsWith('favorite_no.png')) {	
+                img.src = 'favorite_yes.png';	
             }	
         }	
     });	
@@ -250,19 +250,18 @@ const appendEvents = () => {
                                 const favorite_img = document.createElement('img');	
                                 //set the initial favorite_img depending on database info	
                                 if (eventids.includes(events[i].eventid)) {	
-                                    favorite_img.src = 'check.svg';	
+                                    favorite_img.src = 'favorite_yes.png';	
                                 } else {	
-                                    favorite_img.src = 'cross.svg';	
+                                    favorite_img.src = 'favorite_no.png';	
                                 }
-                                favorite_img.src = 'check.svg';
-                                favorite_img.width = 30;
-                                favorite_img.height = 30;	
+                                favorite_img.width = 40;
+                                favorite_img.height = 40;	
                                 const edit_button = document.createElement('button');	
                                 edit_button.type="button";	
                                 const edit_img = document.createElement('img');	
                                 edit_img.src = 'edit.png';
-                                edit_img.width = 30;
-                                edit_img.height = 30;	
+                                edit_img.width = 40;
+                                edit_img.height = 40;	
                                 if (response.isAdmin) {	
                                     edit_button.appendChild(edit_img);	
                                 }	

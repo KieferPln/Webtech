@@ -88,20 +88,19 @@ function getCountFromCookie() {
 }
 
 
-// Function to display the amount of bubbles that the user has created. When the user
-//hasn't accepted the cookies, it will display "accept the cookies to see how many bubbles you have created!".
+// Function to display the amount of bubbles the user has created.
 
   function displayBubbleCount() {
     const bubbleCount = getCountFromCookie();
     const bubbleCountDisplay = document.getElementById("bubble-count");
     if (!acceptedCookies()) {
-      bubbleCountDisplay.innerHTML = "accept the cookies to see how many bubbles you have created!";
+      bubbleCountDisplay.innerHTML = "Accept the cookies to see how many bubbles you have created!";
     } else if (bubbleCount === 0) {
-      bubbleCountDisplay.innerHTML = "you have not made any bubbles yet!";
+      bubbleCountDisplay.innerHTML = "You have not made any bubbles yet!";
     } else if (bubbleCount === 1) {
-      bubbleCountDisplay.innerHTML = "you have made <b>1</b> bubble!";
+      bubbleCountDisplay.innerHTML = "You have made <b>1</b> bubble!";
     } else {
-      bubbleCountDisplay.innerHTML = `you have made <b>${bubbleCount}</b> bubbles!`;
+      bubbleCountDisplay.innerHTML = "You have made <b>${bubbleCount}</b> bubbles!";
     }
   }
   
@@ -143,4 +142,3 @@ function getCountFromCookie() {
         document.querySelector("#cookies").style.display = "none";
         document.cookie = "bubbleCount=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
       });
-    
