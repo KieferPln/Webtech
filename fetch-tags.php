@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 if (file_exists('../connection.php')) {
     require('../connection.php');
 } else {
@@ -8,7 +10,6 @@ if (file_exists('../connection.php')) {
     exit();
 }
 
-    session_start();
 $sql = $conn->prepare('SELECT * FROM event_subjects');
 $sql->execute();
 $fetch = $sql->fetchAll();
