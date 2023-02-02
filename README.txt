@@ -31,3 +31,6 @@ Password: pmy#1_^5?jwNJ4i!Fuf#
 
 
 References:
+for cookies: 
+https://www.youtube.com/watch?v=AuLMvRcWmss
+PDO Tutorial: https://www.sourcecodester.com/tutorials/php/12348/php-pdo-login-and-registration.html
