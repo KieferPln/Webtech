@@ -291,6 +291,20 @@ const appendEvents = () => {
 appendEvents()
 
 const data = {
+    'General': {
+        header: 'General Information', content:
+    "<p>The United Nations has specified seventeen Sustainable Develoment Goals (SDG's). One of them \
+    is 'Life Below Water'. Its mission statement is to 'Conserve and sustainably use the oceans, \
+    seas and marine resources'. The UN has identified five main issues our oceans currently face: \
+    (plastic) pollution, overfishing, eutrophication, acidification, and rising temperatures. This \
+    website provides comprehensive information on these issues and supplies users with sources for \
+    further reading. <br>\
+    <br>\
+    In the agenda you'll find interesting upcoming events. If you come across any that you are \
+    interested in attending, please feel free to make an account. This allows you to add events to\
+    your favorites so you never lose track of them. \
+    </p>"},
+
     'Pollution': {
         header: '(Plastic) Pollution', content:
             "<p>Due to an increase in plastic consumption and ineffective waste management strategies, more \
@@ -311,7 +325,7 @@ const data = {
             "<p>Overfishing has the obvious consequence of reducing population levels of marine life, thereby \
     threatening overfished species with extinction. This threatens food supplies and entire marine \
     ecosystems. <br>\
-    <br>>\
+    <br>\
     Another consequence is that overfishing impacts the ability the ocean has to store \
     carbon, which is a crucial part of climate change mitigation (as mentioned in the 'rising \
     temperatures' section).<p>" },
@@ -368,7 +382,27 @@ const data = {
 
     'Sources': {
         header: 'Sources', content:
-            '<p>Content still needs to be added.<p>'
+            "<p> <a href='https://sdgs.un.org/goals'>\
+            United Nations Social Development Goals</a><br>\
+            \
+            <a href='https://unstats.un.org/sdgs/report/2022/The-Sustainable-Development-Goals-Report-2022.pdf'>\
+            UN SDG 2022 Report (PDF)</a><br>\
+            \
+            <a href='https://www.iucn.org/resources/issues-brief/marine-plastic-pollution'>\
+            IUCN Brief on Plastic Pollution</a><br>\
+            \
+            <a href='https://www.iucn.org/resources/issues-brief/ocean-warming'>\
+            IUCN Brief on Ocean Warming </a><br>\
+            \
+            <a href='https://oceandecade.org/'>\
+            United Nations Decade of Ocean Science for Sustainable Development</a><br>\
+            \
+            <a href='https://www.un.org/en/climatechange/science/climate-issues/ocean-impacts'>\
+            UN information on climate change and ocean connection</a><br> \
+            \
+            <a href='https://www.nationalgeographic.com/environment/article/microplastics-are-in-our-bodies-how-much-do-they-harm-us'\
+            National Geographic information on microplastics</a><br>\
+            <p>" 
     },
 
     'privacy': {

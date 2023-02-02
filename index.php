@@ -122,6 +122,11 @@
             <div id="information">
                 <h2 style="margin-top: var(--gutter-m);">Information</h2>
                 <div class="tile-container">
+                    <div onclick="toggleInfoPopup('General')" class="tile">
+                        <div class="tile-content-container">
+                            General Information
+                        </div>
+                    </div>
                     <div onclick="toggleInfoPopup('Pollution')" class="tile">
                         <div class="tile-content-container">
                             (Plastic) Pollution
