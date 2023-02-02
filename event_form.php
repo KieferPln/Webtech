@@ -292,8 +292,8 @@
                 <label for="Acidification">Acidification</label>
             </div>
             <div class="row">
-                <input name="Rising Temperatures" type="checkbox" value="Rising Temperatures">
-                <label for="Rising Temperatures">Rising Temperatures</label>
+                <input name="Rising_Temperatures" type="checkbox" value="Rising Temperatures">
+                <label for="Rising_Temperatures">Rising Temperatures</label>
             </div>
             <div class="row">
                 <input name="Eutrophication" type="checkbox" value="Eutrophication">
@@ -312,16 +312,16 @@
                 <label for="Academics">Academics</label>
             </div>
             <div class="row">
-                <input name="Policy Makers" type="checkbox" value="Policy Makers">
-                <label for="Policy Makers">Policy Makers</label>
+                <input name="Policy_Makers" type="checkbox" value="Policy Makers">
+                <label for="Policy_Makers">Policy Makers</label>
             </div>
             <div class="row">
                 <input name="Environmentalists" type="checkbox" value="Environmentalists">
                 <label for="Environmentalists">Environmentalists</label>
             </div>
             <div class="row">
-                <input name="Concerned Citizens" type="checkbox" value="Concerned Citizens">
-                <label for="Concerned Citizens">Concerned Citizens</label>
+                <input name="Concerned_Citizens" type="checkbox" value="Concerned Citizens">
+                <label for="Concerned_Citizens">Concerned Citizens</label>
             </div>
             <div class="row">
                 <input name="Students" type="checkbox" value="Students">

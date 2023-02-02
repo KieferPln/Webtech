@@ -38,9 +38,10 @@ if(isset($_POST['add_event']))
     $eventid = $conn->lastInsertId();
 
     // for table event_subjects
-    $subjects = array("Acidification", "Eutrophication", "Overfishing", "Pollution", "Rising Temperatures");
+    $subjects = array("Acidification", "Eutrophication", "Overfishing", "Pollution", "Rising_Temperatures");
     foreach($subjects as $subject) {
         if (isset($_POST[$subject])) {
+            $subject = $_POST[$subject];
             $query = "INSERT INTO event_subjects (eventid, subject) VALUES (:eventid, :subject)";
             $query_run = $conn->prepare($query);
             $data = [
@@ -52,9 +53,10 @@ if(isset($_POST['add_event']))
     }
 
     // for table event_audience
-    $audiences = array("Academics", "Policy makers", "Environmentalists", "Concerned Citizens", "Students");
+    $audiences = array("Academics", "Policy_Makers", "Environmentalists", "Concerned_Citizens", "Students");
     foreach($audiences as $target_audience) {
         if (isset($_POST[$target_audience])) {
+            $target_audience = $_POST[$target_audience];
             $query = "INSERT INTO event_audience (eventid, target_audience) VALUES (:eventid, :target_audience)";
             $query_run = $conn->prepare($query);
             $data = [
