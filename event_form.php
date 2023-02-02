@@ -26,9 +26,6 @@
             <button type="submit" id="submit-edit" class="submit" formaction="edit_event.php">Submit changes</button>
             <button type="submit" id="submit-delete" class="submit" formaction="delete_event.php" 
                 onclick="return confirm('Are you sure you want to delete this event?');">Delete event</button>
-
-            <!--<button type="submit" id="submit-delete" class="submit" formaction="delete_event.php">Delete event</button>-->
-            
             <button type="button" class="close-button" onclick="toggleAddEventPopup()">
                 <span class="cross-line" style="transform: rotate(-45deg);"></span>
                 <span class="cross-line" style="transform: rotate(45deg);"></span>
@@ -327,8 +324,8 @@
                 <label for="Concerned Citizens">Concerned Citizens</label>
             </div>
             <div class="row">
-                <input name="students" type="checkbox" value="students">
-                <label for="students">Students</label>
+                <input name="Students" type="checkbox" value="Students">
+                <label for="Students">Students</label>
             </div>
         </div>
     </form>
