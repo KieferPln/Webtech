@@ -276,7 +276,7 @@ button.login:hover {
     justify-content: flex-start;
     padding: var(--gutter-m);
     gap: var(--gutter-m);
-    z-index: 1;
+    z-index: 2;
 }
 
 .favorite-button {
@@ -287,7 +287,7 @@ button.login:hover {
     justify-content: flex-start;
     padding: var(--gutter-m);
     gap: var(--gutter-m);
-    z-index: 1;
+    z-index: 2;
 }
 
 .event-container {

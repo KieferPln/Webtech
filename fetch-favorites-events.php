@@ -16,10 +16,11 @@ $events = $sql->fetchAll();
 
 header('Content-Type: application/json');
 
-if (isset($_SESSION['username'])) {
-    echo json_encode(array("message" => "You have no favorites"));
-} elseif (!empty($events)){
+if  (!empty($events)) {
     echo json_encode($events);
+    
+} elseif(isset($_SESSION['username'])){
+    echo json_encode(array("message" => "You have no favorites"));
 } else {
     echo json_encode(array("message" => "You need to be logged in to view your favorites"));
 }
