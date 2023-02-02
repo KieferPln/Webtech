@@ -214,7 +214,6 @@ const createEvent = (name, date, id) => {
     container.appendChild(circle)
     container.appendChild(eventName)
     container.appendChild(eventDate)
-    container.appendChild(eventid)
     container.addEventListener('click', () => { togglePopup(), currentEvent = id }, true);
     
     return container
@@ -248,36 +247,42 @@ const appendEvents = () => {
     	
                         getEvents().then(events => {	
                             for (let i = 0; i < events.length; i++) {	
-                                const favorite_button = document.createElement('button');	
-                                favorite_button.type="button";	
-                                const favorite_img = document.createElement('img');	
-                                //set the initial favorite_img depending on database info	
-                                if (eventids.includes(events[i].eventid)) {	
-                                    favorite_img.src = 'favorite_yes.png';	
-                                } else {	
-                                    favorite_img.src = 'favorite_no.png';	
-                                }
-                                favorite_img.width = 40;
-                                favorite_img.height = 40;	
-                                const edit_button = document.createElement('button');	
-                                edit_button.type="button";	
-                                const edit_img = document.createElement('img');	
-                                edit_img.src = 'edit.png';
-                                edit_img.width = 40;
-                                edit_img.height = 40;	
-                                if (response.isAdmin) {	
-                                    edit_button.appendChild(edit_img);	
-                                }	
-                                favorite_button.appendChild(favorite_img);	
-                                favorite_button.addEventListener('click', () => toggleFavorite(events[i].eventid, favorite_button));                    	
-                                favorite_button.classList.add("favorite-button");	
-                                eventContainer.appendChild(favorite_button);	
-                                edit_button.classList.add("edit-button");	
-                                edit_button.addEventListener('click', () => toggleAddEventPopup(events[i].eventid));	
-                                eventContainer.appendChild(edit_button);	
-                                eventContainer.appendChild(createEvent(events[i].name, events[i].date, events[i].eventid));	
+                              const eventWrapper = document.createElement('div');
+                              eventWrapper.style.display = "flex";
+                              eventWrapper.style.flexDirection = "row";
+                              eventWrapper.style.alignItems = "center";
+                              const event = createEvent(events[i].name, events[i].date, events[i].eventid);
+                              const favorite_button = document.createElement('button');	
+                              favorite_button.type="button";	
+                              const favorite_img = document.createElement('img');	
+                              //set the initial favorite_img depending on database info	
+                              if (eventids.includes(events[i].eventid)) {	
+                                favorite_img.src = 'favorite_yes.png';	
+                              } else {	
+                                favorite_img.src = 'favorite_no.png';	
+                              }
+                              favorite_img.width = 40;
+                              favorite_img.height = 40;	
+                              const edit_button = document.createElement('button');	
+                              edit_button.type="button";	
+                              const edit_img = document.createElement('img');	
+                              edit_img.src = 'edit.png';
+                              edit_img.width = 40;
+                              edit_img.height = 40;	
+                              if (response.isAdmin) {	
+                                edit_button.appendChild(edit_img);	
+                              }	
+                              favorite_button.appendChild(favorite_img);	
+                              favorite_button.addEventListener('click', () => toggleFavorite(events[i].eventid, favorite_button));                    	
+                              favorite_button.classList.add("favorite-button");	
+                              eventWrapper.appendChild(favorite_button);	
+                              edit_button.classList.add("edit-button");	
+                              edit_button.addEventListener('click', () => toggleAddEventPopup(events[i].eventid));	
+                              eventWrapper.appendChild(edit_button);	
+                              eventWrapper.appendChild(event);
+                              eventContainer.appendChild(eventWrapper);	
                             }	
-                        }).catch(err => console.log(err))	
+                          }).catch(err => console.log(err))
                     }	
                 });	
             // if they aren't logged in, only show the events	

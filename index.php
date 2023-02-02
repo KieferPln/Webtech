@@ -160,7 +160,6 @@
                 </div>
             </div>
 
-            <!-- *********** EVENTS *********** -->
             <!-- *********** EVENTS *********** -->	
             <div id="events">	
             <div class="column">	
