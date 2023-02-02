@@ -9,7 +9,7 @@ if (file_exists('../connection.php')) {
     exit();
 }
 
-$sql = $conn->prepare('SELECT events.* FROM events JOIN favorites ON events.eventid = favorites.eventid WHERE favorites.id = :id AND events.date >= CURDATE() ORDER BY events.date ASCSELECT events.* FROM events JOIN favorites ON events.eventid = favorites.eventid JOIN event_audience ON events.eventid = event_audience.eventid WHERE favorites.id = :id AND event_audience.target_audience = :audience AND events.date >= CURDATE() ORDER BY events.date ASC');
+$sql = $conn->prepare('SELECT events.* FROM events JOIN event_audience ON events.eventid = event_audience.eventid JOIN favorites ON events.eventid = favorites.eventid WHERE event_audience.target_audience = :audience AND favorites.id = :id AND events.date >= CURDATE() ORDER BY events.date ASC');
 $sql->bindValue(':id', $_SESSION['user']);
 $sql->bindValue(':audience', $_COOKIE['filter_audience']);
 $sql->execute();

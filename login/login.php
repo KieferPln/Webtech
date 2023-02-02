@@ -19,7 +19,7 @@
 
 <body>
     <div class="container">
-        <canvas style="z-index:0;" id="canvas"></canvas>
+        <canvas style="z-index:1;" id="canvas"></canvas>
         <div style="z-index:1;">
             <div class="alert-success" id="success_msg" style="display:
             <?php if(isset($_SESSION['message'])) echo 'block'; else echo 'none'; ?>;">

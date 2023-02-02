@@ -179,25 +179,49 @@ $.ajax({
     }	
 }); 	
 
-const toggleFavorite = (eventid, button) => {	
+const toggleFavorite = (eventid) => {	
     $.ajax({	
         url: "toggle-favorite.php",	
         type: "POST",	
         data: { eventid: eventid },	
-        success: function(response) {	
-            console.log(response);	
-            const img = button.querySelector('img');	
-            if (img.src.endsWith('favorite_yes.png')) {	
-                img.src = 'favorite_no.png';	
-            } else if (img.src.endsWith('favorite_no.png')) {	
-                img.src = 'favorite_yes.png';	
-            }	
-        }	
     });	
 }
 
-const createEvent = (name, date, id) => {
+const toggleHeart = (element,id) =>{
+    if (element.classList.contains('active'))
+        {element.classList.remove('active')}
+    else{
+    element.classList.add('active')
+}
+toggleFavorite(id)
+
+}
+const createEvent = (name, date, id, isloggedIn, isfavo, isAdmin) => {
+    console.log(isAdmin)
     const container = document.createElement('div')
+
+    const heartContainer = document.createElement('div')
+    heartContainer.classList.add('heart-container')
+    const favo = document.createElement('i')
+    
+    if(isloggedIn){
+        favo.classList.add('gg-heart')
+        heartContainer.appendChild(favo)
+        container.appendChild(heartContainer)
+        heartContainer.addEventListener('click', () => toggleHeart(favo,id))
+        if(isAdmin){
+            const editContainer = document.createElement('div')
+            editContainer.classList.add('heart-container')
+            const edit = document.createElement('i')
+            edit.classList.add('gg-pen')
+            editContainer.appendChild(edit)
+            container.appendChild(editContainer)
+            editContainer.addEventListener('click', () => toggleAddEventPopup(id));        }
+    }
+
+    if(isfavo){
+        favo.classList.add('active')
+    }
     const circle = document.createElement('span')
     const eventName = document.createElement('div')
     const eventDate = document.createElement('div')
@@ -214,8 +238,9 @@ const createEvent = (name, date, id) => {
     container.appendChild(circle)
     container.appendChild(eventName)
     container.appendChild(eventDate)
-    container.addEventListener('click', () => { togglePopup(), currentEvent = id }, true);
-    
+    eventDate.addEventListener('click', () => { togglePopup(), currentEvent = id }, true)
+    eventName.addEventListener('click', () => { togglePopup(), currentEvent = id }, true);
+
     return container
 }
 
@@ -228,7 +253,7 @@ const appendEvents = () => {
         error: ()=>{
             getEvents().then(events => {	
                 for (let i = 0; i < events.length; i++) {	
-                    eventContainer.appendChild(createEvent(events[i].name, events[i].date, events[i].eventid));	
+                    eventContainer.appendChild(createEvent(events[i].name, events[i].date, events[i].eventid),false,false,false);	
                 }	
             }).catch(err => console.log(err))	
         },
@@ -247,42 +272,43 @@ const appendEvents = () => {
     	
                         getEvents().then(events => {	
                             for (let i = 0; i < events.length; i++) {	
-                              const eventWrapper = document.createElement('div');
-                              eventWrapper.style.display = "flex";
-                              eventWrapper.style.flexDirection = "row";
-                              eventWrapper.style.alignItems = "center";
-                              const event = createEvent(events[i].name, events[i].date, events[i].eventid);
-                              const favorite_button = document.createElement('button');	
-                              favorite_button.type="button";	
-                              const favorite_img = document.createElement('img');	
-                              //set the initial favorite_img depending on database info	
-                              if (eventids.includes(events[i].eventid)) {	
-                                favorite_img.src = 'favorite_yes.png';	
-                              } else {	
-                                favorite_img.src = 'favorite_no.png';	
-                              }
-                              favorite_img.width = 40;
-                              favorite_img.height = 40;	
-                              const edit_button = document.createElement('button');	
-                              edit_button.type="button";	
-                              const edit_img = document.createElement('img');	
-                              edit_img.src = 'edit.png';
-                              edit_img.width = 40;
-                              edit_img.height = 40;	
-                              if (response.isAdmin) {	
-                                edit_button.appendChild(edit_img);	
-                              }	
-                              favorite_button.appendChild(favorite_img);	
-                              favorite_button.addEventListener('click', () => toggleFavorite(events[i].eventid, favorite_button));                    	
-                              favorite_button.classList.add("favorite-button");	
-                              eventWrapper.appendChild(favorite_button);	
-                              edit_button.classList.add("edit-button");	
-                              edit_button.addEventListener('click', () => toggleAddEventPopup(events[i].eventid));	
-                              eventWrapper.appendChild(edit_button);	
-                              eventWrapper.appendChild(event);
-                              eventContainer.appendChild(eventWrapper);	
+                                eventContainer.appendChild(createEvent(events[i].name, events[i].date, events[i].eventid,true,eventids.includes(events[i].eventid),response.isAdmin));	
                             }	
-                          }).catch(err => console.log(err))
+                        }).catch(err => console.log(err))		
+                            //   const eventWrapper = document.createElement('div');
+                            //   eventWrapper.style.display = "flex";
+                            //   eventWrapper.style.flexDirection = "row";
+                            //   eventWrapper.style.alignItems = "center";
+                            //   const event = createEvent(events[i].name, events[i].date, events[i].eventid);
+                            //   const favorite_button = document.createElement	
+                            //   const favorite_img = document.createElement('i');
+                            //   favorite_img.classList.add('fa-solid fa-star')	
+                            //   //set the initial favorite_img depending on database info	
+                            //   if (eventids.includes(events[i].eventid)) {	
+                            //     favorite_img.src = 'favorite_yes.png';	
+                            //   } else {	
+                            //     favorite_img.src = 'favorite_no.png';	
+                            //   }
+                            //   favorite_img.width = 40;
+                            //   favorite_img.height = 40;	
+                            //   const edit_button = document.createElement('button');	
+                            //   edit_button.type="button";	
+                            //   const edit_img = document.createElement('img');	
+                            //   edit_img.src = 'edit.png';
+                            //   edit_img.width = 40;
+                            //   edit_img.height = 40;	
+                              if (response.isAdmin) {	
+                                 edit_button.appendChild(edit_img);	
+                                }	
+                            //   favorite_button.appendChild(favorite_img);	
+                            //   favorite_button.addEventListener('click', () => toggleFavorite(events[i].eventid, favorite_button));                    	
+                            //   favorite_button.classList.add("favorite-button");	
+                            //   eventWrapper.appendChild(favorite_button);	
+                            //   edit_button.classList.add("edit-button");	
+                            //   edit_button.addEventListener('click', () => toggleAddEventPopup(events[i].eventid));	
+                            //   eventWrapper.appendChild(edit_button);	
+                            //   eventWrapper.appendChild(event);
+                            //   eventContainer.appendChild(eventWrapper);	
                     }	
                 });	
             // if they aren't logged in, only show the events	
@@ -298,7 +324,7 @@ appendEvents()
 const data = {
     'General': {
         header: 'General Information', content:
-    "<p>The United Nations has specified seventeen Sustainable Develoment Goals (SDG's). One of them \
+    "The United Nations has specified seventeen Sustainable Develoment Goals (SDG's). One of them \
     is 'Life Below Water'. Its mission statement is to 'Conserve and sustainably use the oceans, \
     seas and marine resources'. The UN has identified five main issues our oceans currently face: \
     (plastic) pollution, overfishing, eutrophication, acidification, and rising temperatures. This \
@@ -308,11 +334,11 @@ const data = {
     In the agenda you'll find interesting upcoming events. If you come across any that you are \
     interested in attending, please feel free to make an account. This allows you to add events to\
     your favorites so you never lose track of them. \
-    </p>"},
+    "},
 
     'Pollution': {
         header: '(Plastic) Pollution', content:
-            "<p>Due to an increase in plastic consumption and ineffective waste management strategies, more \
+            "Due to an increase in plastic consumption and ineffective waste management strategies, more \
     plastic than ever is ending up in the ocean. Of all the waste that finds its way to the ocean, 85% \
     is plastic. In 2021, more than 17 million metric tons of plastic entered the ocean. Instead of \
     becoming less, this number is projected to double or triple by 2040. <br> \
@@ -323,21 +349,21 @@ const data = {
     <br>\
     Besides these immediate dangers from plastic waste, large plastics eventually become microplastics. \
     The complete dangers of microplastics are still unknown, but it is clear that they find their way \
-    into our food and water supplies, and eventually into our bodies.<p>" },
+    into our food and water supplies, and eventually into our bodies." },
 
     'Overfishing': {
         header: 'Overfishing', content:
-            "<p>Overfishing has the obvious consequence of reducing population levels of marine life, thereby \
+            "Overfishing has the obvious consequence of reducing population levels of marine life, thereby \
     threatening overfished species with extinction. This threatens food supplies and entire marine \
     ecosystems. <br>\
     <br>\
     Another consequence is that overfishing impacts the ability the ocean has to store \
     carbon, which is a crucial part of climate change mitigation (as mentioned in the 'rising \
-    temperatures' section).<p>" },
+    temperatures' section)." },
 
     'Eutrophication': {
         header: 'Eutrophication', content:
-            "<p>Eutrophication occurs when nutrients are added to the environment. This is predominantly caused by \
+            "Eutrophication occurs when nutrients are added to the environment. This is predominantly caused by \
     washout of agricultural fertilizers which are rich in phosphorus and nitrogen. Other possible causes \
     are sewage disposal and the intentional adding of nutrients to attract economically or \
     recreationally important marine species. <br>\
@@ -350,21 +376,21 @@ const data = {
     <br>\
     An example of a dead zone is along the Gulf Coast of the United States. In 2021, this area \
     was 16.405 square kilometers. Another example is along the coast of Chili, where in 2016 23 million \
-    dead salmon washed ashore. This was attributed to algae blooms, caused by eutrophication.<p>" },
+    dead salmon washed ashore. This was attributed to algae blooms, caused by eutrophication." },
 
     'Acidification': {
         header: 'Acidification', content:
-            "<p>A quarter of annual carbon emissions are absorbed by the ocean. This reduces the immediate impact of \
+            "A quarter of annual carbon emissions are absorbed by the ocean. This reduces the immediate impact of \
     climate change. However, it also causes the ocean to increase in acidity. This poses a danger to \
     marine ecosystems, fisheries, and coastal protection due to reduction of coral reefs. <br>\
     <br>\
     It is projected that acidification will increase in coming years. This is not only problematic due to the \
     aforementioned reasons, it also reduces the ocean's ability to absord carbon emissions in the \
-    future, thereby worsening climate change.<p>" },
+    future, thereby worsening climate change." },
 
     'Temperatures': {
         header: 'Rising Temperatures', content:
-            "<p>Ocean temperatures are rising because they absorb the largest part of the excess energy and heat \
+            "Ocean temperatures are rising because they absorb the largest part of the excess energy and heat \
     from greenhouse gas emissions. It is estimated that oceans have absorbed approxiamately 90% of \
     warmth created by increased emissions. <br>\
     <br>\
@@ -383,7 +409,7 @@ const data = {
     to 90% of coral reefs. An even higher increase of 2°C would cause the disappearance of 99% of coral \
     reefs. At this point, there would be no way of reestablishing coral ecosystems. A third danger is \
     the increase of probability of marine heatwaves. These heatwaves compound the regular dangers of \
-    rising ocean temperatures.<p>" },
+    rising ocean temperatures." },
 
     'Sources': {
         header: 'Sources', content:

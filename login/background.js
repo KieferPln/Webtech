@@ -22,10 +22,13 @@ class Particle {
         this.color = color
     }
     draw() {
+
+
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-        ctx.fillStyle = '#FFFFFF'
-        ctx.fill();
+ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+ctx.strokeStyle = "#FFFFFF";
+ctx.globalAlpha = 0.5
+ctx.stroke();
     }
     update() {
 
@@ -65,16 +68,19 @@ class Particle {
     }
 }
 
+function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
+}
 function init() {
     particlesArray = []
     let numberOfParticles = 50;
     for (let i = 0; i < numberOfParticles; i++) {
-        let size = math.random() * 7 + 3 
+        let size = getRandomArbitrary(2,7)
         let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2)
         let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2)
         let directionX = (Math.random() * 5) - 2.5
         let directionY = (Math.random() * 5) - 2.5
-        let color = "#880808"
+        let color = "#FFFFFF"
 
         particlesArray.push(new Particle(x, y, directionX, directionY, size, color))
     }

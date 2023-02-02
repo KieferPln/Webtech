@@ -34,6 +34,7 @@
                         create
                         bubbles!
                     </span>
+                    <br>
                     <span id="bubble-count"></span>
                 </div>
 
@@ -164,7 +165,7 @@
             <div id="events">	
             <div class="column">	
                     <h2>Upcoming Events</h2>	
-                    <div class="row">	
+                    <div class="row" style='max-width: 100%'>	
                         <select id='select-subject'onchange="filterEventsbySubjects()" name="Filter-subjects">	
                             <option value="">All subjects</option>    	
                             <option value="Pollution">Pollution</option>	
@@ -207,12 +208,12 @@
                 <!-- *********** ABOUT US *********** -->
 
                 <div id="about_us" style="display: flex; flex-direction: column; gap: var(--gutter-m);">
-                    <h2 style="margin-top: var(--gutter-m); text-align:center">About Us</h2>
+                    <h2 style="margin-top: var(--gutter-m); text-align:center color:white">About Us</h2>
                     <div class="content">
-                        <iframe loading="lazy" allowfullscreen width=300, heigth=300
+                        <!-- <iframe loading="lazy" allowfullscreen width=100%, heigth=300
                             referrerpolicy="no-referrer-when-downgrade"
                             src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDXSG_YOOUXxeFLXwEREWCCaPPnIead_EI&q=52.3538275,4.956128">
-                        </iframe>
+                        </iframe> -->
 
                         Welcome to our website, created by a group of five first-year
                         students
@@ -242,9 +243,11 @@
             <div class="pop-up-container" id="popup">
                 <div></div>
 
-                <iframe loading="lazy" allowfullscreen id="iframe-maps" referrerpolicy="no-referrer-when-downgrade"
+                <div style='position:sticky,top: 0px' >
+                <iframe   loading="lazy" allowfullscreen id="iframe-maps" referrerpolicy="no-referrer-when-downgrade"
                     src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDXSG_YOOUXxeFLXwEREWCCaPPnIead_EI&q=Space+Needle,Seattle+WA">
                 </iframe>
+                </div>
                 <div class="text-container">
                     <div class="pop-up-header">
                         <!-- _ Naam _ -->
