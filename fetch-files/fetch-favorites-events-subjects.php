@@ -20,7 +20,7 @@ header('Content-Type: application/json');
 if (!empty($events)) {
     echo json_encode($events);
 } elseif (isset($_SESSION['username'])){
-    echo json_encode(array("message" => "You have no favorites"));
+    echo json_encode(array("message" => "You have no favorites with this subject"));
 } else {
     echo json_encode(array("message" => "You need to be logged in to view your favorites"));
 }

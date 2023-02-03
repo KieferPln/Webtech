@@ -47,14 +47,14 @@ const createTag = (name) => {
 }
 
 const getTagsByEventId = async (id) => {
-    const response = await fetch("fetch-tags.php");
+    const response = await fetch("fetch-files/fetch-tags.php");
     const data = await response.json();
     if (!data) return getTagsByEventId();
     return data.filter((tag) => tag.eventid == id);
 }
 
 const getAudienceByEventId = async (id) => {
-    const response = await fetch("fetch-audience.php");
+    const response = await fetch("fetch-files/fetch-audience.php");
     const data = await response.json();
     if (!data) return getAudienceByEventId();
     return data.filter((audience) => audience.eventid == id);
@@ -65,33 +65,33 @@ const getEvents = async () => {
 
     if(getCookie('filter_subjects') && getCookie('filter_audience') && getCookie('favorites_select')) 
     {
-        response = await fetch("fetch-favorites-events-multiple.php");
+        response = await fetch("fetch-files/fetch-favorites-events-multiple.php");
     }
     else if(getCookie('filter_subjects') && getCookie('filter_audience')) 
     {
-        response = await fetch("fetch-filters-multiple.php");
+        response = await fetch("fetch-files/fetch-filters-multiple.php");
     }
     else if(getCookie('filter_subjects') && getCookie('favorites_select')) 
     {
-        response = await fetch("fetch-favorites-events-subjects.php");
+        response = await fetch("fetch-files/fetch-favorites-events-subjects.php");
     }
     else if(getCookie('filter_audience') && getCookie('favorites_select')) 
     {
-        response = await fetch("fetch-favorites-events-audience.php");
+        response = await fetch("fetch-files/fetch-favorites-events-audience.php");
     }
     else if(getCookie('filter_subjects'))
     {
-        response = await fetch("fetch-filters-subjects.php");
+        response = await fetch("fetch-files/fetch-filters-subjects.php");
     }
     else if(getCookie('favorites_select'))
     {
-        response = await fetch("fetch-favorites-events.php");
+        response = await fetch("fetch-files/fetch-favorites-events.php");
     }
     else if(getCookie('filter_audience'))
     {
-        response = await fetch("fetch-filters-audience.php");
+        response = await fetch("fetch-files/fetch-filters-audience.php");
     }
-    else(response = await fetch("fetch-events.php"))
+    else(response = await fetch("fetch-files/fetch-events.php"))
 
     const data = await response.json();
     console.log(data)

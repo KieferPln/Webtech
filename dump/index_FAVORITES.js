@@ -260,7 +260,7 @@ const favoriteButton = document.getElementById('favorite-button')
 // van events bij favorieten werkt. kan er in principe uit voor we inleveren maar kan misschien 
 // ergens anders voor worden gebruikt.
 $.ajax({
-    url: "fetch-favorites.php",
+    url: "fetch-files/fetch-favorites.php",
     type: "GET",
     dataType: "json",
     success: function(favorite_events) {
@@ -329,7 +329,7 @@ const appendEvents = () => {
             // if they are logged in, get the user's favorites
             if (response.loggedIn) {
                 $.ajax({
-                    url: "fetch-favorites.php",
+                    url: "fetch-files/fetch-favorites.php",
                     type: "GET",
                     dataType: "json",
                     success: function(favorite_events) {
