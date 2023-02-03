@@ -120,13 +120,13 @@
         <div id="content">
             <!-- *********** INFORMATION *********** -->
 
-            <div id="information">
-                <h2 style="margin-top: var(--gutter-m);">Information</h2>
+            <div id="information" >
+                <h2 style="color: white;">Information</h2>
                 <div class="tile-container">
                     <script>
-                        var topics = ['General Information', '\(Plastic\) Pollution', 
-                        'Overfishing', 'Eutrophication', 'Acidification', 
-                        'Rising Temperatures', 'Research & Our Sources'];
+                        var topics = ['General Information', '\(Plastic\) Pollution',
+                            'Overfishing', 'Eutrophication', 'Acidification',
+                            'Rising Temperatures', 'Research & Our Sources'];
                         for (var i = 0; i < topics.length; i++) {
                             document.write(`
                                 <div onclick="toggleInfoPopup('${topics[i]}')" class="tile">
@@ -187,34 +187,33 @@
             </div>
                     -->
 
-            <!-- *********** EVENTS *********** -->	
-            <div id="events" style="overflow-y: scroll;">	
-            <div class="column">	
-                    <h2>Upcoming Events</h2>	
-                    <div class="row" style='width: 100%; overflow: scroll; background-color: red;'>	
-                        <select id='select-subject'onchange="filterEventsbySubjects()" name="Filter-subjects">	
-                            <option value="">All subjects</option>    	
-                            <option value="Pollution">Pollution</option>	
-                            <option value="Acidification">Acidification</option>	
-                            <option value="Rising Temperatures">Rising Temperatures</option>	
-                            <option value="Eutrophication">Eutrophication</option>	
-                            <option value="Overfishing">Overfishing</option>                                                	
-                        </select>	
-                        	
-                        <select id='select-audience'onchange="filterEventsbyAudience()" name="Filter-audience">	
-                            <option value="">All audiences</option>	
-                            <option value="Academics">Academics</option>	
-                            <option value="Policy Makers">Policy Makers</option>	
-                            <option value="Environmentalists">Environmentalists</option>	
-                            <option value="Concerned Citizens">Concerned Citizens</option>	
-                            <option value="Students">Students</option> 	
-                        </select>	
+            <!-- *********** EVENTS *********** -->
+            <div id="events" style="overflow-y: scroll;">
+                <div class="column">
+                    <h2 style="position: sticky; left: 0px;">Upcoming Events</h2>
+                    <div class="row" style='width: 100%; overflow: scroll;'>
+                        <select id='select-subject' onchange="filterEventsbySubjects()" name="Filter-subjects">
+                            <option value="">All subjects</option>
+                            <option value="Pollution">Pollution</option>
+                            <option value="Acidification">Acidification</option>
+                            <option value="Rising Temperatures">Rising Temperatures</option>
+                            <option value="Eutrophication">Eutrophication</option>
+                            <option value="Overfishing">Overfishing</option>
+                        </select>
+
+                        <select id='select-audience' onchange="filterEventsbyAudience()" name="Filter-audience">
+                            <option value="">All audiences</option>
+                            <option value="Academics">Academics</option>
+                            <option value="Policy Makers">Policy Makers</option>
+                            <option value="Environmentalists">Environmentalists</option>
+                            <option value="Concerned Citizens">Concerned Citizens</option>
+                            <option value="Students">Students</option>
+                        </select>
                         <button class="favorites" onclick="showFavorites()">Show favorites</button>
                     </div>
                 </div>
+
                 <div id='event-container' class=" event-container"></div>
-
-
                 <!-- *********** ADD EVENT *********** -->
 
                 <!-- the form is long because there are 150+ countries in the drop
@@ -232,38 +231,38 @@
                 <div class="gap"></div>
 
                 <!-- *********** ABOUT US *********** -->
+            </div>
 
-                <div id="about_us" style="display: flex; flex-direction: column; gap: var(--gutter-m);">
-                    <h2 style="margin-top: var(--gutter-m); text-align:center color:white">About Us</h2>
-                    <div class="content">
-                        <!-- <iframe loading="lazy" allowfullscreen width=100%, heigth=300
-                            referrerpolicy="no-referrer-when-downgrade"
-                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDXSG_YOOUXxeFLXwEREWCCaPPnIead_EI&q=52.3538275,4.956128">
-                        </iframe> -->
+            <div id="about_us" style="display: flex; flex-direction: column; gap: var(--gutter-m);">
+                <h2 style="margin-top: var(--gutter-m); text-align:center;">About Us (Dit is een footer, Milan.)</h2>
+                <div class="content">
+                    <!-- <iframe loading="lazy" allowfullscreen width=100%, heigth=300
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDXSG_YOOUXxeFLXwEREWCCaPPnIead_EI&q=52.3538275,4.956128">
+                    </iframe> -->
 
-                        Welcome to our website, created by a group of five first-year
-                        students
-                        studying Artificial Intelligence at the University of Amsterdam.
-                        Our names are Daan Keller, Colin de Koning, Kiefer Plender,
-                        Julius de
-                        Groot & Milan Tool.
-                        <br>
-                        <br>
-                        Our website is dedicated to raising awareness about the United
-                        Nations'
-                        Sustainable Development Goal 14: 'Life Below Water.'
-                        Here, you will find information about current problems facing our
-                        oceans
-                        and the risks they pose to marine life and human communities.
-                        We created this website from scratch as a way to educate and
-                        inform
-                        the
-                        public about the importance of protecting our oceans.
-                        Join us in our mission to conserve and sustainably use the
-                        oceans,
-                        seas,
-                        and marine resources for sustainable development by educating yourself on this topic.
-                    </div>
+                    Welcome to our website, created by a group of five first-year
+                    students
+                    studying Artificial Intelligence at the University of Amsterdam.
+                    Our names are Daan Keller, Colin de Koning, Kiefer Plender,
+                    Julius de
+                    Groot & Milan Tool.
+                    <br>
+                    <br>
+                    Our website is dedicated to raising awareness about the United
+                    Nations'
+                    Sustainable Development Goal 14: 'Life Below Water.'
+                    Here, you will find information about current problems facing our
+                    oceans
+                    and the risks they pose to marine life and human communities.
+                    We created this website from scratch as a way to educate and
+                    inform
+                    the
+                    public about the importance of protecting our oceans.
+                    Join us in our mission to conserve and sustainably use the
+                    oceans,
+                    seas,
+                    and marine resources for sustainable development by educating yourself on this topic.
                 </div>
             </div>
 
@@ -271,10 +270,10 @@
             <div class="pop-up-container" id="popup">
                 <div></div>
 
-                <div style='position:sticky,top: 0px' >
-                <iframe   loading="lazy" allowfullscreen id="iframe-maps" referrerpolicy="no-referrer-when-downgrade"
-                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDXSG_YOOUXxeFLXwEREWCCaPPnIead_EI&q=Space+Needle,Seattle+WA">
-                </iframe>
+                <div style='position:sticky,top: 0px'>
+                    <iframe loading="lazy" allowfullscreen id="iframe-maps" referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDXSG_YOOUXxeFLXwEREWCCaPPnIead_EI&q=Space+Needle,Seattle+WA">
+                    </iframe>
                 </div>
                 <div class="text-container">
                     <div class="pop-up-header">
@@ -311,10 +310,14 @@
             <!-- *********** INFORMATION POPUP  *********** -->
             <div id='info-popup' class="information-popup-backdrop">
                 <div class="information-popup-content" id='info'>
-                    <button class="close-button " onclick="toggleInfoPopup()">
-                        <span class="cross-line" style="transform: rotate(-45deg);"></span>
-                        <span class=" cross-line" style="transform: rotate(45deg);"></span>
-                    </button>
+                    <div class="information-popup-header" id="info-header">
+                        <button class="close-button " onclick="toggleInfoPopup()">
+                            <span class="cross-line" style="transform: rotate(-45deg);"></span>
+                            <span class=" cross-line" style="transform: rotate(45deg);"></span>
+                        </button>
+                        <h2 id="info-header-text"></h2>
+                    </div>
+
                 </div>
             </div>
         </div>
