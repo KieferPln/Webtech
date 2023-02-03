@@ -126,7 +126,7 @@ const togglePopup = () => {
     popupIsTriggered = !popupIsTriggered
 }
 
-// Here the popup for the information is made.
+// Here the popup for the information tiles is made.
 const toggleInfoPopup = (type) => {
     if (popupIsTriggered) {
         popup.style.transform = "translateY(100%)"
@@ -184,6 +184,7 @@ $.ajax({
     }
 });
 
+// call the php script the remove or add favorites to the database
 const toggleFavorite = (eventid) => {
     $.ajax({
         url: "toggle-favorite.php",
@@ -191,7 +192,7 @@ const toggleFavorite = (eventid) => {
         data: { eventid: eventid },
     });
 }
-
+// show the heart as red or black depending on favorite status
 const toggleHeart = (element, id) => {
     if (element.classList.contains('active')) { element.classList.remove('active') }
     else {
@@ -201,7 +202,7 @@ const toggleHeart = (element, id) => {
 
 }
 
-// here the Events get made, it needs to look different if an user is logged in and if an admin
+// here the Events get made, it needs to look different if a user is logged in or if an admin
 // is logged in.
 const createEvent = (name, date, id, isloggedIn, isfavo, isAdmin) => {
     console.log(isAdmin)

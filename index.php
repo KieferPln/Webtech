@@ -140,53 +140,6 @@
                 </div>
             </div>
 
-            <!-- 
-            Hierboven staat nu een loopje die voor elk onderwerp een tile maakt.
-            Scheelt weer code ("don't repeat yourself" principe) en maakt het
-            makkelijker om een nieuwe toe te voegen.
-
-            <div id="information">
-                <h2 style="margin-top: var(--gutter-m);">Information</h2>
-                <div class="tile-container">
-                    <div onclick="toggleInfoPopup('General')" class="tile">
-                        <div class="tile-content-container">
-                            General Information
-                        </div>
-                    </div>
-                    <div onclick="toggleInfoPopup('Pollution')" class="tile">
-                        <div class="tile-content-container">
-                            (Plastic) Pollution
-                        </div>
-                    </div>
-                    <div onclick="toggleInfoPopup('Overfishing')" class="tile">
-                        <div class="tile-content-container">
-                            Overfishing
-                        </div>
-                    </div>
-                    <div onclick="toggleInfoPopup('Eutrophication')" class="tile">
-                        <div class="tile-content-container">
-                            Eutrophication
-                        </div>
-                    </div>
-                    <div onclick="toggleInfoPopup('Acidification')" class="tile">
-                        <div class="tile-content-container">
-                            Acidification
-                        </div>
-                    </div>
-                    <div onclick="toggleInfoPopup('Temperatures')" class="tile">
-                        <div class="tile-content-container">
-                            Rising Temperatures
-                        </div>
-                    </div>
-                    <div onclick="toggleInfoPopup('Sources')" class="tile">
-                        <div class="tile-content-container">
-                            Research & Our Sources
-                        </div>
-                    </div>
-                </div>
-            </div>
-                    -->
-
             <!-- *********** EVENTS *********** -->
             <div id="events" style="overflow-y: scroll;">
                 <div class="column">

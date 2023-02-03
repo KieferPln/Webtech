@@ -1,0 +1,224 @@
+===Database life_below_water
+
+== Table structure for table events
+
+|------
+|Column|Type|Null|Default
+|------
+|//**eventid**//|int|No|
+|name|text|No|
+|date|date|No|
+|description|text|No|
+|url|text|No|
+|country|text|No|
+|city|text|No|
+|address|text|No|
+== Dumping data for table events
+
+|1|10th World Ocean Summit &amp; Expo|2023-02-27|The 10th World Ocean Summit &amp; Expo 2023 is dedicated to the issue of how to finance a sustainable ocean economy.
+
+The 10th World Ocean Summit &amp; Expo 2023 covers topics such as:
+
+China and the ocean economy
+Sinking capital? An investment framework for the ocean
+The global ocean agenda— what comes next?
+Realising the ocean’s investment potential
+Scaling the response to pollution and plastics
+Investment principles for the ocean|https://events.economist.com/world-ocean-summit/|Portugal|Lisbon|Praça das Indústrias 1
+|2|ICSLRCR: International Conference on Sea Level Rise and Coastal Regions|2023-06-22|The International Research Conference is a federated organization dedicated to bringing together a significant number of diverse scholarly events for presentation within the conference program. Events will run over a span of time during the conference depending on the number and length of the presentations. With its high quality, it provides an exceptional value for students, academics and industry researchers.
+
+International Conference on Sea Level Rise and Coastal Regions aims to bring together leading academic scientists, researchers and research scholars to exchange and share their experiences and research results on all aspects of Sea Level Rise and Coastal Regions. It also provides a premier interdisciplinary platform for researchers, practitioners and educators to present and discuss the most recent innovations, trends, and concerns as well as practical challenges encountered and solutions adopted in the fields of Sea Level Rise and Coastal Regions.|https://waset.org/sea-level-rise-and-coastal-regions-conference-in-june-2023-in-london|United Kingdom|London|Whitehall 1
+|69|GOBI: Global Ocean Biodiversity Initiative Symposium|2023-02-01|The Global Ocean Biodiversity Initiative (GOBI) Symposium 2023 will be held on the theme, ‘Making it Count: Science in Support of Ocean Conservation and Governance,’ and focus on creating actionable science and facilitating the transition from science to policy.
+
+The Symposium will examine how the marine science community can strengthen its relationships with decision makers and competent authorities to ensure the best science is available at the right time to underpin decision making and inform future policy priorities. Participants will also reflect on the opportunities, challenges, and barriers for marine science in a changing world, and consider what conservation and sustainable use of marine resources will look like in 2030.|https://sdg.iisd.org/events/global-ocean-biodiversity-initiative-gobi-symposium-2023/|Canada|Vancouver|6133 University Blvd
+|72|GSPEE: 2nd Global Summit on Power and Energy Engineering|2023-03-20|It is a great pleasure to announce that The Scientistt will host the 2nd Global Summit on Power and Energy Engineering (GSPEE2023) will be held in Rome, Italy during March 20-22, 2023.GSPEE2023 aims to bring together the renowned researchers, scientists and scholars to exchange ideas, to present sophisticated research works and to discuss hot topics in the field and share their experiences on all aspects of Power and Energy Engineering.The GSPEE2023 will be a 3 days event that means to gather the key players of the Power and Energy Engineering community and related sectors. Moreover, the conference offers a valuable platform to create new contacts in the field of Power and Energy Engineering, by providing valuable networking time for you to meet great personnel in the field.We look forward to seeing you at GSPEE2023 in Rome, Italy.|https://www.thescientistt.com/2023/power-engineering-summit|Italy|Rome|Via Aurelia Antica 415
+|73|ICOCC: International Conference on Oceanography and Climate Change|2023-08-10|International Conference on Oceanography and Climate Change aims to bring together leading academic scientists, researchers and research scholars to exchange and share their experiences and research results on all aspects of Oceanography and Climate Change. It also provides a premier interdisciplinary platform for researchers, practitioners and educators to present and discuss the most recent innovations, trends, and concerns as well as practical challenges encountered and solutions adopted in the fields of Oceanography and Climate Change.|https://waset.org/oceanography-and-climate-change-conference-in-august-2023-in-new-york|United States|New York|429 11th Ave, NY 10001
+|74|Our Ocean|2023-03-02|The ocean is one of humankind’s most valuable resources: home to 80% of all life on Earth, provider of nourishment for more than 3 billion people, and a medium for global trade. However, this vital asset is in danger from global warming, unsustainable practices, illegal fishing, reckless pollution, and the loss of marine habitats. It is time for all nations to work together to prevent the further destruction of our ocean. Our collective efforts to clean the ocean, restore climate and regenerate marine life may well be the last stand in a struggle to do away with actions and ways of thinking that cause disruption the lives of all beings that populate our planet.|https://ouroceanpanama2023.gob.pa/|Panama|Panama City|Calle Gral. Juan D. Peron
+|75|ICMEOA: International Conference on Marine Eutrophication and Ocean Acidification|2023-02-20|International Conference on Marine Eutrophication and Ocean Acidification aims to bring together leading academic scientists, researchers and research scholars to exchange and share their experiences and research results on all aspects of Marine Eutrophication and Ocean Acidification. It also provides a premier interdisciplinary platform for researchers, practitioners and educators to present and discuss the most recent innovations, trends, and concerns as well as practical challenges encountered and solutions adopted in the fields of Marine Eutrophication and Ocean Acidification.|https://waset.org/marine-eutrophication-and-ocean-acidification-conference-in-february-2023-in-tokyo|Japan|Tokyo|3 Chome-1-1 Kyobashi, Chuo City
+|76|11th World Congress on Bio-Polymers and Polymer Chemistry|2023-11-15|Polymer Chemistry 2023 gives a creative research area in motivating young ones in developing research fields and provides cutting edge technology for massive innovations. Polymer Chemistry 2023 covers an in-depths area of science at micro and macro level thus helping to learn about synthesis, characterization, properties and numerous other benefits of polymer, including branches mimicking physical, chemical, biological and analytical options of chemistry. Meet notable personalities all under one common platform for sharing ideas by exclusive scientists, passionate researchers, and prestigious delegates across the globe. We are looking further to current meeting success by bringing revolution in the field of polymer science through sharing your concepts, views, and experiences of research work under one roof for a more robust world.
+
+Why to attend?
+
+You have a chance to meet targeted Business experts leading market in present time frame concentrated on finding about new technologies and fields related to Polymer science, providing great opportunity. Conduct exhibitions, disperse data, meet with current researchers and gather their acknowledgment in particular occasion. Widely praised speakers, latest methods, strategies, up to date overhauls in Polymer science and Engineering are focused in conference.|https://polymerchemistrycongress.alliedacademies.com/2022/|United Arab Emirates|Dubai|Madinat Jumeirah - King Salman Bin Abdulaziz Al Saud St - Al Sufouh 1
+|77|OCEANS|2023-06-05|Global thought leaders and innovators in the areas of marine technology, engineering, science, research, and education will gather together at OCEANS 2023 Limerick event to learn and experience cutting-edge technologies in the field of marine science.  Patrons will hear from industry experts and engineers regarding the latest research and innovations, discuss current environmental issues and policies affecting the field, and collaboratively work together to move the fields of marine technology and engineering forward.|https://limerick23.oceansconference.org/|Ireland|Limerick|University of Limerick, Campus Life Services 2nd Floor UL Sport Arena
+|78|ICOAB: International Conference on Ocean Acidification and Biodiversity|2023-02-06|International Conference on Ocean Acidification and Biodiversity aims to bring together leading academic scientists, researchers and research scholars to exchange and share their experiences and research results on all aspects of Ocean Acidification and Biodiversity. It also provides a premier interdisciplinary platform for researchers, practitioners and educators to present and discuss the most recent innovations, trends, and concerns as well as practical challenges encountered and solutions adopted in the fields of Ocean Acidification and Biodiversity.|https://waset.org/ocean-acidification-and-biodiversity-conference-in-february-2023-in-amsterdam|Netherlands|Amsterdam|Europaplein 24, 1078 GZ
+|79|ICOSP: International Conference on Oceanography and Sea Pollution|2023-02-06|International Conference on Oceanography and Sea Pollution aims to bring together leading academic scientists, researchers and research scholars to exchange and share their experiences and research results on all aspects of Oceanography and Sea Pollution. It also provides a premier interdisciplinary platform for researchers, practitioners and educators to present and discuss the most recent innovations, trends, and concerns as well as practical challenges encountered and solutions adopted in the fields of Oceanography and Sea Pollution.|https://waset.org/oceanography-and-sea-pollution-conference-in-february-2023-in-bangkok|Thailand|Bangkok|60 Ratchadaphisek Rd, Khlong Toei
+|80|8th International Conference on Oceanography and Marine Biology|2023-06-22|The theme of the conference is “Essential innovation in Pharma biology” and to encourage young minds and their research abilities by providing an opportunity to meet the experts in the field of Oceanography.  Oceanography Conferences 2023
+
+Oceanography 2023 is providing an international stage to deliberate and learn Marine Sciences, Marine Biology, Marine Geology, and Marine Oceanography, Marine ecology to interchange their facts, knowledge, and research modernizations. The purpose of Marine Science Conferences is to generate a stage for a strong interchange of the topical progression and technologies near Marine Oceanography and Marine Biology.
+
+Conference Series Ltd invites specialists from all over the sphere to perform and present their individual scientific investigation at the &quot;8th International Conference on Oceanography and Marine Biology&quot; webinar during June 22-23, 2023, in Budapest, Hungary includes swift Keynote presentations, Oral talks, Poster presentations, Delegate sights, and Exhibitions.
+
+This global event will be an excellent opportunity for Marine Biology and other professionals. We are anticipating around 60+ speakers and over 400 delegates for this esteemed congress Oceanography Conferences 2023|https://oceanography.conferenceseries.com/|Hungary|Budapest|Jagelló út 1-3, 1123
+|97|Information session &#039;School at Sea&#039;|2023-03-05|School at Sea revolves around your development. Our mission is to help young people develop into self-confident people who have more than enough knowledge, skills and (self) understanding to face the world with confidence. People who, based on creativity and responsibility, can create cooperation and inspire others. And we believe that you already have everything you need in you!|https://schoolatsea.com/voortraject/info-bijeenkomst/|Netherlands|Amsterdam|Marinierskade 58
+|98|ICCMEE 2023: 17. International Conference on Coastal, Marine Ecology and Environment |2023-12-02|The International Research Conference is a federated organization dedicated to bringing together a significant number of diverse scholarly events for presentation within the conference program. Events will run over a span of time during the conference depending on the number and length of the presentations. With its high quality, it provides an exceptional value for students, academics and industry researchers. |https://waset.org/coastal-marine-ecology-and-environment-conference-in-december-2023-in-tokyo|Japan|Tokyo|2 Chome−1−1 
+== Table structure for table event_audience
+
+|------
+|Column|Type|Null|Default
+|------
+|eventid|int|No|
+|target_audience|text|No|
+== Dumping data for table event_audience
+
+|1|Academics
+|1|Policy Makers
+|1|Concerned Citizens
+|2|Academics
+|2|Policy Makers
+|2|Students
+|69|Academics
+|69|Policy Makers
+|72|Academics
+|72|Students
+|73|Academics
+|73|Policy Makers
+|73|Students
+|74|Academics
+|74|Policy Makers
+|74|Environmentalists
+|74|Concerned Citizens
+|74|Students
+|75|Academics
+|75|Policy Makers
+|75|Students
+|76|Academics
+|77|Academics
+|77|Policy Makers
+|77|Environmentalists
+|77|Concerned Citizens
+|77|Students
+|78|Academics
+|78|Students
+|79|Academics
+|79|Policy Makers
+|79|Students
+|80|Academics
+|80|Policy Makers
+|80|Environmentalists
+|80|Students
+|97|Students
+|98|Academics
+|98|Policy Makers
+== Table structure for table event_subjects
+
+|------
+|Column|Type|Null|Default
+|------
+|eventid|int|No|
+|subject|text|No|
+== Dumping data for table event_subjects
+
+|1|Pollution
+|1|Rising Temperatures
+|2|Rising Temperatures
+|69|Pollution
+|69|Rising Temperatures
+|72|Pollution
+|73|Acidification
+|73|Pollution
+|73|Rising Temperatures
+|74|Overfishing
+|74|Pollution
+|74|Rising Temperatures
+|75|Acidification
+|75|Eutrophication
+|76|Pollution
+|77|Pollution
+|77|Rising Temperatures
+|78|Acidification
+|78|Eutrophication
+|78|Rising Temperatures
+|79|Acidification
+|79|Eutrophication
+|79|Pollution
+|79|Rising Temperatures
+|97|Overfishing
+|97|Pollution
+|97|Rising Temperatures
+|98|Acidification
+|98|Eutrophication
+|98|Pollution
+== Table structure for table favorites
+
+|------
+|Column|Type|Null|Default
+|------
+|id|int|No|
+|eventid|int|No|
+== Dumping data for table favorites
+
+|1|69
+|780|69
+|781|69
+|781|79
+|781|1
+|781|78
+|780|78
+|780|75
+|780|79
+|780|1
+|780|74
+|1|79
+|1|75
+|1|78
+|789|74
+|789|75
+|789|79
+|789|76
+|789|73
+|790|78
+|790|79
+|790|76
+|790|73
+|790|74
+|791|2
+|791|77
+|791|72
+|792|79
+|792|75
+|792|76
+|792|2
+|792|80
+|793|73
+|793|76
+|793|80
+|793|1
+|793|78
+== Table structure for table users
+
+|------
+|Column|Type|Null|Default
+|------
+|//**id**//|int|No|
+|username|varchar(250)|No|
+|email|varchar(250)|No|
+|password|varchar(800)|No|
+== Dumping data for table users
+
+|1|admin|daan@daan.daan|b9025089f90cbd844cdb45ea173e3cb9c4435971cbdd3792be2878bdac034e82
+|11|jan|jan@hotmail.com|6a0ac0fd972c325d6ca5512b67a5e0ad996c4a3e9b59971d125164e6d4db1a1c
+|26|pietje|pietje@jan.nl|70b6f0c3cb3de75a9243a8aab2d9f314d749e548fe11bf66b19c918282ef4300
+|33|123|123@123.123|a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3
+|34|105 OR 1=1|s@dn.nl|043a718774c572bd8a25adbeb1bfcd5c0256ae11cecf9f9c3f925d0e52beaf89
+|35|105 OR 2=2|hans@hans.nl|6428a8fbbb0e120528bb604a66787102280e1b5e26db76633ce37c8a4526e445
+|39|test123|test@gmail.com|de6b9dbb007c8b094257d2ad95099a067d6619b57c6a20f774d91fbf538aae11
+|40|asd|asd@gmail.com|688787d8ff144c502c7f5cffaafe2cc588d86079f9de88304c26b0cb99ce91c6
+|41|test|test2@gmail.com|39304cd9d7e858596e076abd8b51021c25346f8818ee8217569e93a52533cc7e
+|42|hallo|hallo@gmail.com|d3751d33f9cd5049c4af2b462735457e4d3baf130bcbb87f389e349fbaeb20b9
+|45|wougnweg|kiefer@gmail.com|e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+|764|daan22|daaaaaan@daan.nl|8f447168a4a83aa70f492d927abf96843dc2b33d0e4f45d4199955ba9496135d
+|766|admin;|colinuitnederland@gmail.com|c1c224b03cd9bc7b6a86d77f5dace40191766c485cd55dc48caf9ac873335d6f
+|767|Ouail|abc@gmail.com|ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad
+|780|daan|daan@daan.nl|8f447168a4a83aa70f492d927abf96843dc2b33d0e4f45d4199955ba9496135d
+|781|colin|colinuithem@gmail.com|74a66e2d94b87a37ddd86f122dadc7989cbb43b903f2704572ac9f5bad2112e4
+|782|Julius|jjdegroot2001@gmail.com|03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4
+|785|colink|colink@gmail.com|c45a39d8ce0975b48e7b8ea5385636c05f0406b174e2f88434e990fdbd2fb2cb
+|786|daan2|daan@daadsad.nl|6e7e621e9041f6f9ad87a23b8465855178b3f6fefc3d450896842d2d211be065
+|787|daan3|da@an.nl|fb86c38ac4a93d0f3ba01fe1ce2fac00e5e54a8fd82e5cdc99ac2d4eb2e95c9d
+|788|vis|vis.vis@gmail.com|ddbbfd66eec42b0d82772b00f74186578d1c4632adf5d44046445895d4bd7b7b
+|789|Obama|barackobama@gmail.com|a95a1c3c5ffd688325b1de1912cd1765a5dbe7e66f571c83de938b5c1125d98a
+|790|Joe|joe2001@hotmail.com|0507b9eacc68638cf89f7d7ed264f4b3ca563770182f007588515278e8380bbe
+|791|Edwin|edwincolusius@gmail.com|3b533b86866c1d4fc00ff868b9fdf108753dcedd39e8d568ee3d971d8360c679
+|792|Lara|larais@outlook.com|022d666a513f7961b8fb1ac5129813713af639f3fff19f9303cddd096cdc423c
+|793|Framblij|blijeframboos@gmail.com|3d989eaca68ae89fbe85ab03efccc0b930e3b387fcbfca592e74bfe2129d9f14
