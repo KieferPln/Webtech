@@ -11,6 +11,7 @@ const subjectSelect = document.getElementById('select-subject')
 const audienceSelect = document.getElementById('select-audience')
 let favorites_select = ''
 
+// This function filss the event popup with all the data from the json files that is created in the fill-events
 const fillEventPopup = (data, tags, audience) => {
     eventName.appendChild(document.createTextNode(data.name ? data.name : "We haven't found a name"))
     eventDescription.appendChild(document.createTextNode(data.description ? data.description : "We haven't found a description"))
@@ -30,6 +31,7 @@ const fillEventPopup = (data, tags, audience) => {
     }
 }
 
+// This clears everything from the event popup so next time an event is opened the last event has been deleted
 const emptyEventPopup = () => {
     eventTags.innerHTML = ''
     eventName.innerHTML = ''
@@ -38,6 +40,7 @@ const emptyEventPopup = () => {
     maps.setAttribute('src', MAPS_URL)
 }
 
+// this creates the tags of the events using textnodes
 const createTag = (name) => {
     const tag = document.createElement('div')
     tag.classList.add('tag')
@@ -46,6 +49,7 @@ const createTag = (name) => {
     return tag
 }
 
+// Here we call the fetch tags file and look for the tags inside the json it creates
 const getTagsByEventId = async (id) => {
     const response = await fetch("fetch-files/fetch-tags.php");
     const data = await response.json();
@@ -53,6 +57,7 @@ const getTagsByEventId = async (id) => {
     return data.filter((tag) => tag.eventid == id);
 }
 
+// Here we call the fetch audience file and loog fot the target audience inside the json it creates
 const getAudienceByEventId = async (id) => {
     const response = await fetch("fetch-files/fetch-audience.php");
     const data = await response.json();
@@ -60,6 +65,8 @@ const getAudienceByEventId = async (id) => {
     return data.filter((audience) => audience.eventid == id);
 }
 
+// this is were the events are called, multiple if and else if statements are used. This is needed
+// because it needs to work correctlu with the different filters
 const getEvents = async () => {
     var response;
 
@@ -99,6 +106,8 @@ const getEvents = async () => {
     return data;
 }
 
+// this gets the values from the dropdown menu of the subject filter. It than makes a cookie which
+// stores the value
 function filterEventsbySubjects(){
     let value = subjectSelect.value
     setCookie('filter_subjects',value,1)
@@ -109,6 +118,8 @@ function filterEventsbySubjects(){
         appendEvents(); return
 }
 
+// this gets the values from the dropdown menu of the audience filter. It than makes a cookie which
+// stores the value
 function filterEventsbyAudience(){
     let value = audienceSelect.value
     setCookie('filter_audience',value,1)
@@ -119,6 +130,8 @@ function filterEventsbyAudience(){
         appendEvents(); return
 }
 
+// this checks if the show favorites button is pressed and puts that in an cookie. '' is used as the
+// false boolean.
 function showFavorites(){
     if (favorites_select === ''){
         favorites_select = true
