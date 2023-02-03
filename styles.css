@@ -730,7 +730,7 @@ p {
 }
 
 .information-popup-backdrop {
-    background-color: rgba(0, 0, 0, 0.626);
+    background-color: rgba(124, 160, 208, 0.626);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     width: 100vw;
@@ -758,6 +758,7 @@ p {
     display: flex;
     flex-direction: column;
     gap: var(--gutter-m);
+    padding: var(--gutter-l);
     max-height: 100vh;
     overflow-y: auto;
     border: 2px solid black;
