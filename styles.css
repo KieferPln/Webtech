@@ -2,8 +2,7 @@
 @import url('https://css.gg/user.css');
 @import url('https://css.gg/add.css');
 
-@media all and (max-width: 500px) and (min-width: 0),
-(min-width: 1151px) {
+@media all and (max-width: 500px) and (min-width: 0){
 
     button {
         font-size: .7em !important;
@@ -18,11 +17,11 @@
     }
 
     p {
-        font-size: .3em !important;
+        font-size: .5em !important;
     }
 
     li {
-        font-size: .3em !important;
+        font-size: .7em !important;
     }
 
     #about_us .content {
@@ -655,7 +654,6 @@ p {
     overflow: auto;
     gap: 40px;
     padding: var(--gutter-l);
-    z-index: 1000;
 
 }
 
@@ -675,7 +673,7 @@ p {
     display: flex;
     flex-direction: column;
     padding: var(--gutter-s);
-    z-index: 1000;
+    z-index: 1;
     border: 2px solid black
 }
 
