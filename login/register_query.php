@@ -9,34 +9,31 @@
 		exit();
 	}
 
-	/* UIT TIJDENS TESTEN
-
 	// Rate limiter to prevent too many registration attempts
 	$ip_address = $_SERVER['REMOTE_ADDR'];
 	$current_time = time();
 	$limit = 5;
+	$block_time = 600; // 10 minutes in seconds
 
 	// Check if we have a record of registration attempts from this IP address
 	if (isset($_SESSION['registration_attempts'][$ip_address])) {
-		// Get the number of attempts and the time of the last attempt
-		$attempts = $_SESSION['registration_attempts'][$ip_address]['attempts'];
-		$last_attempt = $_SESSION['registration_attempts'][$ip_address]['last_attempt'];
-		
-		// Check if the number of attempts exceeds the limit and if so, sleep until
-		// the limiter expires
-		if ($attempts >= $limit) {
-			$time_remaining = 300 - ($current_time - $last_attempt);
-			sleep($time_remaining);
-		}
+	// Get the number of attempts and the time of the last attempt
+	$attempts = $_SESSION['registration_attempts'][$ip_address]['attempts'];
+	$last_attempt = $_SESSION['registration_attempts'][$ip_address]['last_attempt'];
+
+	// Check if the number of attempts exceeds the limit and if so, sleep until
+	// the limiter expires
+	if ($attempts >= $limit && ($current_time - $last_attempt) <= 10) {
+		sleep($block_time);
+	}
 	}
 
 	// Update the number of attempts and the time of the last attempt
 	$_SESSION['registration_attempts'][$ip_address] = array(
-		'attempts' => isset($attempts) ? $attempts + 1 : 1,
-		'last_attempt' => $current_time
+	'attempts' => isset($attempts) ? $attempts + 1 : 1,
+	'last_attempt' => $current_time
 	);
 
-	*/
 	
 	// Start of the database entry
 	if(isset($_POST['register'])){
