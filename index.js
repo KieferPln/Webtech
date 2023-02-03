@@ -44,7 +44,6 @@ const toggleAddEventPopup = (eventid = undefined) => {
                 .then(data => {
                     // Populate the form fields with the retrieved data	
                     console.log(data);
-                    //document.getElementById('edit-id').innerHTML = "Editing event " + data.eventid;	
                     document.getElementById('edit-id').value = data.eventid;
                     document.getElementById('name').value = data.name;
                     document.getElementById('date').value = data.date;
@@ -55,14 +54,14 @@ const toggleAddEventPopup = (eventid = undefined) => {
                     document.getElementById('address').value = data.address;
                     document.getElementById("submit-edit").style.visibility = "visible";
                     document.getElementById("submit-delete").style.visibility = "visible";
-                    // subjects checkboxes	
+                    // loop over subjects checkboxes	
                     var subjects = document.querySelectorAll(".subjects-container input[type='checkbox']");
                     for (var i = 0; i < subjects.length; i++) {
                         if (data.subjects.includes(subjects[i].value)) {
                             subjects[i].checked = true;
                         }
                     }
-                    // audience checkboxes	
+                    // loop over audience checkboxes	
                     var audience = document.querySelectorAll(".subjects-container input[type='checkbox']");
                     for (var i = 0; i < audience.length; i++) {
                         if (data.audience.includes(audience[i].value)) {
@@ -72,7 +71,7 @@ const toggleAddEventPopup = (eventid = undefined) => {
                 })
                 .catch(error => console.error('Error:', error));
         } else {
-            document.getElementById('edit-id').innerHTML = "Adding new event";
+            // the fields and checkboxes are empty when adding a new event
             document.getElementById('name').value = '';
             document.getElementById('date').value = '';
             document.getElementById('description').value = '';
@@ -100,9 +99,7 @@ const toggleAddEventPopup = (eventid = undefined) => {
     var eventid = null;
 };
 
-
-// right here the popup for the events itself is made. This calls a lot of functions from the
-// handleEvents.js
+// This is the event popup. This calls a lot of functions from handleEvents.js
 const togglePopup = () => {
     if (!popupIsTriggered) {
         popup.style.transform = "translateY(0%)"
@@ -126,7 +123,7 @@ const togglePopup = () => {
     popupIsTriggered = !popupIsTriggered
 }
 
-// Here the popup for the information tiles is made.
+// Information popup
 const toggleInfoPopup = (type) => {
     if (popupIsTriggered) {
         popup.style.transform = "translateY(100%)"
@@ -153,7 +150,7 @@ const toggleInfoPopup = (type) => {
 
 const head = document.getElementById('info-header-text')
 
-// This is were the text gets inserted in the information popup
+// insert the header and content into the tiles. the text is at the bottom of this file
 const insertInfoText = (type) => {
     const tileData = data[type]
     const cont = document.createElement('div')
@@ -162,7 +159,7 @@ const insertInfoText = (type) => {
     info.appendChild(cont)
 }
 
-// Here it gets deleted
+// delete when closed
 const removeInfoText = () => {
     if (info.hasChildNodes()) {
         head.innerHTML = ''
@@ -212,11 +209,13 @@ const createEvent = (name, date, id, isloggedIn, isfavo, isAdmin) => {
     heartContainer.classList.add('heart-container')
     const favo = document.createElement('i')
 
+    // add the favorite heart if the user is logged in
     if (isloggedIn) {
         favo.classList.add('gg-heart')
         heartContainer.appendChild(favo)
         container.appendChild(heartContainer)
         heartContainer.addEventListener('click', () => toggleHeart(favo, id))
+        // add the edit button if the user is logged in
         if (isAdmin) {
             const editContainer = document.createElement('div')
             editContainer.classList.add('heart-container')
@@ -231,6 +230,7 @@ const createEvent = (name, date, id, isloggedIn, isfavo, isAdmin) => {
     if (isfavo) {
         favo.classList.add('active')
     }
+    // create the elements to show the information and date
     const circle = document.createElement('span')
     const eventName = document.createElement('div')
     const eventDate = document.createElement('div')
@@ -238,6 +238,7 @@ const createEvent = (name, date, id, isloggedIn, isfavo, isAdmin) => {
     const dateNode = document.createTextNode(date)
     const eventid = document.createElement('button')
     eventid.innerHTML = id
+    // fill the elements with the retrieved data
     container.classList.add('event')
     eventDate.classList.add('date')
     circle.classList.add('circle')
@@ -271,7 +272,7 @@ const appendEvents = () => {
         },
         success: function (response) {
             console.log(response.loggedIn)
-            // if they are logged in, fetch the favorites and create the event with a favorite button	
+            // if they are logged in, fetch the favorites and and decide which favorite button to use	
             if (response.loggedIn) {
                 $.ajax({
                     url: "fetch-files/fetch-favorites.php",
