@@ -247,6 +247,8 @@
                         Our names are Daan Keller, Colin de Koning, Kiefer Plender,
                         Julius de
                         Groot & Milan Tool.
+                        <br>
+                        <br>
                         Our website is dedicated to raising awareness about the United
                         Nations'
                         Sustainable Development Goal 14: 'Life Below Water.'
@@ -282,7 +284,7 @@
                     </div>
 
                     <!-- _ Omschrijving _ -->
-                    <a id='event-url'>Bekijk de website</a>
+                    <a id='event-url'>Visit their website</a>
 
                     <!-- _ Omschrijving _ -->
                     <p id='event-description'></p>
