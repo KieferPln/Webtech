@@ -12,8 +12,8 @@ $sql = $conn->prepare('SELECT * FROM events WHERE events.date >= CURDATE() ORDER
 $sql->execute();
 $fetch = $sql->fetchAll();
 
-if (!empty($events)) {
-    echo json_encode($events);
+if (!empty($fetch)) {
+    echo json_encode($fetch);
 } else {
     echo json_encode(array("message" => "There are currently no upcomming events"));
 }
