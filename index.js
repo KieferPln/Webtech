@@ -15,6 +15,8 @@ const scrollTo = (top) => {
     main.scrollTop = top
 }
 
+// Here the technical side of the navigation bar has been made. It looks in the html for the location
+// to scroll to and when you click on the button it scrolls to the correct position.
 let nav_events = document.getElementById('nav_events')
 nav_events.addEventListener('click', () => scrollTo(getRectTopById('events')), true);
 
@@ -98,6 +100,9 @@ const toggleAddEventPopup = (eventid = undefined) => {
     var eventid = null;
 };
 
+
+// right here the popup for the events itself is made. This calls a lot of functions from the
+// handleEvents.js
 const togglePopup = () => {
     if (!popupIsTriggered) {
         popup.style.transform = "translateY(0%)"
@@ -121,6 +126,7 @@ const togglePopup = () => {
     popupIsTriggered = !popupIsTriggered
 }
 
+// Here the popup for the information is made.
 const toggleInfoPopup = (type) => {
     if (popupIsTriggered) {
         popup.style.transform = "translateY(100%)"
@@ -145,19 +151,21 @@ const toggleInfoPopup = (type) => {
     infoPopupIsTriggerd = !infoPopupIsTriggerd
 }
 
-const h = document.getElementById('info-header-text')
+const head = document.getElementById('info-header-text')
 
+// This is were the text gets inserted in the information popup
 const insertInfoText = (type) => {
     const tileData = data[type]
-    const c = document.createElement('div')
-    h.appendChild(document.createTextNode(tileData.header))
-    c.innerHTML = tileData.content;
-    info.appendChild(c)
+    const cont = document.createElement('div')
+    head.appendChild(document.createTextNode(tileData.header))
+    cont.innerHTML = tileData.content;
+    info.appendChild(cont)
 }
 
+// Here it gets deleted
 const removeInfoText = () => {
     if (info.hasChildNodes()) {
-        h.innerHTML = ''
+        head.innerHTML = ''
         info.removeChild(info.children[1])
     }
 }
@@ -192,6 +200,9 @@ const toggleHeart = (element, id) => {
     toggleFavorite(id)
 
 }
+
+// here the Events get made, it needs to look different if an user is logged in and if an admin
+// is logged in.
 const createEvent = (name, date, id, isloggedIn, isfavo, isAdmin) => {
     console.log(isAdmin)
     const container = document.createElement('div')
@@ -241,6 +252,7 @@ const createEvent = (name, date, id, isloggedIn, isfavo, isAdmin) => {
     return container
 }
 
+// here the the early process of creating an event is repeated for every event that is loaded in.
 const appendEvents = () => {
     // check if the user is logged in	
     $.ajax({
