@@ -326,7 +326,6 @@
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
             defer>
             </script>
-        <script src="maps.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     </div>
 </body>
