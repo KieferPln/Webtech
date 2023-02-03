@@ -3,7 +3,12 @@ const ctx = canvas.getContext('2d')
 
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
-const COLORS = ['red', 'blue', 'green', 'purple']
+
+function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+// set mouse props
 let mouse = {
     x: null, y: null,
     radius: (canvas.height / 80) * (canvas.width / 80)
@@ -21,29 +26,31 @@ class Particle {
         this.size = size
         this.color = color
     }
+
     draw() {
-
-
+        // draw particle with given properties
         ctx.beginPath();
-ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-ctx.strokeStyle = "#FFFFFF";
-ctx.globalAlpha = 0.5
-ctx.stroke();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
+        ctx.strokeStyle = "#FFFFFF";
+        ctx.globalAlpha = 0.5
+        ctx.stroke();
     }
     update() {
-
+        // Reverse direction when hitting canvas border
         if (this.x > canvas.width || this.x < 0) {
             this.directionX = -this.directionX
         }
         if (this.y > canvas.height || this.y < 0) {
             this.directionY = -this.directionY
         }
+
         // check collision
         let dx = mouse.x - this.x
         let dy = mouse.y - this.y
         let distance = Math.sqrt(dx ** 2 + dy ** 2)
         let speed = 2
 
+        // Reverse direction when particle is within mouse radius
         if (distance < mouse.radius + this.size) {
             if (mouse.x < this.x && this.x < canvas.width - this.size * 10) {
                 this.directionX = -this.directionX
@@ -62,30 +69,33 @@ ctx.stroke();
                 this.y -= speed
             }
         }
+
+        // move position and draw
         this.x += this.directionX / 5;
         this.y += this.directionY / 5;
         this.draw()
     }
 }
 
-function getRandomArbitrary(min, max) {
-    return Math.random() * (max - min) + min;
-}
+
+// Create x amount of particles of random size and position
 function init() {
     particlesArray = []
     let numberOfParticles = 50;
     for (let i = 0; i < numberOfParticles; i++) {
-        let size = getRandomArbitrary(2,7)
+        let size = getRandomArbitrary(2, 7)
         let x = (Math.random() * ((innerWidth - size * 2) - (size * 2)) + size * 2)
         let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2)
         let directionX = (Math.random() * 5) - 2.5
         let directionY = (Math.random() * 5) - 2.5
         let color = "#FFFFFF"
 
+        // Push particles into array
         particlesArray.push(new Particle(x, y, directionX, directionY, size, color))
     }
 }
 
+// pythagoras
 function getDistance(x1, y1, x2, y2) {
     let y = x2 - x1;
     let x = y2 - y1;
@@ -93,6 +103,8 @@ function getDistance(x1, y1, x2, y2) {
     return Math.sqrt(x * x + y * y);
 }
 
+// checks if value has been the same for atleast 100ms
+// used to prevent high cpu usage when changing window size
 function debounce(func) {
     var timer;
     return function (event) {
@@ -101,6 +113,7 @@ function debounce(func) {
     };
 }
 
+// Update all particles in array
 function animate() {
     requestAnimationFrame(animate)
     ctx.clearRect(0, 0, innerWidth, innerHeight);
@@ -117,6 +130,8 @@ window.addEventListener('resize', debounce(() => {
     mouse.radius = ((canvas.height / 80) * (canvas.height / 80))
     init()
 }))
+
+// Set mouse props to undefined on windowLeave
 window.addEventListener('mouseout', debounce(() => {
     mouse.x = undefined
     mouse.y = undefined

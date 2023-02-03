@@ -140,11 +140,12 @@
                 </div>
             </div>
 
+
             <!-- *********** EVENTS *********** -->
-            <div id="events" style="overflow-y: scroll;">
+            <div id="events">
                 <div class="column">
                     <h2 style="position: sticky; left: 0px;">Upcoming Events</h2>
-                    <div class="row" style='width: 100%; overflow: scroll;'>
+                    <div class="row" style='width: 100%'>
                         <select id='select-subject' onchange="filterEventsbySubjects()" name="Filter-subjects">
                             <option value="">All subjects</option>
                             <option value="Pollution">Pollution</option>
@@ -187,14 +188,8 @@
             </div>
 
             <div id="about_us" style="display: flex; flex-direction: column; gap: var(--gutter-m);">
-                <h2 style="text-align:center; color: white;">About Us (Dit is een footer,
-                    Milan.)</h2>
+                <h2 style="text-align:center; color: white;">About Us</h2>
                 <div class="content">
-                    <!-- <iframe loading="lazy" allowfullscreen width=100%, heigth=300
-                        referrerpolicy="no-referrer-when-downgrade"
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDXSG_YOOUXxeFLXwEREWCCaPPnIead_EI&q=52.3538275,4.956128">
-                    </iframe> -->
-
                     Welcome to our website, created by a group of five first-year
                     students
                     studying Artificial Intelligence at the University of Amsterdam.
@@ -222,25 +217,21 @@
 
             <!-- *********** POPUP *********** -->
             <div class="pop-up-container" id="popup">
-                <div class="text-container">
-                    <div class="pop-up-header">
+
+                <div class="pop-up-header">
                         <h3 id='event-name'></h3>
-                        <div id="event-tags"></div>
-                    </div>
+                        <button class="close-button" onclick="togglePopup()">
+                        <span class="cross-line" style="transform: rotate(-45deg); "></span>
+                        <span class=" cross-line" style="transform: rotate(45deg);"></span>
+                    </button>
+                </div>
+
+                <div class="text-container">
+                    <p id="event-tags"></p>
                     <a id='event-url'>Visit their website</a>
                     <p id='event-description'></p>
                     <p id='event-audience'></p>
-                </div>
-                <div class="button-container">
-                    <button class="close-button" onclick="togglePopup()">
-                        <span class="cross-line" style="transform: rotate(-45deg);"></span>
-                        <span class=" cross-line" style="transform: rotate(45deg);"></span>
-                    </button>
-                    <?php if(isset($_SESSION['username'])) : ?>
-                    <button class="sign-up-button">
-                        <i class="gg-add"></i>
-                        <?php endif; ?>
-                    </button>
+                    <iframe id="iframe-maps" src="" loading='lazy'></iframe>
                 </div>
             </div>
 
