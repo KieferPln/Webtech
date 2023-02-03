@@ -12,6 +12,9 @@ if (file_exists('../connection.php')) {
 if(isset($_POST['eventid']))
 {
     $eventid = $_POST['eventid'];
+    // the eventid primary key is linked to event_subjects and event_audience.
+    // deleting an event from the `events` table automatically deletes them elsewhere
+    // so seperate queries aren't necessary
     $query = "DELETE FROM events WHERE eventid = :eventid ";
     $query_run = $conn->prepare($query);
     $query_execute = $query_run->execute([':eventid' => $eventid]);
