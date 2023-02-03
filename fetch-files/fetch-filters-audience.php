@@ -19,6 +19,6 @@ header('Content-Type: application/json');
 if (!empty($events)) {
     echo json_encode($events);
 } else {
-    echo json_encode(array("message" => "There are no events with this audience"));
+    echo json_encode(array("message" => "There are no events with this target audience"));
 }
 ?>

@@ -12,8 +12,8 @@ const audienceSelect = document.getElementById('select-audience')
 let favorites_select = ''
 
 const fillEventPopup = (data, tags, audience) => {
-    eventName.appendChild(document.createTextNode(data.name ? data.name : 'Geen naam gevonden'))
-    eventDescription.appendChild(document.createTextNode(data.description ? data.description : 'Geen beschrijving gevonden'))
+    eventName.appendChild(document.createTextNode(data.name ? data.name : "We haven't found an name"))
+    eventDescription.appendChild(document.createTextNode(data.description ? data.description : "We haven't found an description"))
     eventUrl.setAttribute('href', data.url ? data.url : '')
     console.log(`${data.address.replace(/ /g, "+")},${data.city},${data.country}`)
     console.log('vanuit index.js', audience)
