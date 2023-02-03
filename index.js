@@ -28,19 +28,13 @@ var popupIsTriggered = false
 var infoPopupIsTriggerd = false
 var addEventPopupIsTriggerd = false
 
+// this function is used both for adding and editing events. eventid is an optional parameter.
+// a button is made (in the CreateEvent function) for every event with the corresponding eventid.
 const toggleAddEventPopup = (eventid = undefined) => {
     if (!addEventPopupIsTriggerd) {
         if (eventid) {
-            // Make an AJAX call to retrieve the data of the event with the given id	
+            // Make an AJAX call to retrieve the data if the button corresponds to an event
             fetch(`retrieve_event.php?eventid=${eventid}`)
-                .then(response => {
-                    console.log("response: ", response); // add this line	
-                    return response.json();
-                })
-                .then(data => {
-                    console.log("data: ", data)
-                    return data;
-                })
                 .catch(error => console.error('Error:', error))
                 .then(data => {
                     // Populate the form fields with the retrieved data	
@@ -251,6 +245,8 @@ const appendEvents = () => {
         type: "GET",
         dataType: "json",
         error: () => {
+            // only show the events when the check-login gives an error (i.e when the
+            // user isn't logged in)
             getEvents().then(events => {
                 for (let i = 0; i < events.length; i++) {
                     eventContainer.appendChild(createEvent(events[i].name, events[i].date, events[i].eventid), false, false, false);
@@ -259,7 +255,7 @@ const appendEvents = () => {
         },
         success: function (response) {
             console.log(response.loggedIn)
-            // if they are logged in, show the favorites button along with the events	
+            // if they are logged in, fetch the favorites and create the event with a favorite button	
             if (response.loggedIn) {
                 $.ajax({
                     url: "fetch-files/fetch-favorites.php",
@@ -275,6 +271,7 @@ const appendEvents = () => {
                                 eventContainer.appendChild(createEvent(events[i].name, events[i].date, events[i].eventid, true, eventids.includes(events[i].eventid), response.isAdmin));
                             }
                         }).catch(err => console.log(err))
+                        // show the edit button when the user is the admin
                         if (response.isAdmin) {
                             edit_button.appendChild(edit_img);
                         }
@@ -382,27 +379,27 @@ const data = {
 
     'Research & Our Sources': {
         header: 'Sources', content:
-            "<p> <a href='https://sdgs.un.org/goals'>\
-            United Nations Social Development Goals</a><br>\
-            \
-            <a href='https://unstats.un.org/sdgs/report/2022/The-Sustainable-Development-Goals-Report-2022.pdf'>\
-            UN SDG 2022 Report (PDF)</a><br>\
-            \
-            <a href='https://www.iucn.org/resources/issues-brief/marine-plastic-pollution'>\
-            IUCN Brief on Plastic Pollution</a><br>\
-            \
-            <a href='https://www.iucn.org/resources/issues-brief/ocean-warming'>\
-            IUCN Brief on Ocean Warming </a><br>\
-            \
-            <a href='https://oceandecade.org/'>\
-            United Nations Decade of Ocean Science for Sustainable Development</a><br>\
-            \
-            <a href='https://www.un.org/en/climatechange/science/climate-issues/ocean-impacts'>\
-            UN information on climate change and ocean connection</a><br> \
-            \
-            <a href='https://www.nationalgeographic.com/environment/article/microplastics-are-in-our-bodies-how-much-do-they-harm-us'\
-            National Geographic information on microplastics</a><br>\
-            <p>"
+    "<p> <a href='https://sdgs.un.org/goals'>\
+    United Nations Social Development Goals</a><br>\
+    \
+    <a href='https://unstats.un.org/sdgs/report/2022/The-Sustainable-Development-Goals-Report-2022.pdf'>\
+    UN SDG 2022 Report (PDF)</a><br>\
+    \
+    <a href='https://www.iucn.org/resources/issues-brief/marine-plastic-pollution'>\
+    IUCN Brief on Plastic Pollution</a><br>\
+    \
+    <a href='https://www.iucn.org/resources/issues-brief/ocean-warming'>\
+    IUCN Brief on Ocean Warming </a><br>\
+    \
+    <a href='https://oceandecade.org/'>\
+    United Nations Decade of Ocean Science for Sustainable Development</a><br>\
+    \
+    <a href='https://www.un.org/en/climatechange/science/climate-issues/ocean-impacts'>\
+    UN information on climate change and ocean connection</a><br> \
+    \
+    <a href='https://www.nationalgeographic.com/environment/article/microplastics-are-in-our-bodies-how-much-do-they-harm-us'\
+    National Geographic information on microplastics</a><br>\
+    <p>"
     },
 
     'privacy': {

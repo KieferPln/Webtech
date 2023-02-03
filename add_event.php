@@ -23,7 +23,8 @@ if(isset($_POST['add_event']))
     $query = "INSERT INTO events (name, date, description, url, country, city, address) 
     VALUES (:name, :date, :description, :url, :country, :city, :address)";
     $query_run = $conn->prepare($query);
-
+    
+    //prepare the data
     $data = [
         ':name' => $name,
         ':date' => $date,
@@ -35,6 +36,8 @@ if(isset($_POST['add_event']))
     ];
     $query_execute = $query_run->execute($data);
 
+    // get the eventid of the current event to correctly enter the subjects and audiences
+    // into the seperate tables
     $eventid = $conn->lastInsertId();
 
     // for table event_subjects

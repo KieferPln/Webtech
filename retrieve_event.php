@@ -8,7 +8,7 @@ if (file_exists('../connection.php')) {
     header("Location: index.php");
     exit();
 }
-
+// retrieve event info to edit an event
 $eventid = $_GET["eventid"];
 $query = "SELECT * FROM events WHERE eventid = :eventid";
 $query_run = $conn->prepare($query);

@@ -8,7 +8,7 @@ if (file_exists('../connection.php')) {
     header("Location: index.php");
     exit();
 }
-
+// eventid is only set when the event form is opened through 'edit event'
 if(isset($_POST['eventid']))
 {
     $eventid = $_POST['eventid'];

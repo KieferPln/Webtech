@@ -25,6 +25,7 @@ if(isset($_POST['name']))
     
     $query_run = $conn->prepare($query);
 
+    // statement preparation
     $data = [
         ':eventid' => $eventid,
         ':name' => $name,
@@ -50,7 +51,9 @@ if(isset($_POST['name']))
     $delete_statement->bindValue(':eventid', $eventid);
     $delete_statement->execute();
     
+    // array to prevent malicious users
     $subjects = array("Acidification", "Eutrophication", "Overfishing", "Pollution", "Rising_Temperatures");
+    // loop over the subjects and insert them if the box is checked
     foreach($subjects as $subject) {
         if (isset($_POST[$subject])) {
             $subject = $_POST[$subject];
@@ -71,6 +74,7 @@ if(isset($_POST['name']))
     $delete_statement->execute();
 
     $audiences = array("Academics", "Policy_Makers", "Environmentalists", "Concerned_Citizens", "Students");
+    // loop in the same way as with subjects
     foreach($audiences as $target_audience) {
         if (isset($_POST[$target_audience])) {
             $target_audience = $_POST[$target_audience];

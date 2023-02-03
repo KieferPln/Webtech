@@ -7,6 +7,7 @@
 
     <form action="add_event.php" method="POST" class="add-event-container">
         <div class="add-event-button-container">
+            <!-- three buttons for submit, edit, delete -->
             <input type="submit" class="submit" name="add_event" value="Add new event"></input>
             <button type="submit" id="submit-edit" class="submit" formaction="edit_event.php">Submit changes</button>
             <button type="submit" id="submit-delete" class="submit" formaction="delete_event.php" 
@@ -18,6 +19,7 @@
         </div>
 
         <div class="subjects-container">
+            <!-- basic event information -->
             <input id="edit-id" name="eventid" value="eventid" style="display: none;"></input>
             <label style="font-weight: 500;" for="location">Main Information</label>
             <input id="name" placeholder="Event name" name="name" type="text" required>
@@ -266,6 +268,7 @@
             <input id="address" name="address" type="address" placeholder="Address" required>
         </div>
 
+        <!-- subjects checkboxes -->
         <div class="subjects-container">
             <label style="font-weight: 500;" for="location">Subjects</label>
             <div class="row">
@@ -289,9 +292,10 @@
                 <label for="Overfishing">Overfishing</label>
             </div>
         </div>
+
+        <!-- audiences checkboxes-->
         <div class="subjects-container">
             <label style="font-weight: 500;" for="location"> Target audience</label>
-
             <div class="row">
                 <input name="Academics" type="checkbox" value="Academics">
                 <label for="Academics">Academics</label>
