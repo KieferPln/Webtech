@@ -11,8 +11,8 @@
 	
 	if (isset($_POST['login'])) {
 		if (!empty($_POST['username']) && !empty($_POST['password'])) {
-			$username = $_POST['username'];
-			$password = hash('sha256', $_POST['password']);
+			$username = htmlspecialchars(trim($_POST['username']));
+			$password = hash('sha256', trim($_POST['password']));
 			$sql = "SELECT * FROM `users` WHERE `username` = :username AND `password` = :password";
 			$query = $conn->prepare($sql);
 			$query->bindParam(':username', $username);
