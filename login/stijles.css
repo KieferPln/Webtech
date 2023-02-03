@@ -144,7 +144,7 @@ input::placeholder {
 
 
 .alert-success {
-    color: green;
+    color: rgb(0,255,0);
     text-align: center;
     position: absolute;
     top: 25%;
