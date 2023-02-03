@@ -69,7 +69,7 @@ function addCountToCookie(count) {
     }
 }
 
-//
+// grabs the count of the bubblecount cookie so it can be displayed on the main site
 
 function getCountFromCookie() {
     var name = "bubbleCount=";
