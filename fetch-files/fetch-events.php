@@ -10,10 +10,10 @@ if (file_exists('../../connection.php')) {
 }session_start();
 $sql = $conn->prepare('SELECT * FROM events WHERE events.date >= CURDATE() ORDER BY events.date ASC');
 $sql->execute();
-$fetch = $sql->fetchAll();
+$events = $sql->fetchAll();
 
-if (!empty($fetch)) {
-    echo json_encode($fetch);
+if (!empty($events)) {
+    echo json_encode($events);
 } else {
     echo json_encode(array("message" => "There are currently no upcomming events"));
 }
