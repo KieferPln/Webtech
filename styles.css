@@ -2,6 +2,35 @@
 @import url('https://css.gg/user.css');
 @import url('https://css.gg/add.css');
 
+@media all and (max-width: 500px) and (min-width: 0),
+(min-width: 1151px) {
+
+    button {
+        font-size: .7em !important;
+    }
+
+    h2 {
+        font-size: 1em !important;
+    }
+
+    h1 {
+        font-size: 5em !important;
+    }
+
+    p {
+        font-size: .3em !important;
+    }
+
+    li {
+        font-size: .3em !important;
+    }
+
+    #about_us .content {
+        font-size: .8em !important;
+    }
+
+}
+
 * {
     font-family: 'Roboto', sans-serif;
     letter-spacing: 1px;
@@ -75,19 +104,19 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 1.4em;
     color: rgb(221, 221, 221);
     font-weight: 500;
     width: fit-content;
     padding-bottom: 0;
     height: fit-content;
-    color: rgb(255, 255, 255);
+    color: rgb(18, 18, 18);
     z-index: 1;
     letter-spacing: 2px;
 }
 
 .header-middle h2 {
-    font-size: 1.8em;
+    font-size: 1.6em;
     color: rgb(221, 221, 221);
     font-weight: 700;
     width: fit-content;
@@ -109,7 +138,8 @@ h3 {
 
 #header {
     width: 100%;
-    height: 100vh;
+    height: fit-content;
+    min-height: 100vh;
     display: flex;
     text-align: left;
     z-index: 3;
@@ -244,16 +274,22 @@ button.login:hover {
     position: fixed;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    background-color: #eaeaea;
 }
 
+button {
+    border: 2px solid black;
+}
 
 #content {
     height: fit-content;
     width: 100%;
     display: flex;
     flex-direction: column;
-    background: #263073
+    background-size: 30px 30px;
+    background-image: radial-gradient(circle, #a0a0a0 1px, rgba(0, 0, 0, 0) 1px);
 }
+
 #events {
     background-color: transparent;
     height: fit-content;
@@ -494,6 +530,7 @@ button.close-button {
     padding: var(--gutter-s);
     border-radius: var(--rounded);
     position: relative;
+    border: 0;
 }
 
 button.close-button span {
@@ -582,13 +619,13 @@ p {
 }
 
 #about_us * {
-    color: rgb(255, 255, 255);
-    font-size: 1.2em;
-    font-weight: 400;
+    color: rgb(6, 6, 6);
+    font-size: 1.5em;
+    font-weight: 700;
     letter-spacing: 2px;
 }
 
-#about_us .container{
+#about_us .container {
     display: flex;
     flex-direction: column;
 }
@@ -602,6 +639,8 @@ p {
     display: flex;
     flex-direction: column;
     gap: var(--gutter-m);
+    font-size: 1.4em;
+    font-weight: 400;
 }
 
 
@@ -611,7 +650,7 @@ p {
     /* Space between grid items */
     align-items: center;
     width: 100%;
-    
+
     max-height: 1500px;
     overflow: auto;
     gap: 40px;
@@ -635,7 +674,7 @@ p {
     flex-direction: column;
     padding: var(--gutter-s);
     z-index: 1;
-    border:2px solid black
+    border: 2px solid black
 }
 
 .tile:hover {
@@ -719,6 +758,7 @@ p {
 
     color: black;
 }
+
 #add-event-popup {
     position: fixed;
     top: 0px;
@@ -732,6 +772,7 @@ p {
     -webkit-backdrop-filter: blur(10px);
     padding: var(--gutter-l);
 }
+
 /* 
 #event-description{
     overflow-y: auto;
@@ -814,6 +855,7 @@ select {
     background-color: red;
     padding: var(--gutter-s);
     background-color: rgb(229, 229, 229);
+    border: 2px solid;
 }
 
 select:hover {
@@ -1047,43 +1089,43 @@ button.favorites:hover {
 @import url(//fonts.googleapis.com/css?family=Open+Sans:600,400&subset=latin,cyrillic);
 
 h4 {
-	text-align: center;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 400;
-	opacity: 0.7;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    opacity: 0.7;
 }
 
 .click {
-	font-size: 33px;
-	color: rgba(0,0,0,.5);
-	width: 38px;
-	height: 38px;
-	margin: 0 auto;
-	margin-top: 20px;
-	position: relative;
-	cursor: pointer;
+    font-size: 33px;
+    color: rgba(0, 0, 0, .5);
+    width: 38px;
+    height: 38px;
+    margin: 0 auto;
+    margin-top: 20px;
+    position: relative;
+    cursor: pointer;
 }
 
 .click span {
-	margin-left: 4px;
-	margin-top: 3px;
-	z-index: 999;
-	position: absolute;
+    margin-left: 4px;
+    margin-top: 3px;
+    z-index: 999;
+    position: absolute;
 }
 
 span:hover {
-	opacity: 0.8;
+    opacity: 0.8;
 }
 
 span:active {
-	transform: scale(0.93,0.93) translateY(2px)
+    transform: scale(0.93, 0.93) translateY(2px)
 }
 
-.heart-container{
+.heart-container {
     width: fit-content;
-    padding: var(--gutter-m);    
-    border-bottom-left-radius:inherit;
-    border-top-left-radius:inherit;
+    padding: var(--gutter-m);
+    border-bottom-left-radius: inherit;
+    border-top-left-radius: inherit;
     z-index: 1;
 }
 
@@ -1096,18 +1138,16 @@ span:active {
     height: 8px;
     border-bottom: 0
 }
+
 .gg-heart {
     box-sizing: border-box;
     position: relative;
     transform:
-        translate(
-            calc(-10px / 2 * var(--ggs,1)),
-            calc(-6px / 2 * var(--ggs,1))
-        )
-        rotate(-45deg)
-        scale(var(--ggs,1));
+        translate(calc(-10px / 2 * var(--ggs, 1)),
+            calc(-6px / 2 * var(--ggs, 1))) rotate(-45deg) scale(var(--ggs, 1));
     display: block
 }
+
 .gg-heart::after,
 .gg-heart::before {
     content: "";
@@ -1115,19 +1155,22 @@ span:active {
     box-sizing: border-box;
     position: absolute
 }
+
 .gg-heart::after {
     right: -9px;
     transform: rotate(90deg);
     top: 5px
 }
+
 .gg-heart::before {
     width: 11px;
     height: 11px;
-    border-left: 2px solid ;
+    border-left: 2px solid;
     border-bottom: 2px solid;
     left: -2px;
     top: 3px
 }
+
 /*  */
 
 .gg-heart.active,
@@ -1153,7 +1196,7 @@ span:active {
     box-sizing: border-box;
     position: relative;
     display: block;
-    transform: rotate(-45deg) scale(var(--ggs,1));
+    transform: rotate(-45deg) scale(var(--ggs, 1));
     width: 14px;
     height: 4px;
     border-right: 2px solid transparent;
@@ -1164,6 +1207,7 @@ span:active {
     border-bottom-right-radius: 1px;
     margin-right: -2px
 }
+
 .gg-pen::after,
 .gg-pen::before {
     content: "";
@@ -1171,6 +1215,7 @@ span:active {
     box-sizing: border-box;
     position: absolute
 }
+
 .gg-pen::before {
     background: currentColor;
     border-left: 0;
@@ -1180,6 +1225,7 @@ span:active {
     border-radius: 1px;
     top: 0
 }
+
 .gg-pen::after {
     width: 8px;
     height: 7px;
@@ -1191,5 +1237,5 @@ span:active {
 }
 
 a:hover {
-cursor: pointer !important;
+    cursor: pointer !important;
 }

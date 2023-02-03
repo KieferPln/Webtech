@@ -28,77 +28,77 @@ var popupIsTriggered = false
 var infoPopupIsTriggerd = false
 var addEventPopupIsTriggerd = false
 
-const toggleAddEventPopup = (eventid = undefined) => {	
-    if (!addEventPopupIsTriggerd) {	
-        if (eventid) {	
+const toggleAddEventPopup = (eventid = undefined) => {
+    if (!addEventPopupIsTriggerd) {
+        if (eventid) {
             // Make an AJAX call to retrieve the data of the event with the given id	
-            fetch(`retrieve_event.php?eventid=${eventid}`)	
-            .then(response => {	
-                console.log("response: ", response); // add this line	
-                return response.json();	
-            })	
-            .then(data => {	
-                console.log("data: ", data)	
-                return data;	
-            })	
-            .catch(error => console.error('Error:', error))	
-            .then(data => {	
-            // Populate the form fields with the retrieved data	
-            console.log(data);	
-            //document.getElementById('edit-id').innerHTML = "Editing event " + data.eventid;	
-            document.getElementById('edit-id').value = data.eventid;	
-            document.getElementById('name').value = data.name;	
-            document.getElementById('date').value = data.date;	
-            document.getElementById('description').value = data.description;	
-            document.getElementById('url').value = data.url;	
-            document.getElementById('country').value = data.country;	
-            document.getElementById('city').value = data.city;	
-            document.getElementById('address').value = data.address;	
-            document.getElementById("submit-edit").style.visibility = "visible";
-            document.getElementById("submit-delete").style.visibility = "visible";            	            	
-            // subjects checkboxes	
-            var subjects = document.querySelectorAll(".subjects-container input[type='checkbox']");	
-            for (var i = 0; i < subjects.length; i++) {	
-            if (data.subjects.includes(subjects[i].value)) {	
-            subjects[i].checked = true;	
-            }	
-            }	
-            // audience checkboxes	
-            var audience = document.querySelectorAll(".subjects-container input[type='checkbox']");	
-            for (var i = 0; i < audience.length; i++) {	
-            if (data.audience.includes(audience[i].value)) {	
-            audience[i].checked = true;	
-            }	
-            }	
-            })	
-            .catch(error => console.error('Error:', error));	
-        } else {	
-            document.getElementById('edit-id').innerHTML = "Adding new event";	
-            document.getElementById('name').value = '';	
-            document.getElementById('date').value = '';	
-            document.getElementById('description').value = '';	
-            document.getElementById('url').value = '';	
-            document.getElementById('country').value = '';	
-            document.getElementById('city').value = '';	
-            document.getElementById('address').value = '';	
-            document.getElementById("submit-edit").style.visibility = "hidden"; 
-            document.getElementById("submit-delete").style.visibility = "hidden";            	           	
-            const checkboxes = document.querySelectorAll("input[type='checkbox']");	
-            for (let checkbox of checkboxes) {	
-                checkbox.checked = false;	
-            }	
-        }	
-    addEventPopup.style.visibility = "visible"	
-    main.style.overflow = 'hidden'
+            fetch(`retrieve_event.php?eventid=${eventid}`)
+                .then(response => {
+                    console.log("response: ", response); // add this line	
+                    return response.json();
+                })
+                .then(data => {
+                    console.log("data: ", data)
+                    return data;
+                })
+                .catch(error => console.error('Error:', error))
+                .then(data => {
+                    // Populate the form fields with the retrieved data	
+                    console.log(data);
+                    //document.getElementById('edit-id').innerHTML = "Editing event " + data.eventid;	
+                    document.getElementById('edit-id').value = data.eventid;
+                    document.getElementById('name').value = data.name;
+                    document.getElementById('date').value = data.date;
+                    document.getElementById('description').value = data.description;
+                    document.getElementById('url').value = data.url;
+                    document.getElementById('country').value = data.country;
+                    document.getElementById('city').value = data.city;
+                    document.getElementById('address').value = data.address;
+                    document.getElementById("submit-edit").style.visibility = "visible";
+                    document.getElementById("submit-delete").style.visibility = "visible";
+                    // subjects checkboxes	
+                    var subjects = document.querySelectorAll(".subjects-container input[type='checkbox']");
+                    for (var i = 0; i < subjects.length; i++) {
+                        if (data.subjects.includes(subjects[i].value)) {
+                            subjects[i].checked = true;
+                        }
+                    }
+                    // audience checkboxes	
+                    var audience = document.querySelectorAll(".subjects-container input[type='checkbox']");
+                    for (var i = 0; i < audience.length; i++) {
+                        if (data.audience.includes(audience[i].value)) {
+                            audience[i].checked = true;
+                        }
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        } else {
+            document.getElementById('edit-id').innerHTML = "Adding new event";
+            document.getElementById('name').value = '';
+            document.getElementById('date').value = '';
+            document.getElementById('description').value = '';
+            document.getElementById('url').value = '';
+            document.getElementById('country').value = '';
+            document.getElementById('city').value = '';
+            document.getElementById('address').value = '';
+            document.getElementById("submit-edit").style.visibility = "hidden";
+            document.getElementById("submit-delete").style.visibility = "hidden";
+            const checkboxes = document.querySelectorAll("input[type='checkbox']");
+            for (let checkbox of checkboxes) {
+                checkbox.checked = false;
+            }
+        }
+        addEventPopup.style.visibility = "visible"
+        main.style.overflow = 'hidden'
     }
     else {
-        addEventPopup.style.visibility = "hidden";	
-        document.getElementById("submit-edit").style.visibility = "hidden";	
-        document.getElementById("submit-delete").style.visibility = "hidden";	
+        addEventPopup.style.visibility = "hidden";
+        document.getElementById("submit-edit").style.visibility = "hidden";
+        document.getElementById("submit-delete").style.visibility = "hidden";
         main.style.overflow = 'auto';
     }
     addEventPopupIsTriggerd = !addEventPopupIsTriggerd
-    var eventid = null;	
+    var eventid = null;
 };
 
 const togglePopup = () => {
@@ -108,9 +108,9 @@ const togglePopup = () => {
         emptyEventPopup()
         getEvents().then(events => {
             const event = events.find((event) => event.eventid == currentEvent)
-            getTagsByEventId(event.eventid).then(tags => {        
-                getAudienceByEventId(event.eventid).then(audience => {        
-                    fillEventPopup(event,tags,audience)
+            getTagsByEventId(event.eventid).then(tags => {
+                getAudienceByEventId(event.eventid).then(audience => {
+                    fillEventPopup(event, tags, audience)
                 }).catch(err => console.log(err))
             }).catch(err => console.log(err))
         }).catch(err => consolle.log(err))
@@ -166,34 +166,33 @@ const removeInfoText = () => {
 }
 
 const eventContainer = document.getElementById('event-container')
-const favoriteButton = document.getElementById('favorite-button')	
-$.ajax({	
-    url: "fetch-files/fetch-favorites.php",	
-    type: "GET",	
-    dataType: "json",	
-    success: function(favorite_events) {	
-        var eventids = favorite_events.map(function(event) {	
-            return event.eventid;	
-        });	
-        $("#upcoming").append(" " + eventids.join(", "));	
-    }	
-}); 	
+const favoriteButton = document.getElementById('favorite-button')
+$.ajax({
+    url: "fetch-favorites.php",
+    type: "GET",
+    dataType: "json",
+    success: function (favorite_events) {
+        var eventids = favorite_events.map(function (event) {
+            return event.eventid;
+        });
+        $("#upcoming").append(" " + eventids.join(", "));
+    }
+});
 
-const toggleFavorite = (eventid) => {	
-    $.ajax({	
-        url: "toggle-favorite.php",	
-        type: "POST",	
-        data: { eventid: eventid },	
-    });	
+const toggleFavorite = (eventid) => {
+    $.ajax({
+        url: "toggle-favorite.php",
+        type: "POST",
+        data: { eventid: eventid },
+    });
 }
 
-const toggleHeart = (element,id) =>{
-    if (element.classList.contains('active'))
-        {element.classList.remove('active')}
-    else{
-    element.classList.add('active')
-}
-toggleFavorite(id)
+const toggleHeart = (element, id) => {
+    if (element.classList.contains('active')) { element.classList.remove('active') }
+    else {
+        element.classList.add('active')
+    }
+    toggleFavorite(id)
 
 }
 const createEvent = (name, date, id, isloggedIn, isfavo, isAdmin) => {
@@ -203,23 +202,24 @@ const createEvent = (name, date, id, isloggedIn, isfavo, isAdmin) => {
     const heartContainer = document.createElement('div')
     heartContainer.classList.add('heart-container')
     const favo = document.createElement('i')
-    
-    if(isloggedIn){
+
+    if (isloggedIn) {
         favo.classList.add('gg-heart')
         heartContainer.appendChild(favo)
         container.appendChild(heartContainer)
-        heartContainer.addEventListener('click', () => toggleHeart(favo,id))
-        if(isAdmin){
+        heartContainer.addEventListener('click', () => toggleHeart(favo, id))
+        if (isAdmin) {
             const editContainer = document.createElement('div')
             editContainer.classList.add('heart-container')
             const edit = document.createElement('i')
             edit.classList.add('gg-pen')
             editContainer.appendChild(edit)
             container.appendChild(editContainer)
-            editContainer.addEventListener('click', () => toggleAddEventPopup(id));        }
+            editContainer.addEventListener('click', () => toggleAddEventPopup(id));
+        }
     }
 
-    if(isfavo){
+    if (isfavo) {
         favo.classList.add('active')
     }
     const circle = document.createElement('span')
@@ -227,7 +227,7 @@ const createEvent = (name, date, id, isloggedIn, isfavo, isAdmin) => {
     const eventDate = document.createElement('div')
     const titleNode = document.createTextNode(name)
     const dateNode = document.createTextNode(date)
-    const eventid = document.createElement('button')	
+    const eventid = document.createElement('button')
     eventid.innerHTML = id
     container.classList.add('event')
     eventDate.classList.add('date')
@@ -246,85 +246,85 @@ const createEvent = (name, date, id, isloggedIn, isfavo, isAdmin) => {
 
 const appendEvents = () => {
     // check if the user is logged in	
-    $.ajax({	
-        url: "check-login.php",	
-        type: "GET",	
-        dataType: "json",	
-        error: ()=>{
-            getEvents().then(events => {	
-                for (let i = 0; i < events.length; i++) {	
-                    eventContainer.appendChild(createEvent(events[i].name, events[i].date, events[i].eventid),false,false,false);	
-                }	
-            }).catch(err => console.log(err))	
+    $.ajax({
+        url: "check-login.php",
+        type: "GET",
+        dataType: "json",
+        error: () => {
+            getEvents().then(events => {
+                for (let i = 0; i < events.length; i++) {
+                    eventContainer.appendChild(createEvent(events[i].name, events[i].date, events[i].eventid), false, false, false);
+                }
+            }).catch(err => console.log(err))
         },
-        success: function(response) {	
+        success: function (response) {
             console.log(response.loggedIn)
             // if they are logged in, show the favorites button along with the events	
-            if (response.loggedIn) {	
-                $.ajax({	
-                    url: "fetch-files/fetch-favorites.php",	
-                    type: "GET",	
-                    dataType: "json",	
-                    success: function(favorite_events) {	
-                        var eventids = favorite_events.map(function(event) {	
-                            return event.eventid;	
-                        });	
-    	
-                        getEvents().then(events => {	
-                            for (let i = 0; i < events.length; i++) {	
-                                eventContainer.appendChild(createEvent(events[i].name, events[i].date, events[i].eventid,true,eventids.includes(events[i].eventid),response.isAdmin));	
-                            }	
-                        }).catch(err => console.log(err))		
-                            //   const eventWrapper = document.createElement('div');
-                            //   eventWrapper.style.display = "flex";
-                            //   eventWrapper.style.flexDirection = "row";
-                            //   eventWrapper.style.alignItems = "center";
-                            //   const event = createEvent(events[i].name, events[i].date, events[i].eventid);
-                            //   const favorite_button = document.createElement	
-                            //   const favorite_img = document.createElement('i');
-                            //   favorite_img.classList.add('fa-solid fa-star')	
-                            //   //set the initial favorite_img depending on database info	
-                            //   if (eventids.includes(events[i].eventid)) {	
-                            //     favorite_img.src = 'favorite_yes.png';	
-                            //   } else {	
-                            //     favorite_img.src = 'favorite_no.png';	
-                            //   }
-                            //   favorite_img.width = 40;
-                            //   favorite_img.height = 40;	
-                            //   const edit_button = document.createElement('button');	
-                            //   edit_button.type="button";	
-                            //   const edit_img = document.createElement('img');	
-                            //   edit_img.src = 'edit.png';
-                            //   edit_img.width = 40;
-                            //   edit_img.height = 40;	
-                              if (response.isAdmin) {	
-                                 edit_button.appendChild(edit_img);	
-                                }	
-                            //   favorite_button.appendChild(favorite_img);	
-                            //   favorite_button.addEventListener('click', () => toggleFavorite(events[i].eventid, favorite_button));                    	
-                            //   favorite_button.classList.add("favorite-button");	
-                            //   eventWrapper.appendChild(favorite_button);	
-                            //   edit_button.classList.add("edit-button");	
-                            //   edit_button.addEventListener('click', () => toggleAddEventPopup(events[i].eventid));	
-                            //   eventWrapper.appendChild(edit_button);	
-                            //   eventWrapper.appendChild(event);
-                            //   eventContainer.appendChild(eventWrapper);	
-                    }	
-                });	
-            // if they aren't logged in, only show the events	
-            } else {	
-            
-            }	
-        }	
-    });	
-}	
+            if (response.loggedIn) {
+                $.ajax({
+                    url: "fetch-favorites.php",
+                    type: "GET",
+                    dataType: "json",
+                    success: function (favorite_events) {
+                        var eventids = favorite_events.map(function (event) {
+                            return event.eventid;
+                        });
+
+                        getEvents().then(events => {
+                            for (let i = 0; i < events.length; i++) {
+                                eventContainer.appendChild(createEvent(events[i].name, events[i].date, events[i].eventid, true, eventids.includes(events[i].eventid), response.isAdmin));
+                            }
+                        }).catch(err => console.log(err))
+                        //   const eventWrapper = document.createElement('div');
+                        //   eventWrapper.style.display = "flex";
+                        //   eventWrapper.style.flexDirection = "row";
+                        //   eventWrapper.style.alignItems = "center";
+                        //   const event = createEvent(events[i].name, events[i].date, events[i].eventid);
+                        //   const favorite_button = document.createElement	
+                        //   const favorite_img = document.createElement('i');
+                        //   favorite_img.classList.add('fa-solid fa-star')	
+                        //   //set the initial favorite_img depending on database info	
+                        //   if (eventids.includes(events[i].eventid)) {	
+                        //     favorite_img.src = 'favorite_yes.png';	
+                        //   } else {	
+                        //     favorite_img.src = 'favorite_no.png';	
+                        //   }
+                        //   favorite_img.width = 40;
+                        //   favorite_img.height = 40;	
+                        //   const edit_button = document.createElement('button');	
+                        //   edit_button.type="button";	
+                        //   const edit_img = document.createElement('img');	
+                        //   edit_img.src = 'edit.png';
+                        //   edit_img.width = 40;
+                        //   edit_img.height = 40;	
+                        if (response.isAdmin) {
+                            edit_button.appendChild(edit_img);
+                        }
+                        //   favorite_button.appendChild(favorite_img);	
+                        //   favorite_button.addEventListener('click', () => toggleFavorite(events[i].eventid, favorite_button));                    	
+                        //   favorite_button.classList.add("favorite-button");	
+                        //   eventWrapper.appendChild(favorite_button);	
+                        //   edit_button.classList.add("edit-button");	
+                        //   edit_button.addEventListener('click', () => toggleAddEventPopup(events[i].eventid));	
+                        //   eventWrapper.appendChild(edit_button);	
+                        //   eventWrapper.appendChild(event);
+                        //   eventContainer.appendChild(eventWrapper);	
+                    }
+                });
+                // if they aren't logged in, only show the events	
+            } else {
+
+            }
+        }
+    });
+}
 
 appendEvents()
 
 const data = {
     'General Information': {
         header: 'General Information', content:
-    "The United Nations has specified seventeen Sustainable Develoment Goals (SDG's). One of them \
+            "The United Nations has specified seventeen Sustainable Develoment Goals (SDG's). One of them \
     is 'Life Below Water'. Its mission statement is to 'Conserve and sustainably use the oceans, \
     seas and marine resources'. The UN has identified five main issues our oceans currently face: \
     (plastic) pollution, overfishing, eutrophication, acidification, and rising temperatures. This \
@@ -433,7 +433,7 @@ const data = {
             \
             <a href='https://www.nationalgeographic.com/environment/article/microplastics-are-in-our-bodies-how-much-do-they-harm-us'\
             National Geographic information on microplastics</a><br>\
-            <p>" 
+            <p>"
     },
 
     'privacy': {
