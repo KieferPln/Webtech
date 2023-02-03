@@ -31,6 +31,7 @@ Password: pmy#1_^5?jwNJ4i!Fuf#
 
 
 References:
-for cookies: 
-https://www.youtube.com/watch?v=AuLMvRcWmss
-PDO Tutorial: https://www.sourcecodester.com/tutorials/php/12348/php-pdo-login-and-registration.html
+Web Dev Tutorials. (2022, 4 januari). HTML, CSS & JavaScript - How to Create a Cookie Consent Message [Video]. YouTube. https://www.youtube.com/watch?v=AuLMvRcWmss
+Creating a Login and Registration Form using PHP PDO Tutorial | Free Source Code Projects and Tutorials. (z.d.). https://www.sourcecodester.com/tutorials/php/12348/php-pdo-login-and-registration.html
+Web It, F. O. (z.d.). Funda of Web IT provides the tutorials about laravel, php, codeigniter, vb.net, asp.net, firebase, php mailter, web designing and web development, etc. Funda Of Web IT. https://www.fundaofwebit.com/php-pdo/how-to-insert-data-into-database-using-pdo-in-php
+HTML Country Select Dropdown List. (z.d.). Gist. https://gist.github.com/danrovito/977bcb97c9c2dfd3398a
