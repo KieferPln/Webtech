@@ -35,6 +35,9 @@ const toggleAddEventPopup = (eventid = undefined) => {
         if (eventid) {
             // Make an AJAX call to retrieve the data if the button corresponds to an event
             fetch(`retrieve_event.php?eventid=${eventid}`)
+                .then(response => {
+                    return response.json();
+                })
                 .catch(error => console.error('Error:', error))
                 .then(data => {
                     // Populate the form fields with the retrieved data	
