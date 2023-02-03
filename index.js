@@ -322,7 +322,7 @@ const appendEvents = () => {
 appendEvents()
 
 const data = {
-    'General': {
+    'General Information': {
         header: 'General Information', content:
     "The United Nations has specified seventeen Sustainable Develoment Goals (SDG's). One of them \
     is 'Life Below Water'. Its mission statement is to 'Conserve and sustainably use the oceans, \
@@ -336,7 +336,7 @@ const data = {
     your favorites so you never lose track of them. \
     "},
 
-    'Pollution': {
+    '(Plastic) Pollution': {
         header: '(Plastic) Pollution', content:
             "Due to an increase in plastic consumption and ineffective waste management strategies, more \
     plastic than ever is ending up in the ocean. Of all the waste that finds its way to the ocean, 85% \
@@ -388,7 +388,7 @@ const data = {
     aforementioned reasons, it also reduces the ocean's ability to absord carbon emissions in the \
     future, thereby worsening climate change." },
 
-    'Temperatures': {
+    'Rising Temperatures': {
         header: 'Rising Temperatures', content:
             "Ocean temperatures are rising because they absorb the largest part of the excess energy and heat \
     from greenhouse gas emissions. It is estimated that oceans have absorbed approxiamately 90% of \
@@ -411,7 +411,7 @@ const data = {
     the increase of probability of marine heatwaves. These heatwaves compound the regular dangers of \
     rising ocean temperatures." },
 
-    'Sources': {
+    'Research & Our Sources': {
         header: 'Sources', content:
             "<p> <a href='https://sdgs.un.org/goals'>\
             United Nations Social Development Goals</a><br>\

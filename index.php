@@ -123,6 +123,31 @@
             <div id="information">
                 <h2 style="margin-top: var(--gutter-m);">Information</h2>
                 <div class="tile-container">
+                    <script>
+                        var topics = ['General Information', '\(Plastic\) Pollution', 
+                        'Overfishing', 'Eutrophication', 'Acidification', 
+                        'Rising Temperatures', 'Research & Our Sources'];
+                        for (var i = 0; i < topics.length; i++) {
+                            document.write(`
+                                <div onclick="toggleInfoPopup('${topics[i]}')" class="tile">
+                                    <div class="tile-content-container">
+                                        ${topics[i]}
+                                    </div>
+                                </div>
+                            `);
+                        }
+                    </script>
+                </div>
+            </div>
+
+            <!-- 
+            Hierboven staat nu een loopje die voor elk onderwerp een tile maakt.
+            Scheelt weer code ("don't repeat yourself" principe) en maakt het
+            makkelijker om een nieuwe toe te voegen.
+
+            <div id="information">
+                <h2 style="margin-top: var(--gutter-m);">Information</h2>
+                <div class="tile-container">
                     <div onclick="toggleInfoPopup('General')" class="tile">
                         <div class="tile-content-container">
                             General Information
@@ -160,6 +185,7 @@
                     </div>
                 </div>
             </div>
+                    -->
 
             <!-- *********** EVENTS *********** -->	
             <div id="events">	
