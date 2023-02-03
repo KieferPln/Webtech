@@ -273,7 +273,7 @@ button.login:hover {
     position: fixed;
     scroll-behavior: smooth;
     overflow-x: hidden;
-    background-color: #eaeaea;
+    background-color: #ffffff;
 }
 
 button {
@@ -872,7 +872,6 @@ select:hover {
 
 .row {
     display: flex;
-    width: fit-content;
     gap: var(--gutter-s);
     align-items: center;
     border-radius: var(--rounded);
