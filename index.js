@@ -168,7 +168,7 @@ const removeInfoText = () => {
 const eventContainer = document.getElementById('event-container')
 const favoriteButton = document.getElementById('favorite-button')	
 $.ajax({	
-    url: "fetch-favorites.php",	
+    url: "fetch-files/fetch-favorites.php",	
     type: "GET",	
     dataType: "json",	
     success: function(favorite_events) {	
@@ -262,7 +262,7 @@ const appendEvents = () => {
             // if they are logged in, show the favorites button along with the events	
             if (response.loggedIn) {	
                 $.ajax({	
-                    url: "fetch-favorites.php",	
+                    url: "fetch-files/fetch-favorites.php",	
                     type: "GET",	
                     dataType: "json",	
                     success: function(favorite_events) {	
