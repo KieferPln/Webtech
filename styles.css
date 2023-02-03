@@ -2,11 +2,7 @@
 @import url('https://css.gg/user.css');
 @import url('https://css.gg/add.css');
 
-@media all and (max-width: 500px) and (min-width: 0){
-
-    button {
-        font-size: .7em !important;
-    }
+@media all and (max-width: 500px) and (min-width: 0) {
 
     h2 {
         font-size: 1em !important;
@@ -65,7 +61,7 @@
     --light-gray: #f3f3f3;
     --blue: #0e87cc;
     /*  */
-    --rounded: 4px;
+    --rounded: 12px;
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.07),
         0 2px 4px rgba(0, 0, 0, 0.07),
         0 4px 8px rgba(0, 0, 0, 0.07),
@@ -109,7 +105,7 @@ h2 {
     width: fit-content;
     padding-bottom: 0;
     height: fit-content;
-    color: rgb(18, 18, 18);
+    color: rgb(0, 0, 0);
     z-index: 1;
     letter-spacing: 2px;
 }
@@ -273,11 +269,13 @@ button.login:hover {
     position: fixed;
     scroll-behavior: smooth;
     overflow-x: hidden;
-    background-color: #ffffff;
+    background: linear-gradient(45deg, rgb(39, 46, 115) 27%, rgb(39, 46, 115) 77%);
 }
 
 button {
     border: 2px solid black;
+    min-width: fit-content;
+    min-width: fit-content;
 }
 
 #content {
@@ -286,14 +284,22 @@ button {
     display: flex;
     flex-direction: column;
     background-size: 30px 30px;
-    background-image: radial-gradient(circle, #a0a0a0 1px, rgba(0, 0, 0, 0) 1px);
+    background-image: radial-gradient(circle, #7e7e7e 1px, rgba(0, 0, 0, 0) 1px);
+    gap: 50px;
+    padding: var(--gutter-m);
 }
 
 #events {
-    background-color: transparent;
     height: fit-content;
+    border-radius: var(--rounded);
+    box-shadow: var(--shadow);
     padding: var(--gutter-m);
-    background-color: transparent
+    background: linear-gradient(45deg, rgb(67, 83, 207) 27%, rgb(39, 46, 115) 77%);
+    border: 2px solid;
+}
+
+#events h2 {
+    color: white;
 }
 
 .bubble {
@@ -313,8 +319,8 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: var(--gutter-m);
-    gap: var(--gutter-m);
+    padding: 20px;
+    gap: var(--gutter-l);
     z-index: 2;
 }
 
@@ -613,25 +619,33 @@ p {
     flex-wrap: wrap;
     flex-direction: column;
     gap: var(--gutter-m);
-    background-color: transparent;
-    padding: var(--gutter-l);
+    background: linear-gradient(45deg, rgb(67, 83, 207) 27%, rgb(39, 46, 115) 77%);
+    border: 2px solid black;
+    border-radius: var(--rounded);
+    padding: var(--gutter-m);
 }
 
 #about_us * {
-    color: rgb(6, 6, 6);
+    color: rgb(0, 0, 0);
     font-size: 1.5em;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 2px;
 }
 
 #about_us .container {
     display: flex;
     flex-direction: column;
+
 }
 
 #about_us {
     background-color: transparent;
     display: flex;
+    background-color: rgba(255, 255, 255);
+    border-radius: var(--rounded);
+    padding: var(--gutter-m);
+    box-shadow: var(--shadow);
+    border: 2px solid;
 }
 
 #about_us .content {
@@ -662,7 +676,7 @@ p {
 }
 
 .tile {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(243, 243, 243);
     width: 300px;
     min-width: 300px;
     height: 300px;
@@ -723,20 +737,50 @@ p {
     justify-content: center;
     align-items: center;
     visibility: hidden;
+    padding: var(--gutter-m);
 }
 
 .information-popup-content {
     box-shadow: var(--shadow);
+    padding-top: 0px;
     border-radius: var(--rounded);
     background-color: rgb(255, 255, 255);
     height: fit-content;
     width: 700px;
     display: flex;
     flex-direction: column;
-    padding: var(--gutter-m);
     display: flex;
     flex-direction: column;
     gap: var(--gutter-m);
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+.information-popup-content div {
+    padding: var(--gutter-s);
+}
+
+.information-popup-header {
+    background-color: rgba(255, 255, 255, 0.513);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    padding: var(--gutter-s);
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgb(202, 202, 202);
+    border-top-left-radius: var(--rounded);
+    border-top-right-radius: var(--rounded);
+}
+
+.information-popup-header h2 {
+    width: 100%;
+    text-align: center;
 }
 
 .information-popup-content p {
@@ -998,7 +1042,6 @@ select:hover {
 }
 
 button.menu {
-    background-color: red;
     width: fit-content;
     height: fit-content;
     padding: var(--gutter-s);

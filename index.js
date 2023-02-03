@@ -142,19 +142,19 @@ const toggleInfoPopup = (type) => {
     infoPopupIsTriggerd = !infoPopupIsTriggerd
 }
 
+const h = document.getElementById('info-header-text')
+
 const insertInfoText = (type) => {
     const tileData = data[type]
-    const h = document.createElement('h2')
     const c = document.createElement('div')
-    h.innerHTML = tileData.header;
+    h.appendChild(document.createTextNode(tileData.header))
     c.innerHTML = tileData.content;
-    info.appendChild(h)
     info.appendChild(c)
 }
 
 const removeInfoText = () => {
     if (info.hasChildNodes()) {
-        info.removeChild(info.children[1])
+        h.innerHTML = ''
         info.removeChild(info.children[1])
     }
 }
