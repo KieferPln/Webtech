@@ -287,6 +287,8 @@ const appendEvents = () => {
 
 appendEvents()
 
+// this is the text that is inside the information popups. It is in html code so you can implement 
+// line breaks and links inside the popups.
 const data = {
     'General Information': {
         header: 'General Information', content:
