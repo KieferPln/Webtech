@@ -15,7 +15,7 @@ $fetch = $sql->fetchAll();
 if (!empty($events)) {
     echo json_encode($events);
 } else {
-    echo json_encode(array("message" => "There are no currently no upcomming events"));
+    echo json_encode(array("message" => "There are currently no upcomming events"));
 }
 
 
